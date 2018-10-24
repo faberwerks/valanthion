@@ -55,10 +55,11 @@ public class Entity : MonoBehaviour
 
     }
 
-    public void Damage(int atk)
+    public void Damage(float atk)
     {
         Debug.Log(name + "DAMAGE PROCESSED");
         float damage = atk * (100.0f / (100 + GetDefense()));
+
 
         SetHealth(GetHealth() - Mathf.FloorToInt(damage));
 
