@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
-    public Rigidbody2D rb;
+    protected Rigidbody2D rb;
 
-    protected Vector2 movement = new Vector2(1, 0);
+    protected SpriteRenderer sprRend;
+
+    protected Vector2 movement = new Vector2(1, 0); // temp value
+
     protected float health;
+
     protected uint speed;
     protected uint damage;
     protected uint defense;
     protected uint atkSpeed;
     protected bool isFacingRight;
-    protected SpriteRenderer sprRend;
-
+   
     protected void Move()
     {
         switch (isFacingRight)
@@ -29,78 +32,70 @@ public class Entity : MonoBehaviour
         }
     }
 
-    protected void DestroyGameObject()
-    {
-        Destroy(gameObject);
-    }
-
-    protected void Death()
+    // a method to handle entity death
+    protected void Die()
     {
         if (health <= 0)
         {
-            DestroyGameObject();
+            Destroy(gameObject);
         }
     }
 
     // Use this for initialization
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
+    // a method to damage entity health
     public void Damage(float atk)
     {
-        Debug.Log(name + "DAMAGE PROCESSED");
-        float damage = atk * (100.0f / (100 + GetDefense()));
+        float damage = atk * (100.0f / (100 + Defense));
 
-
-        SetHealth(GetHealth() - Mathf.FloorToInt(damage));
-
-        Debug.Log(health);
+        Health = Health - Mathf.FloorToInt(damage);
     }
 
-    public float GetHealth()
+    /////// PROPERTIES ///////
+    public float Health
     {
-        return this.health;
-    }
-
-    public void SetHealth(float health)
-    {
-        if (health >= 0)
+        get
         {
-            this.health = health;
+            return this.health;
         }
-        else
+        set
         {
-            this.health = 0;
+            if (health >= 0)
+            {
+                health = value;
+            }
+            else
+            {
+                this.health = 0.0f;
+            }
         }
     }
 
-    public uint GetDefense()
+    public uint Defense
     {
-        return defense;
+        get
+        {
+            return defense;
+        }
+        set
+        {
+            this.defense = value;
+        }
     }
 
-    public void SetDefense(uint defense)
+    public bool IsFacingRight
     {
-        this.defense = defense;
+        get
+        {
+            return isFacingRight;
+        }
+        set
+        {
+            this.isFacingRight = value;
+        }
     }
-
-    public bool GetIsFacingRight()
-    {
-        return this.isFacingRight;
-    }
-
-    public void SetIsFacingRight(bool isFacingRight)
-    {
-        this.isFacingRight = isFacingRight;
-    }
-
 }

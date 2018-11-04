@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    public enum GameState : byte { Start, Defeat, Victory };
-
-    Player player;
-
-    protected byte state;
+    public enum GameState : byte { START, DEFEAT, VICTORY };
 
     protected GameObject[] enemies;
 
+    Player player;
+
+    protected GameState currState;
+
     // Use this for initialization
     void Start () {
-        SetState((byte)GameState.Start);
+        CurrState = GameState.START;
 
         player = GameObject.FindObjectOfType<Player>();
 	}
@@ -25,33 +25,36 @@ public class GameManager : MonoBehaviour {
 
         if (enemies.Length < 1)
         {
-            SetState((byte)GameState.Victory);
+            CurrState = GameState.VICTORY;
         }
 
-		switch (GetState())
+		switch (CurrState)
         {
-            case (byte)GameState.Defeat:
+            case GameState.DEFEAT:
                 Debug.Log("DEFEAT BOI");
                 break;
-            case (byte)GameState.Victory:
+            case GameState.VICTORY:
                 Debug.Log("Victory Boy");
                 break;
         }
 	}
 
-    // this function is used to give the player exp
-    public void Exp(int expValue)
+    // a method to give the player exp
+    public void GiveExp(int expValue)
     {
-        player.SetExp(expValue);
+        player.Exp = expValue;
     }
 
-    public void SetState(byte state)
+    /////// PROPERTIES ///////
+    public GameState CurrState
     {
-        this.state = state;
-    }
-
-    public byte GetState()
-    {
-        return this.state;
+        get
+        {
+            return currState;
+        }
+        set
+        {
+            this.currState = value;
+        }
     }
 }

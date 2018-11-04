@@ -10,7 +10,7 @@ public class FallDeath : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            gameManager.SetState((byte)GameManager.GameState.Defeat);
+            gameManager.CurrState = GameManager.GameState.DEFEAT;
         }
         Destroy(coll.gameObject);
     }

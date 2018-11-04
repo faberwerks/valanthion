@@ -5,13 +5,11 @@ using UnityEngine.UI;
 
 public class BarFilling : MonoBehaviour {
 
-	[SerializeField] //showing image on inspector
-	private Image Content;
+	[SerializeField] // show image field on inspector
+	private Image content;
 
-
-
-	[SerializeField] //showing fillAmount on inspector
-	private float Fill;
+	[SerializeField] // show fill amount field on inspector
+	private float fill;
 
     private Player player;
 
@@ -22,13 +20,12 @@ public class BarFilling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        Fill = player.GetHealth() * 0.01f;
+        fill = player.Health * 0.01f;
 		fillBar();
-
 	}
 
-	void fillBar(){
-		Content.fillAmount = Fill;
+    // a method to fill bar
+	public void fillBar(){
+		content.fillAmount = fill;
 	}
 }

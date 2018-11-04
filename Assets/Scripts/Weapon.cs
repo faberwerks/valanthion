@@ -2,29 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class Weapon : MonoBehaviour
 {
+    private GameManager gameManager;
+    private GameData gameData;
 
-    GameManager GameManager;
-    GetGameData GameData;
+    private string itemId = "002";
 
-    string itemId = "002";
-
-    int attack;
-    int range;
-    int attackSpeed;
+    private int attack;
+    private int range;
+    private int attackSpeed;
 
     void Awake()
     {
-        GameManager = GameObject.FindObjectOfType<GameManager>();
-        GameData = GameManager.GetComponent<GetGameData>();
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+        gameData = gameManager.GetComponent<GameData>();
     }
 
     void Start()
     {
-        foreach (string[] currString in GameData.itemList)
+        foreach (string[] currString in gameData.itemList)
         {
             if(string.Equals(itemId,currString[0]))
             {
@@ -38,8 +35,6 @@ public class Weapon : MonoBehaviour
                 Debug.Log(range);
                 Debug.Log(attackSpeed);
             }
-
         }
     } 
-
 }

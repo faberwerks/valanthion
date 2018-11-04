@@ -32,7 +32,7 @@ public class EntityAttack : MonoBehaviour {
             isAttacking = true;
             attackTimer = attackCd;
 
-            if (entity.GetIsFacingRight())
+            if (entity.IsFacingRight)
             {
                 //attackTrigger = attackTriggerRight;
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 10.0f, LayerMask.GetMask("Enemy"));

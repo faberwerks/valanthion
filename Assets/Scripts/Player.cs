@@ -10,50 +10,57 @@ public class Player : Entity
 
     public float stamina;
 
-    protected bool isJumping;
-    protected bool canDoubleJump;
-
     protected int jumpPower;
     protected int exp;
 
-    [SerializeField]
-    private void Awake()
-    {
-    }
+    protected bool isJumping;
+    protected bool canDoubleJump;
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    // Use this for initialization
+    void Start()
     {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         isJumping = false;
+        jumpPower = 5;
+        speed = 5;
+        health = 100;
+        exp = 0;
     }
 
-    // this function is use for death validation
-    void CheckDeath()
+    // Update is called once per frame
+    void Update()
     {
-        if (GetHealth() <= 0)
+        CheckDeath();
+        Jump();
+        Skill();
+        InputMove();
+    }
+
+    // a method to validate death
+    public void CheckDeath()
+    {
+        if (Health <= 0)
         {
-            gameManager.SetState((byte)GameManager.GameState.Defeat);
+            gameManager.CurrState = GameManager.GameState.DEFEAT;
         }
     }
 
-    // this function is use to move the character
-    void KeyDown()
+    // a method to player input for movement
+    public void InputMove()
     {
-
         if (Input.GetAxis("Horizontal") > 0)
         {
-            SetIsFacingRight(true);
+            IsFacingRight = true;
             Move();
         }
-        
         else if (Input.GetAxis("Horizontal") < 0)
         {
-            SetIsFacingRight(false);
+            IsFacingRight = false;
             Move();
         }
-
     }
 
-    //this function 
+    // a method to handle skills
     void Skill()
     {
         if (Input.GetKeyDown("q"))
@@ -92,6 +99,7 @@ public class Player : Entity
         }
     }
 
+    // a method to handle player jump
     void Jump()
     {
         if (Input.GetKeyDown("up"))
@@ -114,40 +122,30 @@ public class Player : Entity
         }
     }
 
-    // Use this for initialization
-    void Start()
+    public void OnCollisionEnter2D(Collision2D collision)
     {
-        rb = gameObject.GetComponent<Rigidbody2D>();
         isJumping = false;
-        jumpPower = 5;
-        speed = 5;
-        health = 100;
-        exp = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    /////// PROPERTIES ///////
+    public int Exp
     {
-        CheckDeath();
-        Jump();
-        Skill();
-        KeyDown();
-        Debug.Log(exp);
+        get
+        {
+            return exp;
+        }
+        set
+        {
+            this.exp += value;
+        }
     }
 
-    public int GetExp()
+    public float Stamina
     {
-        return this.exp;
-    }
-
-    public void SetExp(int expValue)
-    {
-        this.exp+=expValue;
-    }
-
-    public float GetStamina()
-    {
-        return stamina;
+        get
+        {
+            return stamina;
+        }
     }
 
 }

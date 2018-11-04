@@ -31,7 +31,7 @@ public class AttackTrigger : MonoBehaviour {
             Debug.Log("ENEMY!");
             collision.SendMessageUpwards("Damage", atk);
 
-            if (gameObject.GetComponentInParent<Entity>().GetIsFacingRight())
+            if (gameObject.GetComponentInParent<Entity>().IsFacingRight)
             {
                 knockback *= 1;
             }
@@ -42,6 +42,5 @@ public class AttackTrigger : MonoBehaviour {
 
             collision.GetComponent<Rigidbody2D>().velocity = new Vector2(knockback, 2.5f);
         }
-
     }
 }
