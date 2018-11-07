@@ -2,24 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour {
+public class GameManager {
 
-    public enum GameState : byte { START, DEFEAT, VICTORY };
+    public enum GameState : byte { PLAYING, VICTORY, DEFEAT, PAUSED };
 
-    protected GameObject[] enemies;
+    private static GameManager instance;
 
-    Player player;
+    // protected GameObject[] enemies;
 
-    protected GameState currState;
+    // Player player;
+
+    protected GameState currGameState;
 
     // Use this for initialization
     void Start () {
-        CurrState = GameState.START;
+        CurrGameState = GameState.PLAYING;
 
-        player = GameObject.FindObjectOfType<Player>();
+        // player = GameObject.FindObjectOfType<Player>();
 	}
 
     // Update is called once per frame
+    /*
     void Update () {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -38,23 +41,93 @@ public class GameManager : MonoBehaviour {
                 break;
         }
 	}
+    */
+
+    // a method to handle victory
+    public void Victory(bool hasWon)
+    {
+        if (hasWon)
+        {
+            CurrGameState = GameState.VICTORY;
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            CurrGameState = GameState.PLAYING;
+            Time.timeScale = 1.0f;
+        }
+    }
+
+    // a method to handle defeat
+    public void Defeat(bool defeated)
+    {
+        if (defeated)
+        {
+            CurrGameState = GameState.DEFEAT;
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            CurrGameState = GameState.PLAYING;
+            Time.timeScale = 1.0f;
+        }
+    }
+
+    // a method to handle pausing
+    public void Pause(bool paused)
+    {
+        if (paused)
+        {
+            CurrGameState = GameState.PAUSED;
+            Time.timeScale = 0.0f;
+        }
+        else
+        {
+            CurrGameState = GameState.PLAYING;
+            Time.timeScale = 1.0f;
+        }
+    }
+
+    // a method to reset game state
+    public void Playing(bool playing)
+    {
+        if (playing)
+        {
+            CurrGameState = GameState.PLAYING;
+            Time.timeScale = 1.0f;
+        }
+    }
 
     // a method to give the player exp
+    /*
     public void GiveExp(int expValue)
     {
         player.Exp = expValue;
     }
+    */
 
     /////// PROPERTIES ///////
-    public GameState CurrState
+    public static GameManager Instance
     {
         get
         {
-            return currState;
+            if (instance == null)
+            {
+                instance = new GameManager();
+            }
+            return instance;
+        }
+    }
+    
+    public GameState CurrGameState
+    {
+        get
+        {
+            return currGameState;
         }
         set
         {
-            this.currState = value;
+            this.currGameState = value;
         }
     }
 }

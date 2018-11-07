@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class EntityAttack : MonoBehaviour {
 
-    private bool isAttacking = false;
-
     private Entity entity;
+
+    public LayerMask targetLayer;
+
+    private Vector2 currDir;
+
     private float attackTimer = 0;
     private float attackCd = 0.5f;
 
-    //public Collider2D attackTriggerLeft;
-    //public Collider2D attackTriggerRight;
-    //private Collider2D attackTrigger;
-
-    private void Awake()
-    {
-        //attackTriggerLeft.enabled = false;
-        //attackTriggerRight.enabled = false;
-    }
+    private bool isAttacking = false;
 
     private void Start()
     {
@@ -27,25 +22,18 @@ public class EntityAttack : MonoBehaviour {
 
     private void Update()
     {
+        if (entity.IsFacingRight)
+        {
+            currDir = Vector2.right;
+        }
+        else
+        {
+            currDir = Vector2.left;
+        }
+
         if (Input.GetKeyDown("z") && !isAttacking)
         {
-            isAttacking = true;
-            attackTimer = attackCd;
-
-            if (entity.IsFacingRight)
-            {
-                //attackTrigger = attackTriggerRight;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, 10.0f, LayerMask.GetMask("Enemy"));
-                hit.transform.gameObject.GetComponent<Enemy>().Damage(100);
-            }
-            else
-            {
-                //attackTrigger = attackTriggerLeft;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.left, 10.0f, LayerMask.GetMask("Enemy"));
-                hit.transform.gameObject.GetComponent<Enemy>().Damage(100);
-            }
-
-            //attackTrigger.enabled = true;
+            Attack();
         }
 
         if (isAttacking)
@@ -57,8 +45,19 @@ public class EntityAttack : MonoBehaviour {
             else
             {
                 isAttacking = false;
-                //attackTrigger.enabled = false;
             }
+        }
+    }
+
+    public void Attack()
+    {
+        isAttacking = true;
+        attackTimer = attackCd;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+        if (hit)
+        {
+            hit.transform.gameObject.GetComponent<Entity>().TakeDamage(entity.Atk);
         }
     }
 }

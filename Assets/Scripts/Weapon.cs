@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private GameManager gameManager;
+    public GameObject gameManager;
     private GameData gameData;
 
     private string itemId = "002";
@@ -15,7 +15,6 @@ public class Weapon : MonoBehaviour
 
     void Awake()
     {
-        gameManager = GameObject.FindObjectOfType<GameManager>();
         gameData = gameManager.GetComponent<GameData>();
     }
 

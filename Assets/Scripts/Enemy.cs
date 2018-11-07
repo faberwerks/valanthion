@@ -6,8 +6,6 @@ public class Enemy : Entity
 {
     public enum EnemyState : byte { ROAM, CHASE, ATTACK };
 
-    private GameManager gameManager;
-
     private GameObject player;
 
     public Collider2D attackTriggerLeft;
@@ -45,7 +43,6 @@ public class Enemy : Entity
         expValue = 100;
 
         player = GameObject.FindGameObjectWithTag("Player");
-        gameManager = GameObject.FindObjectOfType<GameManager>();
     }
 
     void Update()
@@ -216,7 +213,7 @@ public class Enemy : Entity
     {
         if (health <= 0)
         {
-            gameManager.GiveExp(expValue);
+            // gameManager.GiveExp(expValue);
             Destroy(gameObject);
         }
     }

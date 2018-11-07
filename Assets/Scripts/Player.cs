@@ -41,7 +41,7 @@ public class Player : Entity
     {
         if (Health <= 0)
         {
-            gameManager.CurrState = GameManager.GameState.DEFEAT;
+            GameManager.Instance.CurrGameState = GameManager.GameState.DEFEAT;
         }
     }
 
