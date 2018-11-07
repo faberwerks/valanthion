@@ -63,6 +63,7 @@ public class GameManager {
     {
         if (defeated)
         {
+            Debug.Log("DEFEAT");
             CurrGameState = GameState.DEFEAT;
             Time.timeScale = 0.0f;
         }

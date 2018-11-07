@@ -17,7 +17,7 @@ public class EntityAttack : MonoBehaviour {
 
     private void Start()
     {
-        entity = GetComponentInParent<Entity>();
+        entity = GetComponent<Entity>();
     }
 
     private void Update()
@@ -29,11 +29,6 @@ public class EntityAttack : MonoBehaviour {
         else
         {
             currDir = Vector2.left;
-        }
-
-        if (Input.GetKeyDown("z") && !isAttacking)
-        {
-            Attack();
         }
 
         if (isAttacking)
@@ -49,7 +44,8 @@ public class EntityAttack : MonoBehaviour {
         }
     }
 
-    public void Attack()
+    // a method to handle entity attacks
+    public void Attack(float atk)
     {
         isAttacking = true;
         attackTimer = attackCd;
@@ -57,7 +53,7 @@ public class EntityAttack : MonoBehaviour {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
         if (hit)
         {
-            hit.transform.gameObject.GetComponent<Entity>().TakeDamage(entity.Atk);
+            hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk);
         }
     }
 }

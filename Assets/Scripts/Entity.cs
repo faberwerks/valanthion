@@ -8,14 +8,12 @@ public class Entity : MonoBehaviour
 
     protected SpriteRenderer sprRend;
 
-    protected Vector2 movement = new Vector2(1, 0); // temp value
-
     protected float health;
+    protected float atkSpeed;
 
     protected uint speed;
     protected uint atk;
     protected uint defense;
-    protected uint atkSpeed;
     protected bool isFacingRight;
    
     protected void Move()
@@ -23,19 +21,19 @@ public class Entity : MonoBehaviour
         switch (isFacingRight)
         {
             case true:
-                transform.Translate(movement * speed * Time.deltaTime);
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
                 break;
 
             case false:
-                transform.Translate(movement * -speed * Time.deltaTime);
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
                 break;
         }
     }
 
     // a method to handle entity death
-    protected void Die()
+    protected virtual void CheckDeath()
     {
-        if (health <= 0)
+        if (Health <= 0)
         {
             Destroy(gameObject);
         }
@@ -64,7 +62,7 @@ public class Entity : MonoBehaviour
         }
         set
         {
-            if (health >= 0)
+            if (health > 0.0f)
             {
                 health = value;
             }

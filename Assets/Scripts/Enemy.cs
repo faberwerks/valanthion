@@ -4,31 +4,30 @@ using UnityEngine;
 
 public class Enemy : Entity
 {
-    public enum EnemyState : byte { ROAM, CHASE, ATTACK };
+    public enum EnemyState : byte { ROAM, GUARD, CHASE, ATTACK };
 
     private GameObject player;
 
-    public Collider2D attackTriggerLeft;
-    public Collider2D attackTriggerRight;
-    private Collider2D attackTrigger;
+    private EntityAttack entityAttack;
 
     private RaycastHit2D hit;
 
     protected Vector3 originalPos;
 
+    protected Vector2 currDir;
+
+    protected EnemyState initialState;
     protected EnemyState currState;
 
     protected float attackTimer;
-    protected float attackCd;
     protected float yMin;
+    private float distance;
 
     protected int expValue;
     private int playerLayer;
 
     private void Awake()
     {
-        attackTriggerLeft.enabled = false;
-        attackTriggerRight.enabled = false;
         playerLayer = LayerMask.GetMask("Player");
     }
 
@@ -37,21 +36,39 @@ public class Enemy : Entity
         originalPos = transform.position;
         health = 100;
         speed = 3;
-        currState = EnemyState.ROAM;
-        attackTimer = 0;
-        attackCd = 2f;
-        expValue = 100;
+        atk = 20;
+        defense = 0;
+
+        atkSpeed = 2.0f;
+        attackTimer = 0.0f;
 
         player = GameObject.FindGameObjectWithTag("Player");
+        entityAttack = GetComponent<EntityAttack>();
+
+        expValue = 100;
+
+        CurrState = InitialState;
     }
 
     void Update()
     {
-        Death();
+        CheckDeath();
+
+        if (IsFacingRight)
+        {
+            currDir = Vector2.right;
+        }
+        else
+        {
+            currDir = Vector2.left;
+        }
+
         switch (CurrState)
         {
             case EnemyState.ROAM:
-                Invoke("Roam", 0.5f);
+                Roam();
+                break;
+            case EnemyState.GUARD:
                 break;
             case EnemyState.CHASE:
                 Chase();
@@ -60,165 +77,111 @@ public class Enemy : Entity
                 Attack();
                 break;
         }
+
+        Debug.Log(CurrState);
+        Debug.Log("ENEMY HEALTH: " + Health);
     }
 
     // a method to handle enemy roaming
     protected void Roam()
     {
-        if (IsFacingRight)
-        {
-            hit = Physics2D.Raycast(transform.position, Vector2.right, 5.0f, playerLayer);
-        }
-        else
-        {
-            hit = Physics2D.Raycast(transform.position, Vector2.left, 5.0f, playerLayer);
-        }
+        hit = Physics2D.Raycast(transform.position, currDir, 5.0f, playerLayer);
 
         if (hit)
         {
+            player = hit.transform.gameObject;
             CurrState = EnemyState.CHASE;
             return;
         }
 
-        if (IsFacingRight)
+        if (Mathf.Abs(originalPos.x - transform.position.x) >= 3.0f)
         {
-            if (transform.position.x - originalPos.x <= 3)
-            {
-                IsFacingRight = true;
-                Move();
-            }
-            else
-            {
-                IsFacingRight = false;
-                Move();
-            }
+            IsFacingRight = !IsFacingRight;
         }
-        else
+        Move();
+    }
+
+    // a method to handle enemy static guard
+    protected void Guard()
+    {
+        hit = Physics2D.Raycast(transform.position, currDir, 5.0f, playerLayer);
+
+        if (hit)
         {
-            if (transform.position.x - originalPos.x >= -3)
-            {
-                IsFacingRight = false;
-                Move();
-            }
-            else
-            {
-                IsFacingRight = true;
-                Move();
-            }
+            player = hit.transform.gameObject;
+            CurrState = EnemyState.CHASE;
+            return;
         }
     }
 
     // a method to handle enemy chasing
     protected void Chase()
     {
-        /*
-        float playerX = player.transform.position.x;
+        distance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (playerX - transform.position.x < 0 && playerX - transform.position.x >= -5)
-        {
-            isFacingRight = false;
-            Move();
-        }
-        else if (playerX - transform.position.x > 0 && playerX - transform.position.x <= 5)
-        {
-            isFacingRight = true;
-            Move();
-        }
-        else
-        {
-            SetState((byte)State.Roam);
-            return;
-        }
-        */
-
-        hit = Physics2D.Raycast(transform.position, (IsFacingRight ? Vector2.right : Vector2.left), 5.0f, playerLayer);
-        if (hit)
-        {
-            IsFacingRight = IsFacingRight;
-            Move();
-        }
-        else
-        {
-            hit = Physics2D.Raycast(transform.position, (IsFacingRight ? Vector2.left : Vector2.right), 5.0f, playerLayer);
-            if (hit)
-            {
-                IsFacingRight = !IsFacingRight;
-                Move();
-            }
-            else
-            {
-                CurrState = EnemyState.ROAM;
-                return;
-            }
-        }
-
-        /*
-        if(playerX - transform.position.x > 0 && playerX - transform.position.x <= 1)
-        {
-            SetState((byte)State.Attack);
-            return;
-        }
-
-        else if (playerX - transform.position.x < 0 && playerX - transform.position.x >= -1)
-        {
-            SetState((byte)State.Attack);
-            return;
-        }
-        */
-
-        if (hit.distance <= 1.0f)
+        if (distance <= 1.0f)
         {
             CurrState = EnemyState.ATTACK;
             return;
+        }
+        else if (distance > 5.0f)
+        {
+            CurrState = InitialState;
+            return;
+        }
+        else
+        {
+            if (player.transform.position.x < transform.position.x)
+            {
+                IsFacingRight = false;
+            }
+            else
+            {
+                isFacingRight = true;
+            }
+            Move();
         }
     }
 
     // a method to handle enemy attacking
     protected void Attack()
     {
-        if (attackTimer > 0)
+        distance = Vector3.Distance(transform.position, player.transform.position);
+
+        if (distance > 1.0f)
         {
-            attackTimer -= Time.deltaTime;
+            Debug.Log("ATTACK: TOO FAR");
+            CurrState = EnemyState.CHASE;
+            return;
         }
         else
         {
-            attackTimer = attackCd;
-
-            if (IsFacingRight)
+            if (attackTimer <= 0.0f)
             {
-                attackTrigger = attackTriggerRight;
+                Debug.Log("ATTACK: ATTACKING");
+                attackTimer = atkSpeed;
+                entityAttack.Attack(Atk);
             }
             else
             {
-                attackTrigger = attackTriggerLeft;
+                attackTimer -= Time.deltaTime;
             }
-
-            attackTrigger.enabled = true;
-        }
-
-        hit = Physics2D.Raycast(transform.position, (IsFacingRight ? Vector2.right : Vector2.left), 5.0f, playerLayer);
-        if (!hit)
-        {
-            hit = Physics2D.Raycast(transform.position, (IsFacingRight ? Vector2.left : Vector2.right), 5.0f, playerLayer);
-            if (!hit)
-            {
-                CurrState = EnemyState.ROAM;
-                return;
-            }
-        }
-    }
-
-    // a method to handle enemy death
-    protected void Death()
-    {
-        if (health <= 0)
-        {
-            // gameManager.GiveExp(expValue);
-            Destroy(gameObject);
         }
     }
 
     /////// PROPERTIES ///////
+    public EnemyState InitialState
+    {
+        get
+        {
+            return initialState;
+        }
+        set
+        {
+            this.initialState = value;
+        }
+    }
+
     public EnemyState CurrState
     {
         get

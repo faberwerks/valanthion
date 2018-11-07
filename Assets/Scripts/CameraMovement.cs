@@ -6,11 +6,16 @@ public class CameraMovement : MonoBehaviour {
 
     public GameObject player;
 
+    private Vector3 currPos;
+
     private const float OFFSET = -10;
     
     // Update is called once per frame
     void LateUpdate () {
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z + OFFSET);
+        currPos = player.transform.position;
+        currPos.z += OFFSET;
+
+        transform.position = currPos;
 	}
 
 }

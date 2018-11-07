@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    public GameManager gameManager;
+    private EntityAttack entityAttack;
 
     protected Vector2 jumpForce = new Vector2(0, 1);
 
@@ -20,16 +20,20 @@ public class Player : Entity
     void Start()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
+        entityAttack = GetComponent<EntityAttack>();
         isJumping = false;
         jumpPower = 5;
         speed = 5;
         health = 100;
         exp = 0;
+        atk = 50;
     }
 
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("PLAYER HEALTH: " + Health);
+        InputAttack();
         CheckDeath();
         Jump();
         Skill();
@@ -37,11 +41,11 @@ public class Player : Entity
     }
 
     // a method to validate death
-    public void CheckDeath()
+    protected override void CheckDeath()
     {
         if (Health <= 0)
         {
-            GameManager.Instance.CurrGameState = GameManager.GameState.DEFEAT;
+            GameManager.Instance.Defeat(true);
         }
     }
 
@@ -122,9 +126,22 @@ public class Player : Entity
         }
     }
 
+    // a method to handle input for attacks
+    public bool InputAttack()
+    {
+        if (Input.GetKeyDown("z"))
+        {
+            entityAttack.Attack(Atk);
+        }
+        return false;
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        isJumping = false;
+        if (collision.gameObject.tag == "Ground")
+        {
+            isJumping = false;
+        }
     }
 
     /////// PROPERTIES ///////

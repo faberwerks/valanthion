@@ -29,7 +29,7 @@ public class AttackTrigger : MonoBehaviour {
         if (collision.isTrigger != true && collision.name == targetTag)
         {
             Debug.Log("ENEMY!");
-            collision.SendMessageUpwards("Damage", atk);
+            collision.SendMessageUpwards("TakeDamage", atk);
 
             if (gameObject.GetComponentInParent<Entity>().IsFacingRight)
             {
