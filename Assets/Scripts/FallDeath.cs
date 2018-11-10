@@ -10,6 +10,6 @@ public class FallDeath : MonoBehaviour {
         {
             GameManager.Instance.CurrGameState = GameManager.GameState.DEFEAT;
         }
-        Destroy(coll.gameObject);
+        // Destroy(coll.gameObject);
     }
 }
