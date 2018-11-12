@@ -52,6 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ebd0c6763162947b6a9890eddb02f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defeatPanel: {fileID: 0}
+  victoryPanel: {fileID: 0}
+  pausePanel: {fileID: 0}
 --- !u!114 &114589489469601540
 MonoBehaviour:
   m_ObjectHideFlags: 1
