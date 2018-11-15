@@ -8,6 +8,9 @@ public class Player : Entity
 
     protected Vector2 jumpForce = new Vector2(0, 1);
 
+    protected Weapon weapon;
+    protected SkillAttack skillAttack;
+
     public float stamina;
 
     protected int jumpPower;
@@ -21,12 +24,16 @@ public class Player : Entity
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
         entityAttack = GetComponent<EntityAttack>();
+        Weapon = GetComponent<Weapon>();
+        skillAttack = GetComponent<SkillAttack>();
+        Debug.Log("ATTACK: " + weapon.Attack);
         isJumping = false;
         jumpPower = 5;
         speed = 5;
         health = 100;
+        stamina = 100;
         exp = 0;
-        atk = 50;
+        atk = weapon.Attack;
     }
 
     // Update is called once per frame
@@ -36,8 +43,9 @@ public class Player : Entity
         InputAttack();
         CheckDeath();
         Jump();
-        Skill();
         InputMove();
+        Stamina += 10 *Time.deltaTime;
+        InputSkill();
     }
 
     // a method to validate death
@@ -64,43 +72,19 @@ public class Player : Entity
         }
     }
 
-    // a method to handle skills
-    void Skill()
+    public void InputSkill()
     {
-        if (Input.GetKeyDown("q"))
-        {
-            Debug.Log("skill q");
-        }
+                if (Input.GetKeyDown(KeyCode.A) && stamina >= 30.0f)
+                {
+                    Debug.Log("SUPER SAIYAN SWORD SKILL 1");
+                    skillAttack.SkillA(atk);
+                }
 
-        if (Input.GetKeyDown("w"))
-        {
-            Debug.Log("skill w");
-        }
-
-        if (Input.GetKeyDown("e"))
-        {
-            Debug.Log("skill e");
-        }
-
-        if (Input.GetKeyDown("r"))
-        {
-            Debug.Log("skill r");
-        }
-
-        if (Input.GetKeyDown("s"))
-        {
-            Debug.Log("skill s");
-        }
-
-        if (Input.GetKeyDown("t"))
-        {
-            Debug.Log("skill t");
-        }
-
-        if (Input.GetKeyDown("y"))
-        {
-            Debug.Log("skill y");
-        }
+                if (Input.GetKeyDown(KeyCode.A) && stamina >= 30.0f)
+                {
+                    Debug.Log("SUPER SAIYAN AXE SKILL 1");
+                    skillAttack.SkillA(atk);
+                }
     }
 
     // a method to handle player jump
@@ -108,19 +92,21 @@ public class Player : Entity
     {
         if (Input.GetKeyDown("up"))
         {
-            if (!isJumping)
+            if (!isJumping && stamina >=10)
             {
                 rb.AddForce(jumpForce * jumpPower, ForceMode2D.Impulse);
                 canDoubleJump = true;
                 isJumping = true;
+                stamina -= 10;
             }
             else
             {
-                if (canDoubleJump)
+                if (canDoubleJump && stamina >= 10)
                 {
                     canDoubleJump = false;
                     rb.velocity = new Vector2(rb.velocity.x, 0);
                     rb.AddForce(jumpForce * jumpPower, ForceMode2D.Impulse);
+                    stamina -= 10;
                 }
             }
         }
@@ -131,6 +117,8 @@ public class Player : Entity
     {
         if (Input.GetKeyDown("z"))
         {
+            Debug.Log("Weapon Type: " +  weapon.WeaponType);
+            Debug.Log("Attack Strength: " + atk);
             entityAttack.Attack(Atk);
         }
         return false;
@@ -145,6 +133,18 @@ public class Player : Entity
     }
 
     /////// PROPERTIES ///////
+    public Weapon Weapon
+    {
+        get
+        {
+            return weapon;
+        }
+        set
+        {
+            this.weapon = value;
+        }
+    }
+
     public int Exp
     {
         get
@@ -162,6 +162,21 @@ public class Player : Entity
         get
         {
             return stamina;
+        }
+        set
+        {
+            if(stamina >= 100)
+            {
+                stamina = 100;
+            }
+            else if (stamina <= 0)
+            {
+                stamina = 0;
+            }
+            else
+            {
+                this.stamina = value;
+            }
         }
     }
 

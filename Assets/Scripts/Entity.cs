@@ -12,7 +12,7 @@ public class Entity : MonoBehaviour
     protected float atkSpeed;
 
     protected uint speed;
-    protected uint atk;
+    protected int atk;
     protected uint defense;
     protected bool isFacingRight;
    
@@ -46,7 +46,7 @@ public class Entity : MonoBehaviour
     }
 
     // a method to damage entity health
-    public void TakeDamage(float atk)
+    public virtual void TakeDamage(float atk)
     {
         float damage = atk * (100.0f / (100 + Defense));
 
@@ -97,7 +97,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public uint Atk
+    public int Atk
     {
         get
         {

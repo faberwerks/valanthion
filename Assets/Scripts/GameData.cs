@@ -6,7 +6,7 @@ using System.IO;
 public class GameData : MonoBehaviour
 {
     string[] splitResult = new string[5];
-    public ArrayList itemList = new ArrayList();
+    public static ArrayList itemList = new ArrayList();
 
     private bool hasRead = false;
 
@@ -43,4 +43,6 @@ public class GameData : MonoBehaviour
 
         hasRead = true;
     }
+
+    /////// PROPERTIES ///////
 }

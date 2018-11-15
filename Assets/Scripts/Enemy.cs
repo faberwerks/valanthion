@@ -22,6 +22,8 @@ public class Enemy : Entity
     protected float attackTimer;
     protected float yMin;
     private float distance;
+    private float colorTimer = 0.2f;
+    private float colorTime = 0.2f;
 
     protected int expValue;
     private int playerLayer;
@@ -44,6 +46,7 @@ public class Enemy : Entity
 
         player = GameObject.FindGameObjectWithTag("Player");
         entityAttack = GetComponent<EntityAttack>();
+        sprRend = GetComponent<SpriteRenderer>();
 
         expValue = 100;
 
@@ -80,6 +83,18 @@ public class Enemy : Entity
 
         Debug.Log(CurrState);
         Debug.Log("ENEMY HEALTH: " + Health);
+
+
+        if (sprRend.color == new Color(255f, 0.0f, 0.0f, 255f) && colorTimer > 0)
+        {
+            colorTimer -= Time.deltaTime;
+        }
+        else if (sprRend.color == new Color(255f, 0.0f, 0.0f, 255f) && colorTimer <= 0)
+        {
+            colorTimer = colorTime;
+            sprRend.color = new Color(255f, 255f, 255f, 255f);
+        }
+
     }
 
     // a method to handle enemy roaming
@@ -167,6 +182,13 @@ public class Enemy : Entity
                 attackTimer -= Time.deltaTime;
             }
         }
+    }
+
+    public override void TakeDamage(float atk)
+    {
+        base.TakeDamage(atk);
+        sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
+
     }
 
     /////// PROPERTIES ///////
