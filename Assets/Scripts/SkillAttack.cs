@@ -8,6 +8,8 @@ public class SkillAttack : MonoBehaviour {
 
     public LayerMask targetLayer;
 
+    private RaycastHit2D hit;
+
     private Vector2 currDir;
 
     private Weapon.WeaponTypes weaponType;
@@ -31,21 +33,21 @@ public class SkillAttack : MonoBehaviour {
         }
     }
 
+    // a method to handle Skill A
     public void SkillA(int atk)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
-        switch(weaponType)
+        hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+
+        switch (weaponType)
         {
             case Weapon.WeaponTypes.SWORD:
-
                 if (hit)
                 {
                     hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk * 1.2f);
                 }
-               break;
+                break;
 
             case Weapon.WeaponTypes.AXE:
-
                 if (hit)
                 {
                     hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk * 1.5f);

@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour {
 
-    public GameObject player;
+    private GameObject player;
 
     private Vector3 currPos;
 
     private const float OFFSET = -10;
-    
-    // Update is called once per frame
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+
     void LateUpdate () {
         currPos = player.transform.position;
         currPos.z += OFFSET;

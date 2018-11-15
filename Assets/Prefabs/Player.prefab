@@ -27,7 +27,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1485836005206608
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1988104265637900
 GameObject:
   m_ObjectHideFlags: 0
@@ -58,6 +58,8 @@ GameObject:
   - component: {fileID: 114400136188602040}
   - component: {fileID: 50170410690292354}
   - component: {fileID: 61813129309744778}
+  - component: {fileID: 114513969262657274}
+  - component: {fileID: 114207458439147784}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -201,6 +203,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &114207458439147784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988104265637900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80a8a3d9892c71544a203f52eac088ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!114 &114231260508155218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -225,8 +241,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackTriggerLeft: {fileID: 61641288012318670}
-  attackTriggerRight: {fileID: 61699062628274374}
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &114513969262657274
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1988104265637900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77f5cfd940a68b47813a42824e0f004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114687052977248762
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,9 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c66671125c29e43be70e385d855778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 50170410690292354}
-  health: 100
-  gameManager: {fileID: 0}
+  stamina: 0
 --- !u!114 &114892035753963450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -288,7 +314,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf710c7dc02b13a40b9eda5aaa68374e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 892a8abacf90998458079ccad456f175, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

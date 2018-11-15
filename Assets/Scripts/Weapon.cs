@@ -10,38 +10,32 @@ public class Weapon : MonoBehaviour
 
     private WeaponTypes weaponType;
 
-    private int attack;
+    private int atk;
     private int range;
-    private int attackSpeed;
+    private int atkSpeed;
 
     void Awake()
     {
-        foreach (string[] currString in GameData.itemList)
+        foreach (string[] currString in GameData.ItemList)
         {
-            
-            if(string.Equals(itemId,currString[0]))
+            if (string.Equals(itemId,currString[0]))
             {
-                Attack = int.Parse(currString[2]);
+                Atk = int.Parse(currString[2]);
                 range = int.Parse(currString[3]);
-                attackSpeed = int.Parse(currString[4]);
+                atkSpeed = int.Parse(currString[4]);
 
+                /*
                 Debug.Log(currString[0]);
                 Debug.Log(currString[1]);
                 Debug.Log(Attack);
                 Debug.Log(range);
                 Debug.Log(attackSpeed);
-
-                Debug.Log("Does this fucking work");
+                */
                 break;
             }
         }
 
         SetWeaponType();
-    }
-
-    private void Update()
-    {
-        Debug.Log("FROM WEAPON: " + Attack);
     }
 
     // a method to set the weapon type
@@ -73,15 +67,15 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public int Attack
+    public int Atk
     {
         get
         {
-            return attack;
+            return atk;
         }
         set
         {
-            this.attack = value;
+            this.atk = value;
         }
     }
 }

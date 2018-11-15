@@ -6,11 +6,11 @@ public class Enemy : Entity
 {
     public enum EnemyState : byte { ROAM, GUARD, CHASE, ATTACK };
 
-    private GameObject player;
+    protected GameObject player;
 
-    private EntityAttack entityAttack;
+    protected EntityAttack entityAttack;
 
-    private RaycastHit2D hit;
+    protected RaycastHit2D hit;
 
     protected Vector3 originalPos;
 
@@ -19,14 +19,14 @@ public class Enemy : Entity
     protected EnemyState initialState;
     protected EnemyState currState;
 
-    protected float attackTimer;
-    protected float yMin;
-    private float distance;
-    private float colorTimer = 0.2f;
-    private float colorTime = 0.2f;
+    protected float atkTimer;
+    protected float distance;
+    // the following variables are to countdown the change colour after getting hit
+    protected float colorTime;
+    protected float colorTimer;
 
     protected int expValue;
-    private int playerLayer;
+    protected int playerLayer;
 
     private void Awake()
     {
@@ -35,22 +35,28 @@ public class Enemy : Entity
 
     void Start()
     {
-        originalPos = transform.position;
+        /// Base class initialisation
+        sprRend = GetComponent<SpriteRenderer>();
+
         health = 100;
+        atkSpeed = 2.0f;
+
         speed = 3;
         atk = 20;
         defense = 0;
 
-        atkSpeed = 2.0f;
-        attackTimer = 0.0f;
-
+        /// This class initialisation
         player = GameObject.FindGameObjectWithTag("Player");
         entityAttack = GetComponent<EntityAttack>();
-        sprRend = GetComponent<SpriteRenderer>();
-
-        expValue = 100;
+        originalPos = transform.position;
 
         CurrState = InitialState;
+
+        atkTimer = 0.0f;
+        colorTime = 0.2f;
+        colorTimer = colorTime;
+
+        expValue = 100;
     }
 
     void Update()
@@ -72,6 +78,7 @@ public class Enemy : Entity
                 Roam();
                 break;
             case EnemyState.GUARD:
+                Guard();
                 break;
             case EnemyState.CHASE:
                 Chase();
@@ -81,10 +88,7 @@ public class Enemy : Entity
                 break;
         }
 
-        Debug.Log(CurrState);
-        Debug.Log("ENEMY HEALTH: " + Health);
-
-
+        // TEMPORARY: CHANGE COLOR FOR A SHORT TIME AFTER HIT
         if (sprRend.color == new Color(255f, 0.0f, 0.0f, 255f) && colorTimer > 0)
         {
             colorTimer -= Time.deltaTime;
@@ -113,6 +117,7 @@ public class Enemy : Entity
         {
             IsFacingRight = !IsFacingRight;
         }
+
         Move();
     }
 
@@ -165,30 +170,28 @@ public class Enemy : Entity
 
         if (distance > 1.0f)
         {
-            Debug.Log("ATTACK: TOO FAR");
             CurrState = EnemyState.CHASE;
             return;
         }
         else
         {
-            if (attackTimer <= 0.0f)
+            if (atkTimer <= 0.0f)
             {
-                Debug.Log("ATTACK: ATTACKING");
-                attackTimer = atkSpeed;
+                atkTimer = atkSpeed;
                 entityAttack.Attack(Atk);
             }
             else
             {
-                attackTimer -= Time.deltaTime;
+                atkTimer -= Time.deltaTime;
             }
         }
     }
 
+    // a method to handle enemy taking damage
     public override void TakeDamage(float atk)
     {
         base.TakeDamage(atk);
         sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
-
     }
 
     /////// PROPERTIES ///////

@@ -5,12 +5,12 @@ using System.IO;
 
 public class GameData : MonoBehaviour
 {
+    private static ArrayList itemList = new ArrayList();
+
     string[] splitResult = new string[5];
-    public static ArrayList itemList = new ArrayList();
 
-    private bool hasRead = false;
+    // private bool hasRead = false;
 
-    // Use this for initialization
     void Awake()
     {
         readTextFile("Assets/Game Data/items.dat");
@@ -18,6 +18,8 @@ public class GameData : MonoBehaviour
 
     private void Update()
     {
+        // NOTE: What is this part for if there's no need to debug anymore?
+        /*
         if (hasRead)
         {
             foreach (string[] currString in itemList)
@@ -25,6 +27,7 @@ public class GameData : MonoBehaviour
                 Debug.Log(currString[0]);
             }
         }
+        */
     }
 
     // a method to read text file
@@ -41,8 +44,15 @@ public class GameData : MonoBehaviour
 
         inp_stm.Close();
 
-        hasRead = true;
+        // hasRead = true;
     }
 
     /////// PROPERTIES ///////
+    public static ArrayList ItemList
+    {
+        get
+        {
+            return itemList;
+        }
+    }
 }

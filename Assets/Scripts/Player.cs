@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    private EntityAttack entityAttack;
-
-    protected Vector2 jumpForce = new Vector2(0, 1);
-
+    protected EntityAttack entityAttack;
     protected Weapon weapon;
     protected SkillAttack skillAttack;
+
+    protected Vector2 jumpForce = new Vector2(0, 1);
 
     public float stamina;
 
@@ -22,29 +21,36 @@ public class Player : Entity
     // Use this for initialization
     void Start()
     {
+        // base class initialisation
         rb = gameObject.GetComponent<Rigidbody2D>();
+
+        health = 100;
+
+        speed = 5;
+
+        // this class initialisation
         entityAttack = GetComponent<EntityAttack>();
         Weapon = GetComponent<Weapon>();
         skillAttack = GetComponent<SkillAttack>();
-        Debug.Log("ATTACK: " + weapon.Attack);
-        isJumping = false;
-        jumpPower = 5;
-        speed = 5;
-        health = 100;
+
         stamina = 100;
+
+        jumpPower = 5;
         exp = 0;
-        atk = weapon.Attack;
+
+        isJumping = false;
+
+        atk = weapon.Atk;
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("PLAYER HEALTH: " + Health);
         InputAttack();
         CheckDeath();
         Jump();
         InputMove();
-        Stamina += 10 *Time.deltaTime;
+        Stamina += 10 * Time.deltaTime; // stamina regen
         InputSkill();
     }
 
@@ -72,22 +78,17 @@ public class Player : Entity
         }
     }
 
+    // a method to handle skill use input
     public void InputSkill()
     {
-                if (Input.GetKeyDown(KeyCode.A) && stamina >= 30.0f)
-                {
-                    Debug.Log("SUPER SAIYAN SWORD SKILL 1");
-                    skillAttack.SkillA(atk);
-                }
-
-                if (Input.GetKeyDown(KeyCode.A) && stamina >= 30.0f)
-                {
-                    Debug.Log("SUPER SAIYAN AXE SKILL 1");
-                    skillAttack.SkillA(atk);
-                }
+        if (Input.GetKeyDown(KeyCode.A) && stamina >= 30.0f)
+        {
+            skillAttack.SkillA(atk);
+        }
     }
 
     // a method to handle player jump
+    // REMINDER: Set fixed jump stamina cost
     void Jump()
     {
         if (Input.GetKeyDown("up"))
@@ -117,8 +118,8 @@ public class Player : Entity
     {
         if (Input.GetKeyDown("z"))
         {
-            Debug.Log("Weapon Type: " +  weapon.WeaponType);
-            Debug.Log("Attack Strength: " + atk);
+            // Debug.Log("Weapon Type: " +  weapon.WeaponType);
+            // Debug.Log("Attack Strength: " + atk);
             entityAttack.Attack(Atk);
         }
         return false;

@@ -10,8 +10,8 @@ public class EntityAttack : MonoBehaviour {
 
     private Vector2 currDir;
 
-    private float attackTimer = 0;
-    private float attackCd = 0.5f;
+    private float atkTimer = 0;
+    private float atkCd = 0.5f;
 
     private bool isAttacking = false;
 
@@ -33,9 +33,9 @@ public class EntityAttack : MonoBehaviour {
 
         if (isAttacking)
         {
-            if (attackTimer > 0)
+            if (atkTimer > 0)
             {
-                attackTimer -= Time.deltaTime;
+                atkTimer -= Time.deltaTime;
             }
             else
             {
@@ -48,7 +48,7 @@ public class EntityAttack : MonoBehaviour {
     public void Attack(float atk)
     {
         isAttacking = true;
-        attackTimer = attackCd;
+        atkTimer = atkCd;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
         if (hit)

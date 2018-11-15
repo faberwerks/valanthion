@@ -12,10 +12,13 @@ public class Entity : MonoBehaviour
     protected float atkSpeed;
 
     protected uint speed;
-    protected int atk;
     protected uint defense;
+
+    protected int atk;
+
     protected bool isFacingRight;
    
+    // a method to move entity
     protected void Move()
     {
         switch (isFacingRight)
@@ -37,12 +40,6 @@ public class Entity : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
     }
 
     // a method to damage entity health

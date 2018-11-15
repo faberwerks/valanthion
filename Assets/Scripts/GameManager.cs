@@ -8,21 +8,20 @@ public class GameManager {
 
     private static GameManager instance;
 
-    // protected GameObject[] enemies;
-
-    // Player player;
-
     protected GameState currGameState;
 
-    // Use this for initialization
+    // REMINDER: Move all this to LEVEL MANAGER script
+    /*
+    protected GameObject[] enemies;
+
+    Player player;
+
     void Start () {
         CurrGameState = GameState.PLAYING;
 
-        // player = GameObject.FindObjectOfType<Player>();
+        player = GameObject.FindObjectOfType<Player>();
 	}
 
-    // Update is called once per frame
-    /*
     void Update () {
         enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
@@ -63,7 +62,7 @@ public class GameManager {
     {
         if (defeated)
         {
-            Debug.Log("DEFEAT");
+
             CurrGameState = GameState.DEFEAT;
             Time.timeScale = 0.0f;
         }
@@ -99,6 +98,7 @@ public class GameManager {
         }
     }
 
+    // REMINDER: Where is this supposed to go?
     // a method to give the player exp
     /*
     public void GiveExp(int expValue)
