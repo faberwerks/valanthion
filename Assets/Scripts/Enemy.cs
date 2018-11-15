@@ -16,7 +16,7 @@ public class Enemy : Entity
 
     protected Vector2 currDir;
 
-    protected EnemyState initialState;
+    public EnemyState initialState;
     protected EnemyState currState;
 
     protected float atkTimer;
