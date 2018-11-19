@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPotion : Item, IPickupable<Player> {
+public class HealthPotion : Item, IPickupable<GameObject> {
 
     void Awake()
     {
         name = "Health Potion";
     }
 
-    public void OnPickup(Player player)
+    public void OnPickup(GameObject player)
     {
-        player.GetComponent<Inventory>().AddItem(gameObject.GetComponent<Item>());
+        player.GetComponent<Inventory>().AddItem(GetComponent<Item>());
         Destroy(gameObject);
     }
 
@@ -19,7 +19,7 @@ public class HealthPotion : Item, IPickupable<Player> {
     {
         if (collision.gameObject.tag == "Player")
         {
-            OnPickup(collision.gameObject.GetComponent<Player>());
+            OnPickup(collision.gameObject);
         }
     }
 }

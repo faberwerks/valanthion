@@ -20,6 +20,11 @@ public class Player : Entity
     protected bool isJumping;
     protected bool canDoubleJump;
 
+    private void Awake()
+    {
+        Weapon = GetComponent<Weapon>();
+    }
+
     // Use this for initialization
     void Start()
     {
@@ -32,7 +37,6 @@ public class Player : Entity
 
         // this class initialisation
         entityAttack = GetComponent<EntityAttack>();
-        Weapon = GetComponent<Weapon>();
         skillAttack = GetComponent<SkillAttack>();
 
         stamina = 100;
@@ -43,6 +47,7 @@ public class Player : Entity
         isJumping = false;
 
         atk = weapon.Atk;
+        Debug.Log(weapon.Atk);
     }
 
     // Update is called once per frame

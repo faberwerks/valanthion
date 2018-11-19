@@ -191,6 +191,7 @@ public class Enemy : Entity
     public override void TakeDamage(float atk)
     {
         base.TakeDamage(atk);
+        Debug.Log(atk);
         sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
     }
 

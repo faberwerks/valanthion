@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public enum WeaponTypes : byte {SWORD,AXE,SPEAR};
 
-    private string itemId = "002";
+    private string itemId = "001";
 
     private WeaponTypes weaponType;
 
@@ -25,7 +25,6 @@ public class Weapon : MonoBehaviour
                 atkSpeed = int.Parse(currString[4]);
 
                 /*
-                Debug.Log(currString[0]);
                 Debug.Log(currString[1]);
                 Debug.Log(Attack);
                 Debug.Log(range);
