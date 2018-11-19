@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class House : MonoBehaviour {
+public class LowerHouse : MonoBehaviour
+{
 
     public DemoLevelManager demoLevelManager;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            if (demoLevelManager.HasKey == true || demoLevelManager.HasStone == true)
+            if (demoLevelManager.HasKey == true)
             {
-                // whatever goes in here
+                GetComponent<BoxCollider2D>().isTrigger = true;
             }
             else
             {
@@ -21,3 +22,4 @@ public class House : MonoBehaviour {
         }
     }
 }
+
