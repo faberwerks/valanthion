@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    protected GameObject[] inventory = new GameObject[2];
+
     protected EntityAttack entityAttack;
     protected Weapon weapon;
     protected SkillAttack skillAttack;
@@ -52,6 +54,7 @@ public class Player : Entity
         InputMove();
         Stamina += 10 * Time.deltaTime; // stamina regen
         InputSkill();
+        InputInv();
     }
 
     // a method to validate death
@@ -125,6 +128,31 @@ public class Player : Entity
         return false;
     }
 
+    // a method to handle input for inventory
+    public void InputInv()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Inventory inv = GetComponent<Inventory>();
+
+            if (inv.items[0].count > 0)
+            {
+                Health += inv.items[0].value;
+                inv.RemoveItem("Health Potion");
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Inventory inv = GetComponent<Inventory>();
+
+            if (inv.items[0].count > 0)
+            {
+                Stamina += inv.items[0].value;
+                inv.RemoveItem("Stamina Potion");
+            }
+        }
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -134,6 +162,14 @@ public class Player : Entity
     }
 
     /////// PROPERTIES ///////
+    public GameObject[] Inventory
+    {
+        get
+        {
+            return inventory;
+        }
+    }
+
     public Weapon Weapon
     {
         get

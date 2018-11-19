@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
-public class Item : ScriptableObject {
-    public GameObject itemObject;
-	
+public class Item : MonoBehaviour {
+    public string itemName;
 }

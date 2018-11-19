@@ -1,4 +1,4 @@
-﻿public interface IPickupable {
-    void OnPickup<T>();
+﻿public interface IPickupable<T> {
+    void OnPickup(T obj);
 
 }

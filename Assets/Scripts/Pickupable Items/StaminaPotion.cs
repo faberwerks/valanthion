@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealthPotion : Item, IPickupable<Player> {
-
+public class StaminaPotion : Item, IPickupable<Player>
+{
     void Awake()
     {
-        name = "Health Potion";
+        name = "Stamina Potion";
     }
 
     public void OnPickup(Player player)
