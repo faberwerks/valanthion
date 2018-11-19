@@ -5,11 +5,13 @@ using UnityEngine;
 public class DemoLevelManager : MonoBehaviour {
 
     private bool hasKey;
+    private bool hasStone;
 
     // Use this for initialization
     void Start()
     {
         HasKey = false;
+        HasStone = false;
     }
 
     /////// PROPERTIES ///////
@@ -22,6 +24,18 @@ public class DemoLevelManager : MonoBehaviour {
         set
         {
             this.hasKey = value;
+        }
+    }
+
+    public bool HasStone
+    {
+        get
+        {
+            return hasStone;
+        }
+        set
+        {
+            this.hasStone = value;
         }
     }
 }
