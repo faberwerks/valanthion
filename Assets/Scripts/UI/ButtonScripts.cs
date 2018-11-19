@@ -27,7 +27,7 @@ public class ButtonScripts : MonoBehaviour {
     // a method to start playing
     public void Play()
     {
-        SceneManager.LoadScene("TEST_LEVEL");
+        SceneManager.LoadScene("DemoLevel");
         GameManager.Instance.Playing(true);
     }
 
