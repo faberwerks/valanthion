@@ -21,6 +21,7 @@ public class Enemy : Entity
 
     protected float atkTimer;
     protected float distance;
+    protected float range;
     // the following variables are to countdown the change colour after getting hit
     protected float colorTime;
     protected float colorTimer;
@@ -41,6 +42,7 @@ public class Enemy : Entity
         health = 100;
         atkSpeed = 2.0f;
 
+        range = 3;
         speed = 3;
         atk = 20;
         defense = 0;
@@ -178,7 +180,7 @@ public class Enemy : Entity
             if (atkTimer <= 0.0f)
             {
                 atkTimer = atkSpeed;
-                entityAttack.Attack(Atk);
+                entityAttack.Attack(Atk,range);
             }
             else
             {

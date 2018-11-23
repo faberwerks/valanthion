@@ -45,12 +45,12 @@ public class EntityAttack : MonoBehaviour {
     }
 
     // a method to handle entity attacks
-    public void Attack(float atk)
+    public void Attack(float atk, float range)
     {
         isAttacking = true;
         atkTimer = atkCd;
 
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir,range, targetLayer);
         if (hit)
         {
             hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk);

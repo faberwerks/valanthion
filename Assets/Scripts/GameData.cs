@@ -9,7 +9,7 @@ public class GameData : MonoBehaviour
 
     string[] splitResult = new string[5];
 
-    // private bool hasRead = false;
+    private bool hasRead = false;
 
     void Awake()
     {
@@ -19,15 +19,16 @@ public class GameData : MonoBehaviour
     private void Update()
     {
         // NOTE: What is this part for if there's no need to debug anymore?
-        /*
-        if (hasRead)
-        {
-            foreach (string[] currString in itemList)
-            {
-                Debug.Log(currString[0]);
-            }
-        }
-        */
+        //if (hasRead)
+        //{
+        //    foreach (string[] currString in itemList)
+        //    {
+        //        Debug.Log(currString[0]);
+        //        Debug.Log(currString[1]);
+        //        Debug.Log(currString[2]);
+
+        //    }
+        //}
     }
 
     // a method to read text file
@@ -44,7 +45,7 @@ public class GameData : MonoBehaviour
 
         inp_stm.Close();
 
-        // hasRead = true;
+        hasRead = true;
     }
 
     /////// PROPERTIES ///////

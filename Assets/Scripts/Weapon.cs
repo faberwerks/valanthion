@@ -11,25 +11,24 @@ public class Weapon : MonoBehaviour
     private WeaponTypes weaponType;
 
     private int atk;
-    private int range;
+    private float range;
     private int atkSpeed;
 
-    void Awake()
+    private void Start()
     {
         foreach (string[] currString in GameData.ItemList)
         {
-            if (string.Equals(itemId,currString[0]))
+            if (string.Equals(itemId, currString[0]))
             {
                 Atk = int.Parse(currString[2]);
                 range = int.Parse(currString[3]);
                 atkSpeed = int.Parse(currString[4]);
 
-                /*
                 Debug.Log(currString[1]);
-                Debug.Log(Attack);
-                Debug.Log(range);
-                Debug.Log(attackSpeed);
-                */
+                Debug.Log(currString[2]);
+                Debug.Log(currString[3]);
+                Debug.Log(currString[4]);
+
                 break;
             }
         }
@@ -63,6 +62,18 @@ public class Weapon : MonoBehaviour
         get
         {
             return weaponType;
+        }
+    }
+
+    public float Range
+    {
+        get
+        {
+            return range;
+        }
+        set
+        {
+            this.range = value;
         }
     }
 

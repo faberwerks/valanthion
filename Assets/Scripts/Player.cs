@@ -16,6 +16,7 @@ public class Player : Entity
 
     protected int jumpPower;
     protected int exp;
+    protected float range;
 
     protected bool isJumping;
     protected bool canDoubleJump;
@@ -47,7 +48,8 @@ public class Player : Entity
         isJumping = false;
 
         atk = weapon.Atk;
-        Debug.Log(weapon.Atk);
+        range = weapon.Range;
+        //Debug.Log(weapon.Atk);
     }
 
     // Update is called once per frame
@@ -128,7 +130,7 @@ public class Player : Entity
         {
             // Debug.Log("Weapon Type: " +  weapon.WeaponType);
             // Debug.Log("Attack Strength: " + atk);
-            entityAttack.Attack(Atk);
+            entityAttack.Attack(Atk,range);
         }
         return false;
     }
@@ -219,6 +221,18 @@ public class Player : Entity
             {
                 this.stamina = value;
             }
+        }
+    }
+
+    public bool IsJumping
+    {
+        get
+        {
+            return isJumping;
+        }
+        set
+        {
+            this.isJumping = value;
         }
     }
 
