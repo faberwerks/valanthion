@@ -11,10 +11,10 @@ public class Entity : MonoBehaviour
     protected float health;
     protected float atkSpeed;
 
-    protected uint speed;
-    protected uint defense;
+    protected int speed;
+    protected int defense;
 
-    protected int atk;
+    protected float atk;
 
     protected bool isFacingRight;
    
@@ -47,7 +47,7 @@ public class Entity : MonoBehaviour
     {
         float damage = atk * (100.0f / (100 + Defense));
 
-        Health = Health - Mathf.FloorToInt(damage);
+        Health -= Mathf.FloorToInt(damage);
     }
 
     /////// PROPERTIES ///////
@@ -70,7 +70,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public uint Defense
+    public int Defense
     {
         get
         {
@@ -94,7 +94,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public int Atk
+    public float Atk
     {
         get
         {

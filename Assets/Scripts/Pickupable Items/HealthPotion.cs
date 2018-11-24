@@ -9,6 +9,7 @@ public class HealthPotion : Item, IPickupable<GameObject> {
         name = "Health Potion";
     }
 
+    // a method called when picked up
     public void OnPickup(GameObject player)
     {
         player.GetComponent<Inventory>().AddItem(GetComponent<Item>());

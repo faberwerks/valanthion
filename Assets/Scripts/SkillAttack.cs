@@ -34,7 +34,7 @@ public class SkillAttack : MonoBehaviour {
     }
 
     // a method to handle Skill A
-    public void SkillA(int atk)
+    public void SkillA(float atk)
     {
         hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
 

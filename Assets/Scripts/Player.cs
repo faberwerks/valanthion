@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    protected GameObject[] inventory = new GameObject[2];
-
     protected EntityAttack entityAttack;
     protected Weapon weapon;
     protected SkillAttack skillAttack;
+    protected Inventory inv;
 
     protected Vector2 jumpForce = new Vector2(0, 1);
 
@@ -20,6 +19,7 @@ public class Player : Entity
 
     protected bool isJumping;
     protected bool canDoubleJump;
+    private bool hasDied = false;
 
     private void Awake()
     {
@@ -39,6 +39,7 @@ public class Player : Entity
         // this class initialisation
         entityAttack = GetComponent<EntityAttack>();
         skillAttack = GetComponent<SkillAttack>();
+        inv = GetComponent<Inventory>();
 
         stamina = 100;
 
@@ -49,7 +50,7 @@ public class Player : Entity
 
         atk = weapon.Atk;
         range = weapon.Range;
-        //Debug.Log(weapon.Atk);
+        entityAttack.AtkCooldown = weapon.AtkSpeed;
     }
 
     // Update is called once per frame
@@ -67,9 +68,10 @@ public class Player : Entity
     // a method to validate death
     protected override void CheckDeath()
     {
-        if (Health <= 0)
+        if (Health <= 0 && !hasDied)
         {
             GameManager.Instance.Defeat(true);
+            hasDied = true;
         }
     }
 
@@ -140,8 +142,6 @@ public class Player : Entity
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Inventory inv = GetComponent<Inventory>();
-
             if (inv.items[0].count > 0)
             {
                 Health += inv.items[0].value;
@@ -150,8 +150,6 @@ public class Player : Entity
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            Inventory inv = GetComponent<Inventory>();
-
             if (inv.items[0].count > 0)
             {
                 Stamina += inv.items[0].value;
@@ -169,14 +167,6 @@ public class Player : Entity
     }
 
     /////// PROPERTIES ///////
-    public GameObject[] Inventory
-    {
-        get
-        {
-            return inventory;
-        }
-    }
-
     public Weapon Weapon
     {
         get

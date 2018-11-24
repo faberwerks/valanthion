@@ -6,13 +6,13 @@ public class Weapon : MonoBehaviour
 {
     public enum WeaponTypes : byte {SWORD,AXE,SPEAR};
 
-    private string itemId = "001";
+    public string itemId = "001";
 
     private WeaponTypes weaponType;
 
-    private int atk;
+    private float atk;
     private float range;
-    private int atkSpeed;
+    private float atkSpeed;
 
     private void Start()
     {
@@ -20,15 +20,9 @@ public class Weapon : MonoBehaviour
         {
             if (string.Equals(itemId, currString[0]))
             {
-                Atk = int.Parse(currString[2]);
-                range = int.Parse(currString[3]);
-                atkSpeed = int.Parse(currString[4]);
-
-                Debug.Log(currString[1]);
-                Debug.Log(currString[2]);
-                Debug.Log(currString[3]);
-                Debug.Log(currString[4]);
-
+                Atk = float.Parse(currString[2]);
+                Range = int.Parse(currString[3]);
+                AtkSpeed = float.Parse(currString[4]);
                 break;
             }
         }
@@ -42,17 +36,14 @@ public class Weapon : MonoBehaviour
         if (int.Parse(itemId) == 1)
         {
             weaponType = WeaponTypes.SWORD;
-            Debug.Log(weaponType);
         }
         else if (int.Parse(itemId) == 2)
         {
             weaponType = WeaponTypes.AXE;
-            Debug.Log(weaponType);
         }
         else
         {
             weaponType = WeaponTypes.SPEAR;
-            Debug.Log(weaponType);
         }
     }
 
@@ -77,7 +68,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    public int Atk
+    public float Atk
     {
         get
         {
@@ -88,4 +79,17 @@ public class Weapon : MonoBehaviour
             this.atk = value;
         }
     }
+
+    public float AtkSpeed
+    {
+        get
+        {
+            return atkSpeed;
+        }
+        set
+        {
+            this.atkSpeed = value;
+        }
+    }
+
 }

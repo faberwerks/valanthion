@@ -11,7 +11,7 @@ public class EntityAttack : MonoBehaviour {
     private Vector2 currDir;
 
     private float atkTimer = 0;
-    private float atkCd = 0.5f;
+    private float atkCooldown;
 
     private bool isAttacking = false;
 
@@ -47,13 +47,41 @@ public class EntityAttack : MonoBehaviour {
     // a method to handle entity attacks
     public void Attack(float atk, float range)
     {
-        isAttacking = true;
-        atkTimer = atkCd;
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir,range, targetLayer);
-        if (hit)
+        if (!isAttacking)
         {
-            hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk);
+            isAttacking = true;
+            atkTimer = atkCooldown;
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, targetLayer);
+            if (hit)
+            {
+                hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk);
+            }
+        }
+    }
+
+    /////// PROPERTIES ///////
+    public float AtkCooldown
+    {
+        get
+        {
+            return atkCooldown;
+        }
+        set
+        {
+            this.atkCooldown = value;
+        }
+    }
+
+    public bool IsAttacking
+    {
+        get
+        {
+            return isAttacking;
+        }
+        set
+        {
+            this.isAttacking = value;
         }
     }
 }

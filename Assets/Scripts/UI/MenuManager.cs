@@ -7,16 +7,19 @@ public class MenuManager : MonoBehaviour {
     public GameObject defeatPanel;
     public GameObject victoryPanel;
     public GameObject pausePanel;
+    public GameObject minimap;
 
     void Start()
     {
         defeatPanel.SetActive(false);
         victoryPanel.SetActive(false);
+        minimap.SetActive(false);
     }
 
     // Update is called once per frame
     void Update () {
         CheckPause();
+        CheckMinimap();
 
 		switch (GameManager.Instance.CurrGameState)
         {
@@ -33,6 +36,18 @@ public class MenuManager : MonoBehaviour {
                 break;
         }
 	}
+
+    public void CheckMinimap()
+    {
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            minimap.SetActive(true);
+        }
+        else
+        {
+            minimap.SetActive(false);
+        }
+    }
 
     // a method to handle pause button input
     public void CheckPause()

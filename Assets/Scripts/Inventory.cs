@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour {
+
     public List<ItemInfo> items = new List<ItemInfo>();
 
     public const int numItemSlots = 2;
@@ -12,7 +13,7 @@ public class Inventory : MonoBehaviour {
         SetUpItems();
     }
 
-    // a method to set up the array
+    // a method to set up the inventory array
     private void SetUpItems()
     {
         ItemInfo healthPotionInfo = new ItemInfo();
@@ -57,6 +58,9 @@ public class Inventory : MonoBehaviour {
     }
 }
 
+/*
+ * A class to hold item information
+ */
 public class ItemInfo
 {
     public string itemName;

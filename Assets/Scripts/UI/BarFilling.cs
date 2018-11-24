@@ -5,13 +5,13 @@ using UnityEngine.UI;
 
 public class BarFilling : MonoBehaviour {
 
-    private Player player;
+    protected Player player;
 
     [SerializeField] // show image field on inspector
-	private Image content;
+	protected Image content;
 
 	[SerializeField] // show fill amount field on inspector
-	private float fill;
+	protected float fill;
 
 	// Use this for initialization
 	void Start () {
@@ -20,7 +20,6 @@ public class BarFilling : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        fill = player.Health * 0.01f;
 		FillBar();
 	}
 

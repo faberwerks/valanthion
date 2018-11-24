@@ -54,11 +54,11 @@ public class Enemy : Entity
 
         CurrState = InitialState;
 
-        atkTimer = 0.0f;
+        entityAttack.AtkCooldown = 2.0f;
         colorTime = 0.2f;
         colorTimer = colorTime;
 
-        expValue = 100;
+        ExpValue = 100;
     }
 
     void Update()
@@ -177,14 +177,9 @@ public class Enemy : Entity
         }
         else
         {
-            if (atkTimer <= 0.0f)
+            if (!entityAttack.IsAttacking)
             {
-                atkTimer = atkSpeed;
                 entityAttack.Attack(Atk,range);
-            }
-            else
-            {
-                atkTimer -= Time.deltaTime;
             }
         }
     }
@@ -193,7 +188,6 @@ public class Enemy : Entity
     public override void TakeDamage(float atk)
     {
         base.TakeDamage(atk);
-        Debug.Log(atk);
         sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
     }
 

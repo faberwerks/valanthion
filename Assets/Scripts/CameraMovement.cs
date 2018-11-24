@@ -8,16 +8,17 @@ public class CameraMovement : MonoBehaviour {
 
     private Vector3 currPos;
 
-    private const float OFFSET = -10;
+    public float offset = -10.0f;
 
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
-    void LateUpdate () {
+    void LateUpdate ()
+    {
         currPos = player.transform.position;
-        currPos.z += OFFSET;
+        currPos.z += offset;
 
         transform.position = currPos;
 	}
