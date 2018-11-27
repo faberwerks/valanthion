@@ -10,6 +10,7 @@ public class Player : Entity
     protected Inventory inv;
 
     protected Vector2 jumpForce = new Vector2(0, 1);
+    protected Vector2 dashDir;
 
     public float stamina;
 
@@ -63,6 +64,7 @@ public class Player : Entity
         Stamina += 10 * Time.deltaTime; // stamina regen
         InputSkill();
         InputInv();
+        Dash();
     }
 
     // a method to validate death
@@ -75,6 +77,15 @@ public class Player : Entity
         }
     }
 
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isJumping = false;
+        }
+    }
+
+    /////// INPUT METHODS ///////
     // a method to player input for movement
     public void InputMove()
     {
@@ -158,11 +169,21 @@ public class Player : Entity
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    // a method to handle dashing
+    public void Dash()
     {
-        if (collision.gameObject.tag == "Ground")
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Stamina >= 20)
         {
-            isJumping = false;
+            if (IsFacingRight)
+            {
+                dashDir = new Vector2(1, 0);
+            }
+            else
+            {
+                dashDir = new Vector2(-1, 0);
+            }
+            rb.AddForce(dashDir * 4, ForceMode2D.Impulse);
+            Stamina -= 20;
         }
     }
 
