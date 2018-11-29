@@ -10,11 +10,15 @@ public class Enemy : Entity
 
     protected EntityAttack entityAttack;
 
+    protected StageSetting stageSetting;
+
     protected RaycastHit2D hit;
 
     protected Vector3 originalPos;
 
     protected Vector2 currDir;
+
+    protected Weapon weapon;
 
     public EnemyState initialState;
     protected EnemyState currState;
@@ -26,11 +30,13 @@ public class Enemy : Entity
     protected float colorTime;
     protected float colorTimer;
 
-    protected int expValue;
     protected int playerLayer;
+
+    protected ushort expValue;
 
     private void Awake()
     {
+        weapon = GetComponent<Weapon>();
         playerLayer = LayerMask.GetMask("Player");
     }
 
@@ -42,9 +48,9 @@ public class Enemy : Entity
         health = 100;
         atkSpeed = 2.0f;
 
-        range = 3;
+        range = weapon.AtkRange;
         speed = 3;
-        atk = 20;
+        atk = weapon.Atk;
         defense = 0;
 
         /// This class initialisation
@@ -54,7 +60,7 @@ public class Enemy : Entity
 
         CurrState = InitialState;
 
-        entityAttack.AtkCooldown = 2.0f;
+        entityAttack.AtkCooldown = weapon.AtkSpeed;
         colorTime = 0.2f;
         colorTimer = colorTime;
 
@@ -101,6 +107,15 @@ public class Enemy : Entity
             sprRend.color = new Color(255f, 255f, 255f, 255f);
         }
 
+    }
+
+    protected override void CheckDeath()
+    {
+        if (Health <= 0)
+        {
+            stageSetting.RemoveEnemy(expValue, gameObject);
+            Destroy(gameObject);
+        }
     }
 
     // a method to handle enemy roaming
@@ -191,6 +206,12 @@ public class Enemy : Entity
         sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
     }
 
+    // a method to get a reference to the stage setting
+    public void SetStageSetting(StageSetting stageSetting)
+    {
+        this.stageSetting = stageSetting;
+    }
+
     /////// PROPERTIES ///////
     public EnemyState InitialState
     {
@@ -216,7 +237,7 @@ public class Enemy : Entity
         }
     }
 
-    public int ExpValue
+    public ushort ExpValue
     {
         get
         {

@@ -50,7 +50,7 @@ public class Player : Entity
         isJumping = false;
 
         atk = weapon.Atk;
-        range = weapon.Range;
+        range = weapon.AtkRange;
         entityAttack.AtkCooldown = weapon.AtkSpeed;
     }
 
@@ -161,10 +161,28 @@ public class Player : Entity
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (inv.items[0].count > 0)
+            if (inv.items[1].count > 0)
             {
                 Stamina += inv.items[0].value;
                 inv.RemoveItem("Stamina Potion");
+            }
+        }
+        else if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            if (inv.items[2].count > 0)
+            {
+                atk += inv.items[0].value;
+                inv.RemoveItem("Attack Potion");
+                Debug.Log("Damage Buff :" + atk);
+            }
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            if (inv.items[3].count > 0)
+            {
+                defense += inv.items[0].value;
+                inv.RemoveItem("Defense Potion");
+                Debug.Log("Defense Buff :" + defense);
             }
         }
     }
@@ -244,6 +262,18 @@ public class Player : Entity
         set
         {
             this.isJumping = value;
+        }
+    }
+
+    public bool HasDied
+    {
+        get
+        {
+            return hasDied;
+        }
+        set
+        {
+            this.hasDied = value;
         }
     }
 

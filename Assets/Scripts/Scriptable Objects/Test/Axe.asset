@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7047a9acb768b7544b2b5e9b60e3e435, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  ID: 002
-  attackStrength: 30
+  itemId: 2
+  attackStrength: 10
   attackSpeed: 2
-  attackRange: 5
+  attackRange: 1

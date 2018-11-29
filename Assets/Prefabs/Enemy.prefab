@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58631799420598286}
   - component: {fileID: 114370704003119382}
   - component: {fileID: 114489015554943630}
+  - component: {fileID: 114657148173580112}
   m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
@@ -37,8 +38,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1585207711315148}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.29, y: 2, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -105,6 +106,19 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &114657148173580112
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585207711315148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a77f5cfd940a68b47813a42824e0f004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponItemList: {fileID: 11400000, guid: d561295049ee3e5458b3e406b005e6c2, type: 2}
+  itemId: 0
 --- !u!212 &212591724634707478
 SpriteRenderer:
   m_ObjectHideFlags: 1

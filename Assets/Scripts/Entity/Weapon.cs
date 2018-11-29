@@ -4,9 +4,103 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public enum WeaponTypes : byte {SWORD,AXE,SPEAR};
+    public enum WeaponTypes : byte { SWORD, AXE, SPEAR };
 
-    public string itemId = "001";
+    public WeaponItemList weaponItemList;
+
+    private WeaponTypes weaponType;
+
+    public short itemId;
+
+    private float atk;
+    private float atkRange;
+    private float atkSpeed;
+
+    private void Start()
+    {
+        foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
+        {
+            if (weaponItem.itemId == itemId)
+            {
+                DetermineWeaponType(weaponItem.itemId);
+                Atk = weaponItem.attackStrength;
+                AtkRange = weaponItem.attackRange;
+                AtkSpeed = weaponItem.attackSpeed;
+                break;
+            }
+        }
+    }
+
+    // a method to determine the weapon type
+    private void DetermineWeaponType(ushort itemId)
+    {
+        if (itemId == 1)
+        {
+            WeaponType = WeaponTypes.SWORD;
+        }
+        else if (itemId == 2)
+        {
+            WeaponType = WeaponTypes.AXE;
+        }
+        else if (itemId == 3)
+        {
+            WeaponType = WeaponTypes.SPEAR;
+        }
+    }
+
+    /////// PROPERTIES ///////
+    public WeaponTypes WeaponType
+    {
+        get
+        {
+            return weaponType;
+        }
+        set
+        {
+            this.weaponType = value;
+        }
+    }
+
+    public float Atk
+    {
+        get
+        {
+            return atk;
+        }
+        set
+        {
+            this.atk = value;
+        }
+    }
+
+    public float AtkRange
+    {
+        get
+        {
+            return atkRange;
+        }
+        set
+        {
+            this.atkRange = value;
+        }
+    }
+
+    public float AtkSpeed
+    {
+        get
+        {
+            return atkSpeed;
+        }
+        set
+        {
+            this.atkSpeed = value;
+        }
+    }
+
+    /*
+    public enum WeaponTypes : byte { SWORD, AXE, SPEAR};
+
+    public ushort itemId;
 
     private WeaponTypes weaponType;
 
@@ -91,5 +185,5 @@ public class Weapon : MonoBehaviour
             this.atkSpeed = value;
         }
     }
-
+    */
 }

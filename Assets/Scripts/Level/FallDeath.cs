@@ -8,7 +8,12 @@ public class FallDeath : MonoBehaviour {
     {
         if (coll.gameObject.tag == "Player")
         {
-            GameManager.Instance.Defeat(true);
+            coll.gameObject.GetComponent<Player>().Health = 0;
+
+        }
+        else if (coll.gameObject.tag == "Enemy")
+        {
+            coll.gameObject.GetComponent<Enemy>().Health = 0;
         }
     }
 }

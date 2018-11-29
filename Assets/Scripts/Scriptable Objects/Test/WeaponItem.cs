@@ -2,7 +2,7 @@
 
 [CreateAssetMenu()]
 public class WeaponItem : ScriptableObject {
-    public string ID;
+    public ushort itemId;
     public float attackStrength;
     public float attackSpeed;
     public float attackRange;
