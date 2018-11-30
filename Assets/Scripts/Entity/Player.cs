@@ -6,11 +6,11 @@ public class Player : Entity
 {
     protected EntityAttack entityAttack;
     protected Weapon weapon;
-    protected SkillAttack skillAttack;
+    // protected SkillAttack skillAttack;
+    protected SkillControl skillControl;
     protected Inventory inv;
 
     protected Vector2 jumpForce = new Vector2(0, 1);
-    protected Vector2 dashDir;
 
     public float stamina;
 
@@ -33,16 +33,19 @@ public class Player : Entity
         // base class initialisation
         rb = gameObject.GetComponent<Rigidbody2D>();
 
-        health = 100;
+        maxHealth = 100;
+        health = maxHealth;
 
         speed = 5;
 
         // this class initialisation
         entityAttack = GetComponent<EntityAttack>();
-        skillAttack = GetComponent<SkillAttack>();
+        // skillAttack = GetComponent<SkillAttack>();
+        skillControl = GetComponent<SkillControl>();
         inv = GetComponent<Inventory>();
 
-        stamina = 100;
+        maxStamina = 100;
+        stamina = maxStamina;
 
         jumpPower = 5;
         exp = 0;
@@ -57,6 +60,7 @@ public class Player : Entity
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Player Max Stamina: " + maxStamina);
         InputAttack();
         CheckDeath();
         Jump();
@@ -64,7 +68,7 @@ public class Player : Entity
         Stamina += 10 * Time.deltaTime; // stamina regen
         InputSkill();
         InputInv();
-        Dash();
+        InputDash();
     }
 
     // a method to validate death
@@ -75,6 +79,21 @@ public class Player : Entity
             GameManager.Instance.Defeat(true);
             hasDied = true;
         }
+    }
+
+    // a method to handle dashing
+    public void Dash()
+    {
+        Vector2 dashDir;
+        if (IsFacingRight)
+        {
+            dashDir = new Vector2(1, 0);
+        }
+        else
+        {
+            dashDir = new Vector2(-1, 0);
+        }
+        rb.AddForce(dashDir * 4, ForceMode2D.Impulse);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -104,9 +123,9 @@ public class Player : Entity
     // a method to handle skill use input
     public void InputSkill()
     {
-        if (Input.GetKeyDown(KeyCode.A) && stamina >= 30.0f)
+        if (Input.GetKeyDown(KeyCode.A))
         {
-            skillAttack.SkillA(atk);
+            skillControl.UseSkill((byte)1);
         }
     }
 
@@ -187,20 +206,12 @@ public class Player : Entity
         }
     }
 
-    // a method to handle dashing
-    public void Dash()
+    // a method to handle dashing input
+    public void InputDash()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && Stamina >= 20)
         {
-            if (IsFacingRight)
-            {
-                dashDir = new Vector2(1, 0);
-            }
-            else
-            {
-                dashDir = new Vector2(-1, 0);
-            }
-            rb.AddForce(dashDir * 4, ForceMode2D.Impulse);
+            Dash();
             Stamina -= 20;
         }
     }

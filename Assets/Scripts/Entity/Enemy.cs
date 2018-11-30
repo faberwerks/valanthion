@@ -45,13 +45,15 @@ public class Enemy : Entity
         /// Base class initialisation
         sprRend = GetComponent<SpriteRenderer>();
 
+        rb = GetComponent<Rigidbody2D>();
+
         health = 100;
         atkSpeed = 2.0f;
 
         range = weapon.AtkRange;
         speed = 3;
         atk = weapon.Atk;
-        defense = 0;
+        defense = 10;
 
         /// This class initialisation
         player = GameObject.FindGameObjectWithTag("Player");
@@ -69,6 +71,7 @@ public class Enemy : Entity
 
     void Update()
     {
+        Debug.Log(name + "Current Atk: " + atk);
         CheckDeath();
 
         if (IsFacingRight)

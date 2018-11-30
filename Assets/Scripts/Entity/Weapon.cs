@@ -16,7 +16,7 @@ public class Weapon : MonoBehaviour
     private float atkRange;
     private float atkSpeed;
 
-    private void Start()
+    private void Awake()
     {
         foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
         {

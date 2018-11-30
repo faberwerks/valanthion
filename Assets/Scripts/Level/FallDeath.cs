@@ -6,6 +6,7 @@ public class FallDeath : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D coll)
     {
+
         if (coll.gameObject.tag == "Player")
         {
             coll.gameObject.GetComponent<Player>().Health = 0;

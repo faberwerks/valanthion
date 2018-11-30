@@ -8,16 +8,25 @@ public class Entity : MonoBehaviour
 
     protected SpriteRenderer sprRend;
 
+    protected float maxStamina;
+    protected float initialMaxStamina;
+
     protected float health;
+    protected float maxHealth;
+    protected float initialMaxHealth;
     protected float atkSpeed;
+    protected float initialAtkSpeed;
 
     protected int speed;
     protected int defense;
+    protected int initialSpeed;
+    protected int initialDefense;
 
     protected float atk;
+    protected float initialAtk;
 
     protected bool isFacingRight;
-   
+
     // a method to move entity
     protected void Move()
     {
@@ -50,6 +59,194 @@ public class Entity : MonoBehaviour
         Health -= Mathf.FloorToInt(damage);
     }
 
+    // a method to slow down entity
+    protected void SlowDown(int slowDownSpeed)
+    {
+        initialSpeed = speed;
+        speed -= slowDownSpeed;
+        StartCoroutine(CSlowDown(5.0f));
+    }
+
+    // a method to knock back entity
+    protected void KnockBack(float force)
+    {
+        rb.AddForce(new Vector2(1.0f, 0) * force, ForceMode2D.Impulse);
+    }
+
+    // a method to stun entity
+    protected void Stun()
+    {
+        initialSpeed = speed;
+        initialAtk = atk;
+
+        speed = 0;
+        atk = 0;
+        StartCoroutine(CStun(5.0f));
+    }
+
+    // a method to bleed entity
+    protected void Bleed()
+    {
+        StartCoroutine(CBleed(5.0f));
+    }
+
+    // a method to reduce defense temporarily
+    protected void ReduceDefense(int reduction)
+    {
+        initialDefense = defense;
+        defense -= reduction;
+        StartCoroutine(CReduceDefense(5.0f));
+    }
+
+    // a method to cripple entity
+    protected void Cripple(int atkReduction)
+    {
+        initialSpeed = speed;
+        initialAtk = atk;
+
+        speed = 0;
+        atk -= atkReduction;
+
+        StartCoroutine("CCripple", 5.0f);
+    }
+
+    public void ApplyBuffs(BuffInfo buffInfo)
+    {
+        if (buffInfo.additionalHealth)
+        {
+            initialMaxHealth = health;
+            maxHealth += 20;
+        }
+        if (buffInfo.additionalStamina)
+        {
+            initialMaxStamina = maxStamina;
+            maxStamina += 20;
+        }
+        if (buffInfo.attackSpeed)
+        {
+            initialAtkSpeed = atkSpeed;
+            atkSpeed -= 1;
+        }
+        if (buffInfo.attackStrength)
+        {
+            initialAtk = atk;
+            atk += 20;
+        }
+        if (buffInfo.defense)
+        {
+            initialDefense = defense;
+            defense += 20;
+        }
+
+        StartCoroutine(CApplyBuffs(5.0f));
+    }
+
+    /////// COROUTINES ///////
+    // slow down timer
+    protected IEnumerator CSlowDown(float time)
+    {
+        float timer = time;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return 0;
+        }
+
+        speed = initialSpeed;
+        yield break;
+    }
+
+    // stun timer
+    protected IEnumerator CStun(float time)
+    {
+        float timer = time;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return 0;
+        }
+
+        speed = initialSpeed;
+        atk = initialAtk;
+        yield break;
+    }
+
+    // bleeding damage
+    protected IEnumerator CBleed(float time)
+    {
+        float timer = time;
+        float secondCounter = 0;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            secondCounter += Time.deltaTime;
+
+            if (secondCounter >= 1.0f)
+            {
+                TakeDamage(1.0f);
+                secondCounter = 0;
+            }
+
+            yield return 0;
+        }
+
+        yield break;
+    }
+
+    // reduce defense timer
+    protected IEnumerator CReduceDefense(float time)
+    {
+        float timer = time;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return 0;
+        }
+
+        defense = initialDefense;
+        yield break;
+    }
+
+    // cripple timer
+    protected IEnumerator CCripple(float time)
+    {
+        float timer = time;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return 0;
+        }
+
+        speed = initialSpeed;
+        atk = initialAtk;
+        yield break;
+    }
+
+    // apply buff timer
+    public IEnumerator CApplyBuffs(float time)
+    {
+        float timer = time;
+
+        while (timer > 0)
+        {
+            timer -= Time.deltaTime;
+            yield return 0;
+        }
+
+        atk = initialAtk;
+        atkSpeed = initialAtkSpeed;
+        defense = initialDefense;
+        maxHealth = initialMaxHealth;
+        maxStamina = initialMaxStamina;
+
+        yield break;
+    }
+    
     /////// PROPERTIES ///////
     public float Health
     {
