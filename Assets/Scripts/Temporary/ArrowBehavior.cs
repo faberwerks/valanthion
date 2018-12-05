@@ -29,6 +29,9 @@ public class ArrowBehavior : MonoBehaviour
     private void Move()
     {
         transform.Translate(CurrDir * speed);
+
+        float angle = Mathf.Atan2(CurrDir.y, CurrDir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
     }
 
     private void Destroy()
@@ -36,11 +39,12 @@ public class ArrowBehavior : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    private void OnCollisionEnter2D(Collision2D c)
+    private void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.collider.CompareTag("Player"))
+        if (c.CompareTag("Player"))
         {
-            c.collider.SendMessage("TakeDamage", attackStrength);
+            c.SendMessage("TakeDamage", attackStrength);
+            Destroy();
         }
     }
 

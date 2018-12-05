@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RangedAttack : MonoBehaviour
 {
-    private Entity entity;
-
     private Vector2 currDir;
 
     private float atkTimer = 0;
@@ -15,19 +13,11 @@ public class RangedAttack : MonoBehaviour
 
     private void Start()
     {
-        entity = GetComponent<Entity>();
+        
     }
 
     private void Update()
     {
-        if (entity.IsFacingRight)
-        {
-            currDir = Vector2.right;
-        }
-        else
-        {
-            currDir = Vector2.left;
-        }
 
         if (isAttacking)
         {
@@ -43,7 +33,7 @@ public class RangedAttack : MonoBehaviour
     }
 
     // a method to handle entity attacks
-    public virtual void Attack()
+    public void Fire(Vector2 dir, Transform target)
     {
         if (!isAttacking)
         {
@@ -53,7 +43,7 @@ public class RangedAttack : MonoBehaviour
             GameObject obj = ObjectPooler.current.GetPooledObject();
 
             obj.transform.position = transform.position;
-            obj.GetComponent<ArrowBehavior>().CurrDir = currDir;
+            obj.GetComponent<ArrowBehavior>().CurrDir = dir;
             obj.SetActive(true);
         }
     }

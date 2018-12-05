@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212591724634707478}
   - component: {fileID: 50439689568206284}
   - component: {fileID: 58631799420598286}
-  - component: {fileID: 114370704003119382}
+  - component: {fileID: 114617060299820682}
   - component: {fileID: 114489015554943630}
   - component: {fileID: 114657148173580112}
   m_Layer: 9
@@ -80,18 +80,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &114370704003119382
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1585207711315148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62a6552b7a69be7428305b634c1363eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialState: 0
 --- !u!114 &114489015554943630
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -106,6 +94,18 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 256
+--- !u!114 &114617060299820682
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1585207711315148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce1ab0296f67fa49aefacc8982eac1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialState: 0
 --- !u!114 &114657148173580112
 MonoBehaviour:
   m_ObjectHideFlags: 1

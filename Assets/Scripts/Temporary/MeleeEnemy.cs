@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RangedEnemy : Enemy, IEnemy {
+public class MeleeEnemy : Enemy, IEnemy {
 
-    protected RangedAttack rangedAttack;
+    protected EntityAttack entityAttack;
+
+    protected RaycastHit2D hit;
 
     private void Awake()
     {
@@ -29,12 +31,12 @@ public class RangedEnemy : Enemy, IEnemy {
 
         /// This class initialisation
         player = GameObject.FindGameObjectWithTag("Player");
-        rangedAttack = GetComponent<RangedAttack>();
+        entityAttack = GetComponent<EntityAttack>();
         originalPos = transform.position;
 
         CurrState = InitialState;
 
-        rangedAttack.AtkCooldown = weapon.AtkSpeed;
+        entityAttack.AtkCooldown = weapon.AtkSpeed;
         colorTime = 0.2f;
         colorTimer = colorTime;
 
@@ -62,11 +64,11 @@ public class RangedEnemy : Enemy, IEnemy {
             case EnemyState.GUARD:
                 Guard();
                 break;
+            case EnemyState.CHASE:
+                Chase();
+                break;
             case EnemyState.ATTACK:
                 Attack();
-                break;
-            case EnemyState.RETREAT:
-                Retreat();
                 break;
         }
 
@@ -80,18 +82,16 @@ public class RangedEnemy : Enemy, IEnemy {
             colorTimer = colorTime;
             sprRend.color = new Color(255f, 255f, 255f, 255f);
         }
-
-        // Debug.Log(CurrState);
     }
 
     public void Patrol()
     {
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10.0f, playerLayer);
+        hit = Physics2D.Raycast(transform.position, currDir, 5.0f, playerLayer);
 
-        if (colls.Length > 0)
+        if (hit)
         {
-            player = colls[0].gameObject;
-            CurrState = EnemyState.ATTACK;
+            player = hit.transform.gameObject;
+            CurrState = EnemyState.CHASE;
             return;
         }
 
@@ -105,24 +105,41 @@ public class RangedEnemy : Enemy, IEnemy {
 
     public void Guard()
     {
-        /*
-        float offset = 10.0f;
+        hit = Physics2D.Raycast(transform.position, currDir, 5.0f, playerLayer);
 
-        if (!IsFacingRight)
+        if (hit)
         {
-            offset *= -1;
+            player = hit.transform.gameObject;
+            CurrState = EnemyState.CHASE;
+            return;
         }
+    }
 
-        Vector3 point = new Vector3(transform.position.x + offset, transform.position.y, 0);
-        */
+    public void Chase()
+    {
+        distance = Vector3.Distance(transform.position, player.transform.position);
 
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10.0f, playerLayer);
-
-        if (colls.Length > 0)
+        if (distance <= 1.0f)
         {
-            player = colls[0].gameObject;
             CurrState = EnemyState.ATTACK;
             return;
+        }
+        else if (distance > 5.0f)
+        {
+            CurrState = InitialState;
+            return;
+        }
+        else
+        {
+            if (player.transform.position.x < transform.position.x)
+            {
+                IsFacingRight = false;
+            }
+            else
+            {
+                isFacingRight = true;
+            }
+            Move();
         }
     }
 
@@ -130,56 +147,19 @@ public class RangedEnemy : Enemy, IEnemy {
     {
         distance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (distance > 10.0f)
+        if (distance > 1.0f)
         {
-            CurrState = InitialState;
-            return;
-        }
-        else if (distance < 3.0f)
-        {
-            CurrState = EnemyState.RETREAT;
+            CurrState = EnemyState.CHASE;
             return;
         }
         else
         {
-
-            if (!rangedAttack.IsAttacking)
+            if (!entityAttack.IsAttacking)
             {
-                rangedAttack.Fire(FindArrowDir(), player.transform);
+                entityAttack.Attack(Atk, range);
             }
         }
     }
 
-    public void Retreat()
-    {
-        distance = Vector3.Distance(transform.position, player.transform.position);
-
-        if (distance < 3.0f)
-        {
-            IsFacingRight = player.GetComponent<Player>().IsFacingRight;
-
-            Move();
-        }
-        else
-        {
-            CurrState = EnemyState.ATTACK;
-            return;
-        }
-    }
-
-    public void Chase() { }
-
-    private Vector2 FindArrowDir()
-    {
-        Vector2 dir;
-
-        float x = player.transform.position.x - transform.position.x;
-
-        float y = player.transform.position.y - transform.position.y;
-
-        dir = new Vector2(x, y);
-
-        // Debug.Log(dir);
-        return dir;
-    }
+    public void Retreat() { }
 }
