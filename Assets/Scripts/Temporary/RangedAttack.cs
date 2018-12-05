@@ -2,11 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityAttack : MonoBehaviour {
-
+public class RangedAttack : MonoBehaviour
+{
     private Entity entity;
-
-    public LayerMask targetLayer;
 
     private Vector2 currDir;
 
@@ -45,18 +43,18 @@ public class EntityAttack : MonoBehaviour {
     }
 
     // a method to handle entity attacks
-    public virtual void Attack(float atk, float range)
+    public virtual void Attack()
     {
         if (!isAttacking)
         {
             isAttacking = true;
             atkTimer = atkCooldown;
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, targetLayer);
-            if (hit)
-            {
-                hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk);
-            }
+            GameObject obj = ObjectPooler.current.GetPooledObject();
+
+            obj.transform.position = transform.position;
+            obj.GetComponent<ArrowBehavior>().CurrDir = currDir;
+            obj.SetActive(true);
         }
     }
 

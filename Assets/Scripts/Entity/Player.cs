@@ -60,7 +60,6 @@ public class Player : Entity
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Player Max Stamina: " + maxStamina);
         InputAttack();
         CheckDeath();
         Jump();
@@ -87,11 +86,11 @@ public class Player : Entity
         Vector2 dashDir;
         if (IsFacingRight)
         {
-            dashDir = new Vector2(1, 0);
+            dashDir = Vector2.right;
         }
         else
         {
-            dashDir = new Vector2(-1, 0);
+            dashDir = Vector2.left;
         }
         rb.AddForce(dashDir * 4, ForceMode2D.Impulse);
     }

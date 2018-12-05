@@ -71,7 +71,6 @@ public class Enemy : Entity
 
     void Update()
     {
-        Debug.Log(name + "Current Atk: " + atk);
         CheckDeath();
 
         if (IsFacingRight)
