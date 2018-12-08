@@ -6,6 +6,7 @@ public class Player : Entity
 {
     protected EntityAttack entityAttack;
     protected Weapon weapon;
+    protected Armor armor;
     // protected SkillAttack skillAttack;
     protected SkillControl skillControl;
     protected Inventory inv;
@@ -25,6 +26,7 @@ public class Player : Entity
     private void Awake()
     {
         Weapon = GetComponent<Weapon>();
+        armor = GetComponent<Armor>();
     }
 
     // Use this for initialization
@@ -55,6 +57,8 @@ public class Player : Entity
         atk = weapon.Atk;
         range = weapon.AtkRange;
         entityAttack.AtkCooldown = weapon.AtkSpeed;
+        Defense = armor.Defense;
+        Debug.Log("Player: " + armor.Defense);
     }
 
     // Update is called once per frame
