@@ -8,11 +8,11 @@ public class UIAnchor : MonoBehaviour {
 
     public Vector3 localOffset;
 
-    RectTransform myCanvas;
+    // RectTransform myCanvas;
 
 	// Use this for initialization
 	void Start () {
-        myCanvas = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
+        // myCanvas = GetComponentInParent<Canvas>().GetComponent<RectTransform>();
 	}
 
     // Update is called once per frame

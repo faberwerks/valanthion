@@ -67,6 +67,7 @@ MonoBehaviour:
   defeatPanel: {fileID: 0}
   victoryPanel: {fileID: 0}
   pausePanel: {fileID: 0}
+  minimap: {fileID: 0}
 --- !u!114 &114589489469601540
 MonoBehaviour:
   m_ObjectHideFlags: 1
