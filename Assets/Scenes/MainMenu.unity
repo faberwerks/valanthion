@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -642,7 +642,7 @@ RectTransform:
   m_GameObject: {fileID: 422023498}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.019595709, y: 0.019595709, z: 0.019595709}
+  m_LocalScale: {x: 0.016240375, y: 0.016240375, z: 0.016240375}
   m_Children:
   - {fileID: 1130342064}
   - {fileID: 808283251}
@@ -704,7 +704,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.784}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.78431374}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -937,7 +937,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2015303737}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleCredits
         m_Mode: 1
         m_Arguments:
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2015303737}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleLoadGame
         m_Mode: 1
         m_Arguments:
@@ -1119,7 +1119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &808283251
 Transform:
   m_ObjectHideFlags: 0
@@ -1293,7 +1293,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2015303737}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleNewGame
         m_Mode: 1
         m_Arguments:
@@ -1355,7 +1355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1130342064
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1673,7 +1673,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2015303737}
+      - m_Target: {fileID: 0}
         m_MethodName: ToggleExit
         m_Mode: 1
         m_Arguments:
@@ -1728,7 +1728,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2015303736}
   - component: {fileID: 2015303738}
-  - component: {fileID: 2015303737}
   m_Layer: 0
   m_Name: Main Menu Manager
   m_TagString: Untagged
@@ -1749,17 +1748,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2015303737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2015303735}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c213bcaac86c814499e9f9b9c3f1680, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2015303738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1771,7 +1759,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b5a5b3097142804cb2d525cb8d6b1ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newGamePanel: {fileID: 563549535}
-  loadGamePanel: {fileID: 577693214}
-  creditsPanel: {fileID: 501124482}
-  exitPanel: {fileID: 368059012}
+  currentMenu: 0

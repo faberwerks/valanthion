@@ -22,18 +22,18 @@ public class MainMenuButtonScripts : MonoBehaviour {
     // a method to toggle the load game panel
     public void ToggleLoadGame()
     {
-        mainMenuManager.TogglePanel(mainMenuManager.loadGamePanel);
+        // mainMenuManager.TogglePanel(mainMenuManager.loadGamePanel);
     }
 
     // a method to toggle the credits panel
     public void ToggleCredits()
     {
-        mainMenuManager.TogglePanel(mainMenuManager.creditsPanel);
+        // mainMenuManager.TogglePanel(mainMenuManager.creditsPanel);
     }
 
     // a method to toggle the exit =panel
     public void ToggleExit()
     {
-        mainMenuManager.TogglePanel(mainMenuManager.exitPanel);
+        // mainMenuManager.TogglePanel(mainMenuManager.exitPanel);
     }
 }
