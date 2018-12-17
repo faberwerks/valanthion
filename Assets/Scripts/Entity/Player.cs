@@ -7,7 +7,6 @@ public class Player : Entity
     protected EntityAttack entityAttack;
     protected Weapon weapon;
     protected Armor armor;
-    // protected SkillAttack skillAttack;
     protected SkillControl skillControl;
     protected Inventory inv;
 
@@ -15,7 +14,7 @@ public class Player : Entity
 
     public float stamina;
 
-    protected int jumpPower;
+    public int jumpPower;
     protected int exp;
     protected float range;
 
@@ -34,6 +33,7 @@ public class Player : Entity
     {
         // base class initialisation
         rb = gameObject.GetComponent<Rigidbody2D>();
+        // anim = gameObject.GetComponent<Animator>();
 
         maxHealth = 100;
         health = maxHealth;
@@ -42,14 +42,12 @@ public class Player : Entity
 
         // this class initialisation
         entityAttack = GetComponent<EntityAttack>();
-        // skillAttack = GetComponent<SkillAttack>();
         skillControl = GetComponent<SkillControl>();
         inv = GetComponent<Inventory>();
 
         maxStamina = 100;
         stamina = maxStamina;
 
-        jumpPower = 5;
         exp = 0;
 
         isJumping = false;

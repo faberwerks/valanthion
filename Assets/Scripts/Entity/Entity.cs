@@ -8,6 +8,8 @@ public class Entity : MonoBehaviour
 
     protected SpriteRenderer sprRend;
 
+    protected Animator anim;
+
     protected float maxStamina;
     protected float initialMaxStamina;
 
