@@ -60,7 +60,7 @@ public class EntityAttack : MonoBehaviour {
             RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, targetLayer);
             if (hit)
             {
-                hit.transform.gameObject.GetComponent<Entity>().TakeDamage(atk);
+                hit.collider.SendMessage("TakeDamage", atk);
             }
         }
     }

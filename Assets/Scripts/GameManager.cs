@@ -10,67 +10,18 @@ public class GameManager {
 
     protected GameState currGameState;
 
-    // REMINDER: Move all this to LEVEL MANAGER script
-    /*
-    protected GameObject[] enemies;
-
-    Player player;
-
-    void Start () {
-        CurrGameState = GameState.PLAYING;
-
-        player = GameObject.FindObjectOfType<Player>();
-	}
-
-    void Update () {
-        enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        if (enemies.Length < 1)
-        {
-            CurrState = GameState.VICTORY;
-        }
-
-		switch (CurrState)
-        {
-            case GameState.DEFEAT:
-                Debug.Log("DEFEAT BOI");
-                break;
-            case GameState.VICTORY:
-                Debug.Log("Victory Boy");
-                break;
-        }
-	}
-    */
-
     // a method to handle victory
-    public void Victory(bool hasWon)
+    public void Victory()
     {
-        if (hasWon)
-        {
-            CurrGameState = GameState.VICTORY;
-            Time.timeScale = 0.0f;
-        }
-        else
-        {
-            CurrGameState = GameState.PLAYING;
-            Time.timeScale = 1.0f;
-        }
+        CurrGameState = GameState.VICTORY;
+        Time.timeScale = 0.0f;
     }
 
     // a method to handle defeat
-    public void Defeat(bool defeated)
+    public void Defeat()
     {
-        if (defeated)
-        {
-
-            CurrGameState = GameState.DEFEAT;
-            Time.timeScale = 0.0f;
-        }
-        else
-        {
-            CurrGameState = GameState.PLAYING;
-            Time.timeScale = 1.0f;
-        }
+        CurrGameState = GameState.DEFEAT;
+        Time.timeScale = 0.0f;
     }
 
     // a method to handle pausing
@@ -91,21 +42,9 @@ public class GameManager {
     // a method to reset game state
     public void Playing(bool playing)
     {
-        if (playing)
-        {
-            CurrGameState = GameState.PLAYING;
-            Time.timeScale = 1.0f;
-        }
+        CurrGameState = GameState.PLAYING;
+        Time.timeScale = 1.0f;
     }
-
-    // REMINDER: Where is this supposed to go?
-    // a method to give the player exp
-    /*
-    public void GiveExp(int expValue)
-    {
-        player.Exp = expValue;
-    }
-    */
 
     /////// PROPERTIES ///////
     public static GameManager Instance

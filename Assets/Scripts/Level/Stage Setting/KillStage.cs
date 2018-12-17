@@ -15,7 +15,7 @@ public class KillStage : StageSetting {
 
         if (enemies.Count == 0)
         {
-            GameManager.Instance.Victory(true);
+            GameManager.Instance.Victory();
         }
     }
 

@@ -12,8 +12,12 @@ MonoBehaviour:
   m_Name: Weapon Item List
   m_EditorClassIdentifier: 
   weaponItemList:
-  - {fileID: 11400000, guid: 2c5cabbbc37d773478ce8f87973356fe, type: 2}
-  - {fileID: 11400000, guid: 98ef91bfbc1013246bfad6af45408380, type: 2}
-  - {fileID: 11400000, guid: 87d293ee2c2ce1f44af564e191b98607, type: 2}
-  - {fileID: 11400000, guid: 190d8d3c46ee36845a80826940c07635, type: 2}
-  - {fileID: 11400000, guid: 811589af807ac7a4aa3fae38c7b03199, type: 2}
+  - {fileID: 11400000, guid: f5851c59841b2ca4798dff819e88aa72, type: 2}
+  - {fileID: 11400000, guid: 83d68e4219836544d83028d5cadc495c, type: 2}
+  - {fileID: 11400000, guid: 960619f57785caa4c8466c372db4165f, type: 2}
+  - {fileID: 11400000, guid: 2549540feca018a409c476e78000e604, type: 2}
+  - {fileID: 11400000, guid: 2ecb32cb9104d1048a9817ff4db45ded, type: 2}
+  - {fileID: 11400000, guid: 7e7e270e02102dd429dd94471ccfb9c6, type: 2}
+  - {fileID: 11400000, guid: b686cfb65a2ae6d4ead9ef554914c641, type: 2}
+  - {fileID: 11400000, guid: 2673491a1898db146aeeec147236bd65, type: 2}
+  - {fileID: 11400000, guid: ca21a83b833bf4d40845466b11cfa86f, type: 2}

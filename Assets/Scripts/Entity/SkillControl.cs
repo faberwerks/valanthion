@@ -148,16 +148,6 @@ public class SkillControl : MonoBehaviour {
             }
         }
 
-        // Skill information
-        if (skill.isCounter)
-        {
-            // put counter here
-        }
-        if (skill.isStance)
-        {
-            // put stance here
-        }
-
         // Buff handling
         if (skill.buffs)
         {

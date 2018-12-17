@@ -8,7 +8,7 @@ public class VictoryPoint : MonoBehaviour {
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameManager.Instance.Victory(true);
+            GameManager.Instance.Victory();
         }
     }
 }

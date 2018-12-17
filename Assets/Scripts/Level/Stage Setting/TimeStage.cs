@@ -34,7 +34,7 @@ public class TimeStage : StageSetting {
         }
         else if (timeIsUp && !hasWon)
         {
-            GameManager.Instance.Victory(true);
+            GameManager.Instance.Victory();
             hasWon = true;
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public enum WeaponTypes : byte { SWORD, AXE, SPEAR };
+    public enum WeaponTypes : byte { SWORD, AXE, POLEARM };
 
     public WeaponItemList weaponItemList;
 
@@ -22,29 +22,12 @@ public class Weapon : MonoBehaviour
         {
             if (weaponItem.itemId == itemId)
             {
-                DetermineWeaponType(weaponItem.itemId);
+                WeaponType = weaponItem.weaponType;
                 Atk = weaponItem.attackStrength;
                 AtkRange = weaponItem.attackRange;
                 AtkSpeed = weaponItem.attackSpeed;
                 break;
             }
-        }
-    }
-
-    // a method to determine the weapon type
-    private void DetermineWeaponType(ushort itemId)
-    {
-        if (itemId == 1)
-        {
-            WeaponType = WeaponTypes.SWORD;
-        }
-        else if (itemId == 2)
-        {
-            WeaponType = WeaponTypes.AXE;
-        }
-        else if (itemId == 3)
-        {
-            WeaponType = WeaponTypes.SPEAR;
         }
     }
 

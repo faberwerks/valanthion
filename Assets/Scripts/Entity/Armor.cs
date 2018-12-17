@@ -14,11 +14,9 @@ public class Armor : MonoBehaviour {
     {
         foreach (ArmorItem armor in armorItemList.armorItemList)
         {
-            if(armor.itemId == itemId)
+            if (armor.itemId == itemId)
             {
-                Debug.Log(armor.defense);
                 Defense = armor.defense;
-                Debug.Log(Defense);
                 break;
             }
         }
