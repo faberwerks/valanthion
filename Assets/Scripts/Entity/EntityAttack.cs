@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EntityAttack : MonoBehaviour {
 
+    private Animator anim;
+
     private Entity entity;
 
     public LayerMask targetLayer;
@@ -17,6 +19,8 @@ public class EntityAttack : MonoBehaviour {
 
     private void Start()
     {
+        anim = GetComponent<Animator>();
+
         entity = GetComponent<Entity>();
     }
 
@@ -49,6 +53,7 @@ public class EntityAttack : MonoBehaviour {
     {
         if (!isAttacking)
         {
+            anim.SetBool("Is Attacking", true);
             isAttacking = true;
             atkTimer = atkCooldown;
 
