@@ -68,8 +68,6 @@ public class MeleeEnemy : Enemy, IEnemy {
             currDir = Vector2.left;
         }
 
-        Debug.Log(CurrState);
-
         switch (CurrState)
         {
             case EnemyState.PATROL:
@@ -159,7 +157,7 @@ public class MeleeEnemy : Enemy, IEnemy {
                 // Flip();
                 Flip(false);
             }
-            else
+            else if(player.transform.position.x > transform.position.x)
             {
                 // IsFacingRight = !true;
                 // Flip();
@@ -174,8 +172,7 @@ public class MeleeEnemy : Enemy, IEnemy {
     {
         anim.SetFloat("Speed", 0.0f);
 
-        distance = Vector3.Distance(transform.position, player.transform.position);
-
+        distance = Mathf.Abs(transform.position.x - player.transform.position.x);
         if (distance > range)
         {
             CurrState = EnemyState.CHASE;

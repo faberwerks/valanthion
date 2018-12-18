@@ -82,7 +82,7 @@ public class MainMenuManager : MonoBehaviour {
             if (GUILayout.Button("Save"))
             {
                 SaveLoad.Save();
-                SceneManager.LoadScene("DemoLevel");
+                SceneManager.LoadScene("DemoLevel2");
             }
 
             GUILayout.Space(10);

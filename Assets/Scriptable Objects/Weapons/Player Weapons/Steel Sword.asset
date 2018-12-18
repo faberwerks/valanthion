@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 1
   weaponType: 0
-  attackStrength: 2
+  attackStrength: 20
   attackSpeed: 3
   attackRange: 1

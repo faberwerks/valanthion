@@ -35,7 +35,6 @@ public class Inventory : MonoBehaviour {
         attackPotionInfo.count = 0;
 
         items.Add(attackPotionInfo);
-		Debug.Log ("NAMBAH ATTACK LO!!!");
 
         ItemInfo defensePotionInfo = new ItemInfo();
         defensePotionInfo.itemName = "Defense Potion";
@@ -43,7 +42,6 @@ public class Inventory : MonoBehaviour {
         defensePotionInfo.count = 0;
 
         items.Add(defensePotionInfo);
-		Debug.Log ("NAMBAH DEFENSE LO!!!");
     }
 
     // a method to add an item to the inventory

@@ -25,7 +25,7 @@ public class Weapon : MonoBehaviour
                 WeaponType = weaponItem.weaponType;
                 Atk = weaponItem.attackStrength;
                 AtkRange = weaponItem.attackRange;
-                AtkSpeed = weaponItem.attackSpeed;
+                AtkSpeed = 3 / weaponItem.attackSpeed;
                 break;
             }
         }

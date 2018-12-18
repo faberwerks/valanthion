@@ -94,6 +94,11 @@ public class Enemy : Entity
         this.stageSetting = stageSetting;
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Flip();
+    }
+
     /////// COROUTINES ///////
     protected IEnumerator CTimeColorChange()
     {

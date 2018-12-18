@@ -77,21 +77,21 @@ public class RangedEnemy : Enemy, IEnemy {
     // a method to handle ranged enemy patrol
     public void Patrol()
     {
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10.0f, playerLayer);
+        Collider2D[] target = Physics2D.OverlapBoxAll(transform.position, currDir * detectionRange, 0, playerLayer);
 
-        if (colls.Length > 0)
+        if (target.Length > 0)
         {
-            player = colls[0].gameObject;
-            CurrState = EnemyState.ATTACK;
+            player = target[0].gameObject;
+            CurrState = EnemyState.CHASE;
             return;
         }
 
         if (Mathf.Abs(originalPos.x - transform.position.x) >= 3.0f)
         {
-            localMove *= -1;
+            Flip();
         }
 
-        Move(localMove);
+        Move();
     }
 
     // a method to handle ranged enemy guarding

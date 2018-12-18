@@ -18,8 +18,8 @@ TagManager:
   - 
   - Player
   - Enemy
-  - 
-  - 
+  - Platform Marker
+  - Obstacle
   - 
   - 
   - 
@@ -44,8 +44,14 @@ TagManager:
   - name: Background
     uniqueID: 1194463309
     locked: 0
-  - name: Background Tiles
+  - name: Background Tile
     uniqueID: 3610779831
+    locked: 0
+  - name: Obstacle
+    uniqueID: 2010517669
+    locked: 0
+  - name: Item
+    uniqueID: 3166123815
     locked: 0
   - name: Player
     uniqueID: 3393162785
