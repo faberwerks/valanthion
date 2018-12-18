@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db503df146437b418888695b4e50a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 10
+  isFacingRight: 0
   initialState: 0
 --- !u!212 &212476678351163220
 SpriteRenderer:

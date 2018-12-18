@@ -33,7 +33,7 @@ public class Player : Entity
     {
         // base class initialisation
         rb = gameObject.GetComponent<Rigidbody2D>();
-        // anim = gameObject.GetComponent<Animator>();
+        anim = gameObject.GetComponent<Animator>();
 
         maxHealth = 100;
         health = maxHealth;
@@ -101,6 +101,8 @@ public class Player : Entity
         if (collision.gameObject.CompareTag("Ground"))
         {
             isJumping = false;
+            anim.SetBool("Is Jumping", false);
+            anim.SetBool("Is Double Jumping", false);
         }
     }
 
@@ -108,16 +110,8 @@ public class Player : Entity
     // a method to player input for movement
     public void InputMove()
     {
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            IsFacingRight = true;
-            Move();
-        }
-        else if (Input.GetAxis("Horizontal") < 0)
-        {
-            IsFacingRight = false;
-            Move();
-        }
+        float tempMove = Input.GetAxis("Horizontal");
+        Move(tempMove);
     }
 
     // a method to handle skill use input
@@ -140,6 +134,7 @@ public class Player : Entity
                 rb.AddForce(jumpForce * jumpPower, ForceMode2D.Impulse);
                 canDoubleJump = true;
                 isJumping = true;
+                anim.SetBool("Is Jumping", true);
                 stamina -= 10;
             }
             else
@@ -149,6 +144,7 @@ public class Player : Entity
                     canDoubleJump = false;
                     rb.velocity = new Vector2(rb.velocity.x, 0);
                     rb.AddForce(jumpForce * jumpPower, ForceMode2D.Impulse);
+                    anim.SetBool("Is Double Jumping", true);
                     stamina -= 10;
                 }
             }

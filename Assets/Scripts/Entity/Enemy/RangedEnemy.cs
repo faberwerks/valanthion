@@ -47,13 +47,16 @@ public class RangedEnemy : Enemy, IEnemy {
 
         if (IsFacingRight)
         {
+            localMove = 1.0f;
             currDir = Vector2.right;
         }
         else
         {
+            localMove = -1.0f;
             currDir = Vector2.left;
         }
 
+        Debug.Log(CurrState);
         switch (CurrState)
         {
             case EnemyState.PATROL:
@@ -85,10 +88,10 @@ public class RangedEnemy : Enemy, IEnemy {
 
         if (Mathf.Abs(originalPos.x - transform.position.x) >= 3.0f)
         {
-            IsFacingRight = !IsFacingRight;
+            localMove *= -1;
         }
 
-        Move();
+        Move(localMove);
     }
 
     // a method to handle ranged enemy guarding
@@ -136,9 +139,16 @@ public class RangedEnemy : Enemy, IEnemy {
 
         if (distance < 3.0f)
         {
-            IsFacingRight = player.GetComponent<Player>().IsFacingRight;
+            if (player.GetComponent<Player>().IsFacingRight)
+            {
+                localMove = 1.0f;
+            }
+            else
+            {
+                localMove = -1.0f;
+            }
 
-            Move();
+            Move(localMove);
         }
         else
         {

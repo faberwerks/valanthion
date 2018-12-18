@@ -49,10 +49,12 @@ public class MeleeEnemy : Enemy, IEnemy {
 
         if (IsFacingRight)
         {
+            localMove = 1.0f;
             currDir = Vector2.right;
         }
         else
         {
+            localMove = -1.0f;
             currDir = Vector2.left;
         }
 
@@ -87,10 +89,10 @@ public class MeleeEnemy : Enemy, IEnemy {
 
         if (Mathf.Abs(originalPos.x - transform.position.x) >= 3.0f)
         {
-            IsFacingRight = !IsFacingRight;
+            localMove *= -1;
         }
 
-        Move();
+        Move(localMove);
     }
 
     // a method to handle melee enemy guarding
@@ -111,7 +113,7 @@ public class MeleeEnemy : Enemy, IEnemy {
     {
         distance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (distance <= 1.0f)
+        if (distance <= range + 3.0f)
         {
             CurrState = EnemyState.ATTACK;
             return;
@@ -125,13 +127,12 @@ public class MeleeEnemy : Enemy, IEnemy {
         {
             if (player.transform.position.x < transform.position.x)
             {
-                IsFacingRight = false;
+                Move(-1.0f);
             }
             else
             {
-                isFacingRight = true;
+                Move(1.0f);
             }
-            Move();
         }
     }
 

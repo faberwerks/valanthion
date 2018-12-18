@@ -27,21 +27,48 @@ public class Entity : MonoBehaviour
     protected float atk;
     protected float initialAtk;
 
-    protected bool isFacingRight;
+    [SerializeField] protected float maxSpeed = 10f;
+
+    protected float localMove;
+
+    [SerializeField] protected bool isFacingRight;
 
     // a method to move entity
-    protected void Move()
+    protected void Move(float move)
     {
+        /*
         switch (isFacingRight)
         {
             case true:
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                rb.AddForce(Vector2.right * speed * Time.deltaTime , ForceMode2D.Impulse);
                 break;
 
             case false:
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                rb.AddForce(Vector2.left * speed * Time.deltaTime , ForceMode2D.Impulse);
                 break;
         }
+        */
+
+        anim.SetFloat("Speed", Mathf.Abs(move));
+        rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
+
+        if (move > 0 && !IsFacingRight)
+        {
+            Flip();
+        }
+        else if (move < 0 && IsFacingRight)
+        {
+            Flip();
+        }
+    }
+
+    protected void Flip()
+    {
+        IsFacingRight = !IsFacingRight;
+
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     // a method to handle entity death
