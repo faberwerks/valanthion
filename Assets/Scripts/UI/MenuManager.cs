@@ -24,6 +24,8 @@ public class MenuManager : MonoBehaviour {
 		switch (GameManager.Instance.CurrGameState)
         {
             case GameManager.GameState.PLAYING:
+                defeatPanel.SetActive(false);
+                victoryPanel.SetActive(false);
                 break;
             case GameManager.GameState.VICTORY:
                 VictoryMenu();

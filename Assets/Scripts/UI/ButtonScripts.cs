@@ -28,20 +28,17 @@ public class ButtonScripts : MonoBehaviour {
     public void Play()
     {
         SceneManager.LoadScene("DemoLevel");
-        GameManager.Instance.Playing(true);
     }
 
     // a method to restart a level
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        GameManager.Instance.Playing(true);
     }
 
     // a method to handle trying again
     public void TryAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        GameManager.Instance.Playing(true);
     }
 }

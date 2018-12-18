@@ -276,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01e1c5f6cdc8c934fb0294e38354e7f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  skillList: {fileID: 11400000, guid: 356c239c5e4ead841997783a7f346998, type: 2}
+  skillList: {fileID: 11400000, guid: ac5f802fce84fcc41bfc9d8e74bd6aa0, type: 2}
 --- !u!212 &212317164377529756
 SpriteRenderer:
   m_ObjectHideFlags: 1

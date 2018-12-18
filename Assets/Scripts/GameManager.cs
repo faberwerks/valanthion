@@ -40,10 +40,11 @@ public class GameManager {
     }
 
     // a method to reset game state
-    public void Playing(bool playing)
+    public void Playing()
     {
         CurrGameState = GameState.PLAYING;
         Time.timeScale = 1.0f;
+        Debug.Log("GAME STATE CHANGED TO PLAYING");
     }
 
     /////// PROPERTIES ///////

@@ -37,6 +37,8 @@ public class StageSetting : MonoBehaviour
         countupTimer = 0.0f;
 
         FindEnemies();
+
+        GameManager.Instance.Playing();
     }
 
     // a method to count up
