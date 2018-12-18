@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuButtonScripts : MonoBehaviour {
 
-    private MainMenuManager mainMenuManager;
+    // private MainMenuManager mainMenuManager;
 
     private void Awake()
     {
-        mainMenuManager = GetComponent<MainMenuManager>();
+        // mainMenuManager = GetComponent<MainMenuManager>();
     }
 
     // a method to toggle the new game panel

@@ -7,14 +7,10 @@ public class FallDeath : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll)
     {
 
-        if (coll.gameObject.tag == "Player")
+        if (coll.gameObject.CompareTag("Player") || coll.gameObject.CompareTag("Enemy"))
         {
-            coll.gameObject.GetComponent<Player>().Health = 0;
+            coll.gameObject.GetComponent<Entity>().Health = 0;
 
-        }
-        else if (coll.gameObject.tag == "Enemy")
-        {
-            coll.gameObject.GetComponent<Enemy>().Health = 0;
         }
     }
 }

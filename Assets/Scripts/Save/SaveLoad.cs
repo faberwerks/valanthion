@@ -8,6 +8,7 @@ public static class SaveLoad {
 
     public static List<Game> savedGames = new List<Game>();
 
+    // a method to save a game
     public static void Save()
     {
         savedGames.Add(Game.current);
@@ -17,6 +18,7 @@ public static class SaveLoad {
         file.Close();
     }
 
+    // a method to load games
     public static void Load()
     {
         if (File.Exists(Application.persistentDataPath + "/savedGames.gd"))

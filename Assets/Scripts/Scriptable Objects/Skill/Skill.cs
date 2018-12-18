@@ -29,9 +29,6 @@ public class Skill : ScriptableObject {
     public bool knocksBack = false;
     public bool cripples = false;
 
-    public bool isCounter = false;
-    public bool isStance = false;
-
     public bool buffs = false;
     public bool attackStrength = false;
     public bool attackSpeed = false;
