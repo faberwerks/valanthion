@@ -38,6 +38,7 @@ public class SkillControl : MonoBehaviour {
     {
         Skill skill = skillProcessor.GetSkill(skillNumber);
 
+        Debug.Log(skill.skillName);
         if (cooldownTimers[skillNumber - 1] > 0)
         {
             return;
