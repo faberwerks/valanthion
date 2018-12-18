@@ -178,7 +178,7 @@ public class Player : Entity
         {
             if (inv.items[1].count > 0)
             {
-                Stamina += inv.items[0].value;
+                Stamina += inv.items[1].value;
                 inv.RemoveItem("Stamina Potion");
             }
         }
@@ -186,7 +186,7 @@ public class Player : Entity
         {
             if (inv.items[2].count > 0)
             {
-                atk += inv.items[0].value;
+                atk += inv.items[2].value;
                 inv.RemoveItem("Attack Potion");
                 Debug.Log("Damage Buff :" + atk);
             }
@@ -195,7 +195,7 @@ public class Player : Entity
         {
             if (inv.items[3].count > 0)
             {
-                defense += inv.items[0].value;
+                defense += inv.items[3].value;
                 inv.RemoveItem("Defense Potion");
                 Debug.Log("Defense Buff :" + defense);
             }
