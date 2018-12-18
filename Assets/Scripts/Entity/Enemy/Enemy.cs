@@ -34,10 +34,43 @@ public class Enemy : Entity
     // the following variables are to countdown the change colour after getting hit
     protected float colorTime;
     protected float colorTimer;
+    public float detectionRange;
 
     protected int playerLayer;
 
     protected ushort expValue;
+
+    protected void Move()
+    {
+        anim.SetFloat("Speed", 1.0f);
+
+        switch (isFacingRight)
+        {
+            case true:
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
+                break;
+            case false:
+                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                break;
+        }
+    }
+
+    protected void Flip(bool faceRight)
+    {
+        IsFacingRight = faceRight;
+
+        Vector3 scale = transform.localScale;
+
+        if (faceRight)
+        {
+            scale.x = 1;
+        }
+        else
+        {
+            scale.x = -1;
+        }
+        transform.localScale = scale;
+    }
 
     protected override void CheckDeath()
     {

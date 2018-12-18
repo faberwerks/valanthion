@@ -26,7 +26,7 @@ public class MeleeEnemy : Enemy, IEnemy {
         atkSpeed = 2.0f;
 
         range = weapon.AtkRange;
-        speed = 3;
+        speed = (int) maxSpeed;
         atk = weapon.Atk;
         defense = 10;
 
@@ -43,6 +43,7 @@ public class MeleeEnemy : Enemy, IEnemy {
 
         ExpValue = 100;
 
+        /*
         if (IsFacingRight)
         {
             localMove = -1.0f;
@@ -51,12 +52,12 @@ public class MeleeEnemy : Enemy, IEnemy {
         {
             localMove = 1.0f;
         }
+        */
     }
 	
 	// Update is called once per frame
 	void Update () {
         CheckDeath();
-        Debug.Log(isFacingRight);
 
         if (IsFacingRight)
         {
@@ -66,6 +67,8 @@ public class MeleeEnemy : Enemy, IEnemy {
         {
             currDir = Vector2.left;
         }
+
+        Debug.Log(CurrState);
 
         switch (CurrState)
         {
@@ -82,37 +85,51 @@ public class MeleeEnemy : Enemy, IEnemy {
                 Attack();
                 break;
         }
-        Debug.Log(CurrState);
+    }
+
+    private void FixedUpdate()
+    {
+        /*
+        switch (CurrState)
+        {
+            case EnemyState.PATROL:
+            case EnemyState.CHASE:
+                Move(localMove);
+                break;
+        }
+        */
     }
 
     // a method to handle melee enemy patrol
     public void Patrol()
     {
-        hit = Physics2D.Raycast(transform.position, currDir, 5.0f, playerLayer);
+        Collider2D[] target = Physics2D.OverlapBoxAll(transform.position, currDir * detectionRange, 0, playerLayer);
 
-        if (hit)
+        if (target.Length > 0)
         {
-            player = hit.transform.gameObject;
+            player = target[0].gameObject;
             CurrState = EnemyState.CHASE;
             return;
         }
 
         if (Mathf.Abs(originalPos.x - transform.position.x) >= 3.0f)
         {
-            localMove *= -1;
+            Flip();
         }
 
-        Move(localMove);
+        Move();
     }
 
     // a method to handle melee enemy guarding
     public void Guard()
     {
-        hit = Physics2D.Raycast(transform.position, currDir, 5.0f, playerLayer);
+        anim.SetFloat("Speed", 0.0f);
 
-        if (hit)
+        Collider2D[] target = Physics2D.OverlapBoxAll(transform.position, currDir * detectionRange, 0, playerLayer);
+
+        if (target.Length > 0)
         {
-            player = hit.transform.gameObject;
+            player = target[0].gameObject;
             CurrState = EnemyState.CHASE;
             return;
         }
@@ -128,7 +145,7 @@ public class MeleeEnemy : Enemy, IEnemy {
             CurrState = EnemyState.ATTACK;
             return;
         }
-        else if (distance > 5.0f)
+        else if (distance > detectionRange)
         {
             CurrState = InitialState;
             originalPos = transform.position;
@@ -138,21 +155,28 @@ public class MeleeEnemy : Enemy, IEnemy {
         {
             if (player.transform.position.x < transform.position.x)
             {
-                Move(-1.0f);
+                // IsFacingRight = !false;
+                // Flip();
+                Flip(false);
             }
             else
             {
-                Move(1.0f);
+                // IsFacingRight = !true;
+                // Flip();
+                Flip(true);
             }
+            Move();
         }
     }
 
     // a method to handle melee enemy attack
     public void Attack()
     {
+        anim.SetFloat("Speed", 0.0f);
+
         distance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (distance > 1.0f)
+        if (distance > range)
         {
             CurrState = EnemyState.CHASE;
             return;
@@ -164,8 +188,6 @@ public class MeleeEnemy : Enemy, IEnemy {
                 entityAttack.Attack(Atk, range);
             }
         }
-
-        // Move(0);
     }
 
     public void Retreat() { }

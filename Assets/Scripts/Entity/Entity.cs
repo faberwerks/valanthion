@@ -51,6 +51,7 @@ public class Entity : MonoBehaviour
 
         anim.SetFloat("Speed", Mathf.Abs(move));
         rb.velocity = new Vector2(move * maxSpeed, rb.velocity.y);
+        // Debug.Log("MOVING!: " + move * maxSpeed);
 
         if (move > 0 && !IsFacingRight)
         {
