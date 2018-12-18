@@ -1,11 +1,9 @@
-﻿/*
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
 [CustomEditor(typeof(Skill))]
-[CanEditMultipleObjects]
 public class SkillEditor : Editor {
     SerializedProperty skillId;
     SerializedProperty skillName;
@@ -76,9 +74,8 @@ public class SkillEditor : Editor {
         EditorGUILayout.PropertyField(executionTime);
         EditorGUILayout.PropertyField(staminaCost);
 
-        dealsDamageToggle = EditorGUILayout.Toggle("Deals Damage", dealsDamage.boolValue);
-
-        // dealsDamage.boolValue = dealsDamageToggle;
+        dealsDamageToggle = EditorGUILayout.Toggle("Deals Damage", dealsDamageToggle);
+        dealsDamage.boolValue = dealsDamageToggle;
 
         if (dealsDamageToggle)
         {
@@ -98,6 +95,7 @@ public class SkillEditor : Editor {
                 }
             }
         }
+
+        serializedObject.ApplyModifiedProperties();
     }
 }
-*/

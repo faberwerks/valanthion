@@ -11,7 +11,7 @@ public class Obstacle : MonoBehaviour {
 
     private void Update()
     {
-        if (CheckHealth())
+        if (!CheckHealth())
         {
             Destroy(gameObject);
         }

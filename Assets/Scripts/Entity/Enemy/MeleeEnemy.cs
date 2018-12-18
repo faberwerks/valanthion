@@ -20,6 +20,7 @@ public class MeleeEnemy : Enemy, IEnemy {
         sprRend = GetComponent<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
 
         health = 100;
         atkSpeed = 2.0f;
@@ -41,20 +42,28 @@ public class MeleeEnemy : Enemy, IEnemy {
         colorTimer = colorTime;
 
         ExpValue = 100;
+
+        if (IsFacingRight)
+        {
+            localMove = -1.0f;
+        }
+        else
+        {
+            localMove = 1.0f;
+        }
     }
 	
 	// Update is called once per frame
 	void Update () {
         CheckDeath();
+        Debug.Log(isFacingRight);
 
         if (IsFacingRight)
         {
-            localMove = 1.0f;
             currDir = Vector2.right;
         }
         else
         {
-            localMove = -1.0f;
             currDir = Vector2.left;
         }
 
@@ -73,6 +82,7 @@ public class MeleeEnemy : Enemy, IEnemy {
                 Attack();
                 break;
         }
+        Debug.Log(CurrState);
     }
 
     // a method to handle melee enemy patrol
@@ -113,7 +123,7 @@ public class MeleeEnemy : Enemy, IEnemy {
     {
         distance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (distance <= range + 3.0f)
+        if (distance <= range)
         {
             CurrState = EnemyState.ATTACK;
             return;
@@ -121,6 +131,7 @@ public class MeleeEnemy : Enemy, IEnemy {
         else if (distance > 5.0f)
         {
             CurrState = InitialState;
+            originalPos = transform.position;
             return;
         }
         else
@@ -153,6 +164,8 @@ public class MeleeEnemy : Enemy, IEnemy {
                 entityAttack.Attack(Atk, range);
             }
         }
+
+        // Move(0);
     }
 
     public void Retreat() { }
