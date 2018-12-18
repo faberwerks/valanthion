@@ -44,7 +44,6 @@ public class GameManager {
     {
         CurrGameState = GameState.PLAYING;
         Time.timeScale = 1.0f;
-        Debug.Log("GAME STATE CHANGED TO PLAYING");
     }
 
     /////// PROPERTIES ///////
