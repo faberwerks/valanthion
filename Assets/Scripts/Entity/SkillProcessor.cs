@@ -29,6 +29,7 @@ public class SkillProcessor : MonoBehaviour {
         {
             if (skill.skillNumber == skillNumber)
             {
+                Debug.Log("Found skill!");
                 return skill;
             }
         }

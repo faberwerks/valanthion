@@ -31,9 +31,6 @@ public class Enemy : Entity
     protected float atkTimer;
     protected float distance;
     protected float range;
-    // the following variables are to countdown the change colour after getting hit
-    protected float colorTime;
-    protected float colorTimer;
     public float detectionRange;
 
     protected int playerLayer;
@@ -42,7 +39,7 @@ public class Enemy : Entity
 
     protected void Move()
     {
-        // anim.SetFloat("Speed", 1.0f);
+        anim.SetFloat("Speed", 1.0f);
 
         switch (isFacingRight)
         {
@@ -79,13 +76,6 @@ public class Enemy : Entity
             stageSetting.RemoveEnemy(expValue, gameObject);
             Destroy(gameObject);
         }
-    }
-
-    // a method to handle enemy taking damage
-    public override void TakeDamage(float atk)
-    {
-        base.TakeDamage(atk);
-        StartCoroutine(CTimeColorChange());
     }
 
     // a method to get a reference to the stage setting

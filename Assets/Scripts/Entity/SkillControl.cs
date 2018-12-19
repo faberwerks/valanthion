@@ -8,17 +8,27 @@ public class SkillControl : MonoBehaviour {
 
     private SkillProcessor skillProcessor;
 
+    private Weapon weapon;
+
     private Vector2 currDir;
 
     public LayerMask targetLayer;
 
     private float[] cooldownTimers = new float[6];
 
+    private float weaponDamage;
+    private float weaponRange;
+
 	// Use this for initialization
 	void Start () {
         player = GetComponent<Player>();
 
         skillProcessor = GetComponent<SkillProcessor>();
+
+        weapon = GetComponent<Weapon>();
+
+        weaponDamage = weapon.Atk;
+        weaponRange = weapon.AtkRange;
 	}
 	
 	// Update is called once per frame
@@ -62,11 +72,11 @@ public class SkillControl : MonoBehaviour {
         {
             if (skill.singleTarget)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
                 if (hit)
                 {
-                    hit.collider.SendMessage("TakeDamage", skill.damage);
+                    hit.collider.SendMessage("TakeDamage", skill.damageMultiplier * weaponDamage);
                     
                     if (skill.bleeding)
                     {
@@ -76,11 +86,11 @@ public class SkillControl : MonoBehaviour {
             }
             else if (skill.multipleTargets)
             {
-                Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position, new Vector2(5, 1), 0, targetLayer);
+                Collider2D[] targets = Physics2D.OverlapBoxAll(transform.position, new Vector2(weaponRange, 1), 0, targetLayer);
 
                 foreach (Collider2D target in targets)
                 {
-                    target.SendMessage("TakeDamage", skill.damage);
+                    target.SendMessage("TakeDamage", skill.damageMultiplier * weaponDamage);
                     
                     if (skill.bleeding)
                     {
@@ -93,7 +103,7 @@ public class SkillControl : MonoBehaviour {
         // Defense Handling
         if (skill.reducesDefense)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -110,7 +120,7 @@ public class SkillControl : MonoBehaviour {
         // Slowdown, stun, knockback, cripple
         if (skill.slowsDownTarget)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -119,7 +129,7 @@ public class SkillControl : MonoBehaviour {
         }
         if (skill.stuns)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -132,7 +142,7 @@ public class SkillControl : MonoBehaviour {
 
             knockbackForce = player.IsFacingRight ? knockbackForce : knockbackForce * -1;
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -141,7 +151,7 @@ public class SkillControl : MonoBehaviour {
         }
         if (skill.cripples)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, 10.0f, targetLayer);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {

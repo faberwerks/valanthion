@@ -18,6 +18,9 @@ public class Entity : MonoBehaviour
     protected float initialMaxHealth;
     protected float atkSpeed;
     protected float initialAtkSpeed;
+    // the following variables are to countdown the change colour after getting hit
+    protected float colorTime;
+    protected float colorTimer;
 
     protected int speed;
     protected int defense;
@@ -87,6 +90,8 @@ public class Entity : MonoBehaviour
         float damage = atk * (100.0f / (100 + Defense));
 
         Health -= Mathf.FloorToInt(damage);
+
+        StartCoroutine(CTimeColorChange());
     }
 
     // a method to slow down entity
@@ -276,7 +281,23 @@ public class Entity : MonoBehaviour
 
         yield break;
     }
-    
+
+    // color change timer
+    protected IEnumerator CTimeColorChange()
+    {
+        sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
+        colorTimer = colorTime;
+
+        while (colorTimer > 0)
+        {
+            colorTimer -= Time.deltaTime;
+            yield return 0;
+        }
+
+        sprRend.color = new Color(255f, 255f, 255f, 255f);
+        yield break;
+    }
+
     /////// PROPERTIES ///////
     public float Health
     {

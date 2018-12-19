@@ -17,7 +17,7 @@ public class Skill : ScriptableObject {
     public bool singleTarget = false;
     public bool multipleTargets = false;
     public bool bleeding = false;
-    public float damage = 0;
+    public float damageMultiplier = 0; // percentage of weapon's damage
     public float bleedingDamage = 0;
 
     public bool reducesDefense = false;

@@ -34,11 +34,15 @@ public class Player : Entity
         // base class initialisation
         rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        sprRend = GetComponent<SpriteRenderer>();
 
         maxHealth = 100;
         health = maxHealth;
 
         speed = 5;
+
+        colorTime = 0.2f;
+        colorTimer = colorTime;
 
         // this class initialisation
         entityAttack = GetComponent<EntityAttack>();
@@ -126,6 +130,10 @@ public class Player : Entity
         if (Input.GetKeyDown(KeyCode.A))
         {
             skillControl.UseSkill((byte)1);
+        }
+        else if (Input.GetKeyDown(KeyCode.S))
+        {
+            skillControl.UseSkill((byte)2);
         }
     }
 
