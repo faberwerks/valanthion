@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ArrowBehavior : MonoBehaviour
 {
-
     public Vector2 CurrDir { get; set; }
 
     public float attackStrength;
@@ -19,6 +18,7 @@ public class ArrowBehavior : MonoBehaviour
     private void Update()
     {
         Move();
+        Debug.Log(transform.position);
     }
 
     private void OnDisable()
@@ -26,12 +26,20 @@ public class ArrowBehavior : MonoBehaviour
         CancelInvoke();
     }
 
-    private void Move()
+    public void Move()
     {
+        /*
         transform.Translate(CurrDir * speed);
 
         float angle = Mathf.Atan2(CurrDir.y, CurrDir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
+        */
+        if (transform.position.x == CurrDir.x && transform.position.y == CurrDir.y)
+        {
+            Destroy();
+            return;
+        }
+        transform.position = Vector2.MoveTowards(transform.position, CurrDir, speed * Time.deltaTime);
     }
 
     private void Destroy()

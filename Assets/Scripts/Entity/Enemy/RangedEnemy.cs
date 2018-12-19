@@ -45,6 +45,7 @@ public class RangedEnemy : Enemy, IEnemy {
 	void Update () {
         CheckDeath();
 
+        /*
         if (IsFacingRight)
         {
             localMove = 1.0f;
@@ -55,6 +56,8 @@ public class RangedEnemy : Enemy, IEnemy {
             localMove = -1.0f;
             currDir = Vector2.left;
         }
+        */
+        currDir = new Vector2(1, 1);
 
         Debug.Log(CurrState);
         switch (CurrState)
@@ -82,7 +85,7 @@ public class RangedEnemy : Enemy, IEnemy {
         if (target.Length > 0)
         {
             player = target[0].gameObject;
-            CurrState = EnemyState.CHASE;
+            CurrState = EnemyState.ATTACK;
             return;
         }
 
@@ -97,11 +100,11 @@ public class RangedEnemy : Enemy, IEnemy {
     // a method to handle ranged enemy guarding
     public void Guard()
     {
-        Collider2D[] colls = Physics2D.OverlapCircleAll(transform.position, 10.0f, playerLayer);
+        Collider2D[] target = Physics2D.OverlapBoxAll(transform.position, currDir * detectionRange, 0, playerLayer);
 
-        if (colls.Length > 0)
+        if (target.Length > 0)
         {
-            player = colls[0].gameObject;
+            player = target[0].gameObject;
             CurrState = EnemyState.ATTACK;
             return;
         }
@@ -112,7 +115,7 @@ public class RangedEnemy : Enemy, IEnemy {
     {
         distance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (distance > 10.0f)
+        if (distance > detectionRange)
         {
             CurrState = InitialState;
             return;
@@ -135,6 +138,7 @@ public class RangedEnemy : Enemy, IEnemy {
     // a method to handle ranged enemy retreat
     public void Retreat()
     {
+        /*
         distance = Vector3.Distance(transform.position, player.transform.position);
 
         if (distance < 3.0f)
@@ -155,13 +159,36 @@ public class RangedEnemy : Enemy, IEnemy {
             CurrState = EnemyState.ATTACK;
             return;
         }
+        */
+
+        distance = Vector3.Distance(transform.position, player.transform.position);
+
+        if (distance < 3.0f)
+        {
+            if (player.transform.position.x > transform.position.x)
+            {
+                Flip(false);
+            }
+            else
+            {
+                Flip(true);
+            }
+
+            Move();
+        }
+        else
+        {
+            CurrState = EnemyState.ATTACK;
+            return;
+        }
     }
 
     public void Chase() { }
 
     // a method to determine the direction of the shot arrow
-    private Vector2 FindArrowDir()
+    private Quaternion FindArrowDir()
     {
+        /*
         Vector2 dir;
 
         float x = player.transform.position.x - transform.position.x;
@@ -169,8 +196,18 @@ public class RangedEnemy : Enemy, IEnemy {
         float y = player.transform.position.y - transform.position.y;
 
         dir = new Vector2(x, y);
+        */
+        Vector3 targ = player.transform.position;
 
-        // Debug.Log(dir);
+        targ.z = 0;
+
+        Vector3 objectPos = transform.position;
+        targ.x = targ.x - objectPos.x;
+        targ.y = targ.y - objectPos.y;
+
+        float angle = Mathf.Atan2(targ.y, targ.x) * Mathf.Rad2Deg;
+
+        Quaternion dir = Quaternion.Euler(new Vector3(0, 0, angle));
         return dir;
     }
 }

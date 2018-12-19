@@ -33,7 +33,7 @@ public class RangedAttack : MonoBehaviour
     }
 
     // a method to handle entity attacks
-    public void Fire(Vector2 dir, Transform target)
+    public void Fire(Quaternion dir, Transform target)
     {
         if (!isAttacking)
         {
@@ -43,7 +43,8 @@ public class RangedAttack : MonoBehaviour
             GameObject obj = ObjectPooler.current.GetPooledObject();
 
             obj.transform.position = transform.position;
-            obj.GetComponent<ArrowBehavior>().CurrDir = dir;
+            obj.transform.rotation = dir;
+            obj.GetComponent<ArrowBehavior>().CurrDir = new Vector2(target.position.x, target.position.y);
             obj.SetActive(true);
         }
     }

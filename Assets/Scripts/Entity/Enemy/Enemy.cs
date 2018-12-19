@@ -42,7 +42,7 @@ public class Enemy : Entity
 
     protected void Move()
     {
-        anim.SetFloat("Speed", 1.0f);
+        // anim.SetFloat("Speed", 1.0f);
 
         switch (isFacingRight)
         {
