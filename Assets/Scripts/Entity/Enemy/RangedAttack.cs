@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RangedAttack : MonoBehaviour
 {
+    private Animator anim;
+
     private Vector2 currDir;
 
     private float atkTimer = 0;
@@ -13,7 +15,7 @@ public class RangedAttack : MonoBehaviour
 
     private void Start()
     {
-        
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -37,6 +39,8 @@ public class RangedAttack : MonoBehaviour
     {
         if (!isAttacking)
         {
+            anim.SetBool("Is Attacking", true);
+
             isAttacking = true;
             atkTimer = atkCooldown;
 

@@ -48,7 +48,6 @@ public class SkillControl : MonoBehaviour {
     {
         Skill skill = skillProcessor.GetSkill(skillNumber);
 
-        Debug.Log(skill.skillName);
         if (cooldownTimers[skillNumber - 1] > 0)
         {
             return;
@@ -67,12 +66,14 @@ public class SkillControl : MonoBehaviour {
             return;
         }
 
+        RaycastHit2D hit;
+
         // Damage Handling
         if (skill.dealsDamage)
         {
             if (skill.singleTarget)
             {
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
+                hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
                 if (hit)
                 {
@@ -100,6 +101,47 @@ public class SkillControl : MonoBehaviour {
             }
         }
 
+        // Dash handling
+        if (skill.dashes)
+        {
+            player.Dash();
+        }
+
+
+        hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
+
+        if (hit)
+        {
+            if (skill.reducesDefense)
+            {
+                hit.collider.SendMessage("ReduceDefense", 5);
+            }
+
+            if (skill.slowsDownTarget)
+            {
+                hit.collider.SendMessage("SlowDown", 1);
+            }
+
+            if (skill.stuns)
+            {
+                hit.collider.SendMessage("Stun");
+            }
+
+            if (skill.knocksBack)
+            {
+                float knockbackForce = 100.0f;
+
+                knockbackForce = player.IsFacingRight ? knockbackForce : knockbackForce * -1;
+
+                hit.collider.SendMessage("Knockback", knockbackForce);
+            }
+
+            if (skill.cripples)
+            {
+                hit.collider.SendMessage("Cripple", 3);
+            }
+        }
+        /*
         // Defense Handling
         if (skill.reducesDefense)
         {
@@ -109,12 +151,6 @@ public class SkillControl : MonoBehaviour {
             {
                 hit.collider.SendMessage("ReduceDefense", 5);
             }
-        }
-
-        // Dash handling
-        if (skill.dashes)
-        {
-            player.Dash();
         }
 
         // Slowdown, stun, knockback, cripple
@@ -158,6 +194,7 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
+        */
 
         // Buff handling
         if (skill.buffs)

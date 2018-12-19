@@ -31,8 +31,10 @@ public class Obstacle : MonoBehaviour {
     // a method to damage obstacle health
     public void TakeDamage(float damage)
     {
-        health -= Mathf.FloorToInt(damage);
-        Debug.Log("Obstacle damaged!");
+        if (destroyable)
+        {
+            health -= Mathf.FloorToInt(damage);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D c)

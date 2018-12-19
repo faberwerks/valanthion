@@ -35,6 +35,9 @@ public class MeleeEnemy : Enemy, IEnemy {
         entityAttack = GetComponent<EntityAttack>();
         originalPos = transform.position;
 
+        //remove this later
+        initialColor = sprRend.color;
+
         CurrState = InitialState;
 
         entityAttack.AtkCooldown = weapon.AtkSpeed;
@@ -42,6 +45,8 @@ public class MeleeEnemy : Enemy, IEnemy {
         colorTimer = colorTime;
 
         ExpValue = 100;
+
+        currDir = new Vector2(1, 1);
 
         /*
         if (IsFacingRight)
@@ -59,14 +64,14 @@ public class MeleeEnemy : Enemy, IEnemy {
 	void Update () {
         CheckDeath();
 
-        if (IsFacingRight)
-        {
-            currDir = Vector2.right;
-        }
-        else
-        {
-            currDir = Vector2.left;
-        }
+        //if (IsFacingRight)
+        //{
+        //    currDir = Vector2.right;
+        //}
+        //else
+        //{
+        //    currDir = Vector2.left;
+        //}
 
         switch (CurrState)
         {

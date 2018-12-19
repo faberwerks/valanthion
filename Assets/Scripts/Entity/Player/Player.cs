@@ -36,6 +36,9 @@ public class Player : Entity
         anim = gameObject.GetComponent<Animator>();
         sprRend = GetComponent<SpriteRenderer>();
 
+        //remove this later
+        initialColor = sprRend.color;
+
         maxHealth = 100;
         health = maxHealth;
 

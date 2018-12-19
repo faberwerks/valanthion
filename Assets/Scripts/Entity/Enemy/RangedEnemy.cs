@@ -18,6 +18,9 @@ public class RangedEnemy : Enemy, IEnemy {
         sprRend = GetComponent<SpriteRenderer>();
 
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        //remove this later
+        initialColor = sprRend.color;
 
         health = 100;
         atkSpeed = 2.0f;
@@ -100,6 +103,8 @@ public class RangedEnemy : Enemy, IEnemy {
     // a method to handle ranged enemy guarding
     public void Guard()
     {
+        anim.SetFloat("Speed", 0);
+
         Collider2D[] target = Physics2D.OverlapBoxAll(transform.position, currDir * detectionRange, 0, playerLayer);
 
         if (target.Length > 0)
@@ -113,6 +118,8 @@ public class RangedEnemy : Enemy, IEnemy {
     // a method to handle ranged enemy attack
     public void Attack()
     {
+        anim.SetFloat("Speed", 0);
+
         distance = Vector3.Distance(transform.position, player.transform.position);
 
         if (distance > detectionRange)

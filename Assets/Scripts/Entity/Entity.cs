@@ -10,6 +10,8 @@ public class Entity : MonoBehaviour
 
     protected Animator anim;
 
+    protected Color initialColor;
+
     protected float maxStamina;
     protected float initialMaxStamina;
 
@@ -294,7 +296,7 @@ public class Entity : MonoBehaviour
             yield return 0;
         }
 
-        sprRend.color = new Color(255f, 255f, 255f, 255f);
+        sprRend.color = initialColor;
         yield break;
     }
 

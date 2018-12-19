@@ -25,6 +25,8 @@ public class Enemy : Entity
 
     protected Weapon weapon;
 
+
+
     public EnemyState initialState;
     protected EnemyState currState;
 
@@ -90,6 +92,7 @@ public class Enemy : Entity
     }
 
     /////// COROUTINES ///////
+    /*
     protected IEnumerator CTimeColorChange()
     {
         sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
@@ -104,6 +107,7 @@ public class Enemy : Entity
         sprRend.color = new Color(255f, 255f, 255f, 255f);
         yield break;
     }
+    */
 
     /////// PROPERTIES ///////
     public EnemyState InitialState
