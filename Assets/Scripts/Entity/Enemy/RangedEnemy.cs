@@ -62,7 +62,7 @@ public class RangedEnemy : Enemy, IEnemy {
         */
         currDir = new Vector2(1, 1);
 
-        Debug.Log(CurrState);
+        //Debug.Log(CurrState);
         switch (CurrState)
         {
             case EnemyState.PATROL:

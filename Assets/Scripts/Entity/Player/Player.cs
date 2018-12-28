@@ -262,7 +262,7 @@ public class Player : Entity
         }
         set
         {
-            if(stamina >= 100)
+            if(stamina > 100)
             {
                 stamina = 100;
             }
