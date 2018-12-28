@@ -12,7 +12,10 @@ public class Bosses1 : Enemy, IEnemy
 
     private int atkCount;
 
+    // this variable control attack delay between combo
     public float comboDelay;
+
+    // this variable control the attack delay
     public float attackDelay;
 
     private bool isAttacking;
@@ -182,6 +185,7 @@ public class Bosses1 : Enemy, IEnemy
         }
     }
 
+    //this function is used to make the boss could do the combo again
     public void ResetCombo()
     {
         if(atkCount == 3)
@@ -197,6 +201,7 @@ public class Bosses1 : Enemy, IEnemy
         }
     }
 
+    // this function is used to control the delay between combo attack
     public void ComboDelay()
     {
         if (isAttacking)
