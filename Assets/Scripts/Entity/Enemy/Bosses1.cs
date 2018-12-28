@@ -12,7 +12,8 @@ public class Bosses1 : Enemy, IEnemy
 
     private int atkCount;
 
-    public float atkDelay;
+    public float comboDelay;
+    public float attackDelay;
 
     private bool isAttacking;
 
@@ -32,7 +33,7 @@ public class Bosses1 : Enemy, IEnemy
         anim = GetComponent<Animator>();
 
         atkCount = 0;
-        atkDelay = 0.5f;
+        comboDelay = 0.5f;
         health = 100;
         atkSpeed = 2.0f;
 
@@ -62,6 +63,8 @@ public class Bosses1 : Enemy, IEnemy
     void Update()
     {
         CheckDeath();
+        ResetCombo();
+        ComboDelay();
 
         switch (CurrState)
         {
@@ -168,7 +171,7 @@ public class Bosses1 : Enemy, IEnemy
         }
         else
         {
-            if (atkCount < 3)
+            if (atkCount < 3 && isAttacking == false)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, playerLayer);
                 if (hit)
@@ -179,13 +182,28 @@ public class Bosses1 : Enemy, IEnemy
         }
     }
 
-    public void attackDelay()
+    public void ResetCombo()
+    {
+        if(atkCount == 3)
+        {
+            if(attackDelay > 0)
+            {
+                attackDelay -= Time.deltaTime;
+            }
+            else
+            {
+                atkCount = 0;
+            }
+        }
+    }
+
+    public void ComboDelay()
     {
         if (isAttacking)
         {
-            if (atkDelay > 0)
+            if (comboDelay > 0)
             {
-                atkTimer -= Time.deltaTime;
+                comboDelay -= Time.deltaTime;
             }
             else
             {
