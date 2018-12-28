@@ -8,6 +8,14 @@ public class Bosses1 : Enemy, IEnemy
 
     protected RaycastHit2D hit;
 
+    private LayerMask targetLayer;
+
+    private int atkCount;
+
+    public float atkDelay;
+
+    private bool isAttacking;
+
     private void Awake()
     {
         weapon = GetComponent<Weapon>();
@@ -23,6 +31,8 @@ public class Bosses1 : Enemy, IEnemy
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
+        atkCount = 0;
+        atkDelay = 0.5f;
         health = 100;
         atkSpeed = 2.0f;
 
@@ -158,9 +168,28 @@ public class Bosses1 : Enemy, IEnemy
         }
         else
         {
-            if (!entityAttack.IsAttacking)
+            if (atkCount < 3)
             {
-                entityAttack.Attack(Atk, range);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, playerLayer);
+                if (hit)
+                {
+                    hit.collider.SendMessage("TakeDamage", atk);
+                }
+            }
+        }
+    }
+
+    public void attackDelay()
+    {
+        if (isAttacking)
+        {
+            if (atkDelay > 0)
+            {
+                atkTimer -= Time.deltaTime;
+            }
+            else
+            {
+                isAttacking = false;
             }
         }
     }
