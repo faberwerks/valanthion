@@ -200,13 +200,19 @@ public class Bosses1 : Enemy, IEnemy
     //this function is used to make the boss could do the combo again
     public void ResetCombo()
     {
-        Debug.Log(attackCd);
         if(attackCd > 0 && atkCount == 3)
         {
+            Debug.Log("counding down to reset");
             attackCd -= Time.deltaTime;
+            if(attackCd <= 0)
+            {
+                Debug.Log("1 step before reset !!");
+                attackCd = -1;
+            }
         }
-        else if(attackCd <= 0 && atkCount == 3)
+        else if(attackCd < 0 && atkCount == 3)
         {
+            Debug.Log("Reseted !!!");
             atkCount = 0;
         }
     }
