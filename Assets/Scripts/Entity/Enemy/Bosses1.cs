@@ -21,6 +21,8 @@ public class Bosses1 : Enemy, IEnemy
 
     private bool isAttacking;
 
+    private bool isCoolingDown = false;
+
     private void Awake()
     {
         weapon = GetComponent<Weapon>();
@@ -70,7 +72,7 @@ public class Bosses1 : Enemy, IEnemy
     void Update()
     {
         CheckDeath();
-        ResetCombo();
+        // ResetCombo();
         ComboDelay();
 
         switch (CurrState)
@@ -180,6 +182,7 @@ public class Bosses1 : Enemy, IEnemy
         {
             if (atkCount < 3)
             {
+                // Debug.Log("COMBO ATTACK!");
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, playerLayer);
                 atkCount += 1;
                 isAttacking = true;
@@ -191,8 +194,14 @@ public class Bosses1 : Enemy, IEnemy
             }
             else
             {
-                Debug.Log("attack finish");
-                attackCd = attackDelay;
+                // Debug.Log(isCoolingDown);
+                if (!isCoolingDown)
+                {
+                    attackCd = attackDelay;
+                    isCoolingDown = true;
+                    StartCoroutine(CResetCombo());
+                    // Debug.Log("IS COOLING DOWN TRUE");
+                }
             }
         }
     }
@@ -202,18 +211,41 @@ public class Bosses1 : Enemy, IEnemy
     {
         if(attackCd > 0 && atkCount == 3)
         {
-            Debug.Log("counding down to reset");
+            // Debug.Log(attackCd);
             attackCd -= Time.deltaTime;
             if(attackCd <= 0)
             {
-                Debug.Log("1 step before reset !!");
+                // Debug.Log("1 step before reset !!");
                 attackCd = -1;
             }
         }
         else if(attackCd < 0 && atkCount == 3)
         {
-            Debug.Log("Reseted !!!");
+            // Debug.Log("Reseted !!!");
             atkCount = 0;
+            isCoolingDown = false;
+        }
+    }
+
+    // a coroutine to count down boss' combo reset
+    public IEnumerator CResetCombo()
+    {
+        while (attackCd > 0 && atkCount == 3)
+        {
+            // Debug.Log(attackCd);
+            attackCd -= Time.deltaTime;
+            if (attackCd <= 0)
+            {
+                attackCd = -1;
+            }
+            yield return 0;
+        }
+        if (attackCd < 0 && atkCount == 3)
+        {
+            // Debug.Log("Reseted !!!");
+            atkCount = 0;
+            isCoolingDown = false;
+            yield break;
         }
     }
 
