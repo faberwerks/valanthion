@@ -42,6 +42,9 @@ public class Bosses1 : Enemy, IEnemy
         atkSpeed = 2.0f;
         attackDelay = atkSpeed;
 
+        attackCd = 0;
+        atkCount = 0;
+
         range = weapon.AtkRange;
         speed = (int)maxSpeed;
         atk = weapon.Atk;
@@ -181,15 +184,14 @@ public class Bosses1 : Enemy, IEnemy
                 atkCount += 1;
                 isAttacking = true;
                 comboCd = comboDelay;
-                Debug.Log("attacking");
                 if (hit)
                 {
                     hit.collider.SendMessage("TakeDamage", atk);
                 }
             }
-            else if(attackCd <= 0 && atkCount == 3)
+            else
             {
-                Debug.Log("combo finished");
+                Debug.Log("attack finish");
                 attackCd = attackDelay;
             }
         }
@@ -198,17 +200,14 @@ public class Bosses1 : Enemy, IEnemy
     //this function is used to make the boss could do the combo again
     public void ResetCombo()
     {
-        if(attackCd > 0)
+        Debug.Log(attackCd);
+        if(attackCd > 0 && atkCount == 3)
         {
-            if (attackCd > 0)
-            {
-                attackCd -= Time.deltaTime;
-                Debug.Log(attackCd);
-            }
-            else
-            {
-                atkCount = 0;
-            }
+            attackCd -= Time.deltaTime;
+        }
+        else if(attackCd <= 0 && atkCount == 3)
+        {
+            atkCount = 0;
         }
     }
 
