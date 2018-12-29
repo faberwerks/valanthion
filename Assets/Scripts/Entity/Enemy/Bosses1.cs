@@ -8,8 +8,6 @@ public class Bosses1 : Enemy, IEnemy
 
     protected RaycastHit2D hit;
 
-    private LayerMask targetLayer;
-
     private int atkCount;
 
     // this variable control attack delay between combo
@@ -88,7 +86,6 @@ public class Bosses1 : Enemy, IEnemy
     // a method to handle bosses patrol
     public void Patrol()
     {
-        Debug.Log("patrolling");
         Collider2D[] target = Physics2D.OverlapBoxAll(transform.position, currDir * detectionRange, 0, playerLayer);
 
         if (target.Length > 0)
