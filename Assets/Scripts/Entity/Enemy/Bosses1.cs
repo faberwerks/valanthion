@@ -16,6 +16,9 @@ public class Bosses1 : Enemy, IEnemy
     // this variable control the attack delay
     public float attackDelay;
 
+    private float attackCd;
+    private float comboCd;
+
     private bool isAttacking;
 
     private void Awake()
@@ -37,6 +40,7 @@ public class Bosses1 : Enemy, IEnemy
         comboDelay = 0.5f;
         health = 100;
         atkSpeed = 2.0f;
+        attackDelay = atkSpeed;
 
         range = weapon.AtkRange;
         speed = (int)maxSpeed;
@@ -171,13 +175,22 @@ public class Bosses1 : Enemy, IEnemy
         }
         else
         {
-            if (atkCount < 3 && isAttacking == false)
+            if (atkCount < 3)
             {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, playerLayer);
+                atkCount += 1;
+                isAttacking = true;
+                comboCd = comboDelay;
+                Debug.Log("attacking");
                 if (hit)
                 {
                     hit.collider.SendMessage("TakeDamage", atk);
                 }
+            }
+            else if(attackCd <= 0 && atkCount == 3)
+            {
+                Debug.Log("combo finished");
+                attackCd = attackDelay;
             }
         }
     }
@@ -185,11 +198,12 @@ public class Bosses1 : Enemy, IEnemy
     //this function is used to make the boss could do the combo again
     public void ResetCombo()
     {
-        if(atkCount == 3)
+        if(attackCd > 0)
         {
-            if(attackDelay > 0)
+            if (attackCd > 0)
             {
-                attackDelay -= Time.deltaTime;
+                attackCd -= Time.deltaTime;
+                Debug.Log(attackCd);
             }
             else
             {
@@ -203,9 +217,9 @@ public class Bosses1 : Enemy, IEnemy
     {
         if (isAttacking)
         {
-            if (comboDelay > 0)
+            if (comboCd > 0)
             {
-                comboDelay -= Time.deltaTime;
+                comboCd -= Time.deltaTime;
             }
             else
             {

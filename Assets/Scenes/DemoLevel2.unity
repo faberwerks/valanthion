@@ -7727,7 +7727,7 @@ MonoBehaviour:
   maxSpeed: 10
   isFacingRight: 0
   initialState: 0
-  detectionRange: 0
+  detectionRange: 10
   comboDelay: 0
   attackDelay: 0
 --- !u!50 &651188644
