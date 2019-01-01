@@ -15,9 +15,14 @@ public class Bosses1 : Enemy, IEnemy
 
     // this variable control the attack delay
     public float attackDelay;
+    //this variable control how long the delay before the boss perform skill
+    public float skillDelay = 11;
+    //this variable use to multiply the skill damage
+    public float skillMultiplier = 2;
 
     private float attackCd;
     private float comboCd;
+    private float skillCounter;
 
     private bool isAttacking;
 
@@ -44,6 +49,7 @@ public class Bosses1 : Enemy, IEnemy
         atkSpeed = 2.0f;
         attackDelay = atkSpeed;
 
+        skillCounter = 0;
         attackCd = 0;
         atkCount = 0;
 
@@ -74,6 +80,7 @@ public class Bosses1 : Enemy, IEnemy
         CheckDeath();
         // ResetCombo();
         ComboDelay();
+        Skill();
 
         switch (CurrState)
         {
@@ -262,6 +269,25 @@ public class Bosses1 : Enemy, IEnemy
             {
                 isAttacking = false;
             }
+        }
+    }
+
+    public void Skill()
+    {
+        if(skillCounter == skillDelay)
+        {
+            Debug.Log("skill active");
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, playerLayer);
+            if (hit)
+            {
+                hit.collider.SendMessage("TakeDamage", atk * skillMultiplier * 2);
+            }
+            skillCounter = 0;
+        }
+        else
+        {
+            skillCounter += 1;
+            Debug.Log(skillCounter);
         }
     }
 
