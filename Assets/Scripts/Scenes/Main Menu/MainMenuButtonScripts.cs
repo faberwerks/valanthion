@@ -16,7 +16,7 @@ public class MainMenuButtonScripts : MonoBehaviour {
     public void ToggleNewGame()
     {
         // mainMenuManager.TogglePanel(mainMenuManager.newGamePanel);
-        SceneManager.LoadScene("DemoLevel");
+        SceneManager.LoadScene("NewGame");
     }
 
     // a method to toggle the load game panel
@@ -31,9 +31,16 @@ public class MainMenuButtonScripts : MonoBehaviour {
         // mainMenuManager.TogglePanel(mainMenuManager.creditsPanel);
     }
 
-    // a method to toggle the exit =panel
+    // a method to toggle the exit panel
     public void ToggleExit()
     {
         // mainMenuManager.TogglePanel(mainMenuManager.exitPanel);
+    }
+
+    // a method to save the game
+    public void Save()
+    {
+        SaveLoad.Save();
+        SceneManager.LoadScene("DemoLevel2");
     }
 }
