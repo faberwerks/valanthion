@@ -79,8 +79,8 @@ public class GameMainMenuManager : MonoBehaviour {
         {
             if (currentCharacterMenu == CharacterMenu.Character)
             {
-                GUILayout.Label("Experience Points: ");
-                GUILayout.Box(Game.current.exp.ToString());
+                // GUILayout.Label("Experience Points: ");
+                // GUILayout.Box(Game.current.exp.ToString());
 
                 GUILayout.Space(10);
                 if (GUILayout.Button("Weapons"))
