@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour {
 
@@ -19,7 +20,7 @@ public class MainMenuManager : MonoBehaviour {
         exitPanel.SetActive(false);
     }
 
-    // a =method to toggle a panel on/off
+    // a method to toggle a panel on/off
     public void TogglePanel(GameObject panel)
     {
         panel.SetActive(!panel.activeInHierarchy);
@@ -36,6 +37,7 @@ public class MainMenuManager : MonoBehaviour {
 
     public MainMenu currentMenu;
 
+    /*
     private void OnGUI()
     {
         GUILayout.BeginArea(new Rect(0, 0, Screen.width, Screen.height));
@@ -125,5 +127,26 @@ public class MainMenuManager : MonoBehaviour {
         GUILayout.FlexibleSpace();
         GUILayout.EndHorizontal();
         GUILayout.EndArea();
+    }
+    */
+
+    public InputField saveName;
+
+    // a button method to save the game
+    public void SaveGame()
+    {
+        if (saveName.text != "")
+        {
+            Game.current = new Game();
+            Game.current.saveName = saveName.text;
+            SaveLoad.Save();
+            SceneManager.LoadScene("DemoLevel2");
+        }
+    }
+
+    // a button method to quit the game
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
