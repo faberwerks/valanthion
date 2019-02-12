@@ -69,8 +69,11 @@ public class Bosses1 : Enemy, IEnemy
 
         CurrState = InitialState;
 
-        colorTime = 0.2f;
-        colorTimer = colorTime;
+        #region Color
+            colorTime = 0.2f;
+            colorTimer = colorTime;
+            initialColor = sprRend.color;
+        #endregion
 
         ExpValue = 100;
 
@@ -279,7 +282,7 @@ public class Bosses1 : Enemy, IEnemy
     {
         if(skillCounter == skillDelay)
         {
-            Debug.Log("skill active");
+            //Debug.Log("skill active");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, playerLayer);
             if (hit)
             {
@@ -290,7 +293,7 @@ public class Bosses1 : Enemy, IEnemy
         else
         {
             skillCounter += 1;
-            Debug.Log(skillCounter);
+            //Debug.Log(skillCounter);
         }
     }
 
@@ -299,8 +302,9 @@ public class Bosses1 : Enemy, IEnemy
         if (Health <= 0)
         {
             stageSetting.RemoveEnemy(expValue, gameObject);
-            Destroy(gameObject);
+            Debug.Log("MATI!!!!!");
             gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
