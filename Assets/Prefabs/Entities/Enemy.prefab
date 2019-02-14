@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce1ab0296f67fa49aefacc8982eac1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSpeed: 5
+  maxSpeed: 3
   isFacingRight: 1
   initialState: 0
   detectionRange: 10
