@@ -8,7 +8,7 @@ public class StageSetting : MonoBehaviour
 
     protected float countupTimer;
 
-    protected ushort gainedExp;
+    // protected ushort gainedExp;
 
     // a method to get a reference to all enemies in the stage
     protected void FindEnemies()
@@ -25,9 +25,9 @@ public class StageSetting : MonoBehaviour
     }
 
     // a method to process enemy death
-    public void RemoveEnemy(ushort expValue, GameObject enemyObject)
+    public void RemoveEnemy(GameObject enemyObject)
     {
-        GainedExp += expValue;
+        // GainedExp += expValue;
         enemies.Remove(enemyObject);
     }
 
@@ -64,15 +64,15 @@ public class StageSetting : MonoBehaviour
     }
 
     /////// PROPERTIES ///////
-    public ushort GainedExp
-    {
-        get
-        {
-            return gainedExp;
-        }
-        set
-        {
-            this.gainedExp = value;
-        }
-    }
+    // public ushort GainedExp
+    // {
+    //     get
+    //     {
+    //         return gainedExp;
+    //     }
+    //     set
+    //     {
+    //         this.gainedExp = value;
+    //     }
+    // }
 }

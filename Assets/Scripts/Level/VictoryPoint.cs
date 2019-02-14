@@ -10,6 +10,7 @@ public class VictoryPoint : MonoBehaviour {
         {
             GameManager.Instance.Victory();
             GameObject.FindGameObjectWithTag("Stage Manager").GetComponent<StageManager>().WinLevel();
+            Game.current.currentStage += 1;
         }
     }
 }

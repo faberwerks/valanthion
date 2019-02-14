@@ -5,16 +5,16 @@ using UnityEngine;
 public class StageManager : MonoBehaviour {
 
     // private int currExp;
-    public int stageId;
+    public int stageID;
     public int skillPointReward;
     public int perkPointReward;
 
     private void Awake()
     {
         // currExp = Game.current.exp;
-        if (Game.current.currentStage < stageId)
+        if (Game.current.currentStage < stageID)
         {
-            Game.current.currentStage = stageId;
+            Game.current.currentStage = stageID;
         }
     }
 

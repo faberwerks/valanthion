@@ -75,7 +75,7 @@ public class Enemy : Entity
     {
         if (Health <= 0)
         {
-            stageSetting.RemoveEnemy(expValue, gameObject);
+            stageSetting.RemoveEnemy(gameObject);
             Destroy(gameObject);
         }
     }

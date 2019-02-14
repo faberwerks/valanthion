@@ -16,6 +16,8 @@ public class Game
     public int currentStage;
     public int skillPoints;
     public int perkPoints;
+    public int equippedWeaponID;
+    public int equippedArmourID;
     // public int exp;
     // public int level;
 
