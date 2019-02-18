@@ -526,14 +526,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 224733045362381662, guid: cd40d84bb19367d4787862284afbcf25,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1758151229531202, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
+    - target: {fileID: 1692043636467562, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1580282715710550, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
@@ -3650,8 +3649,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ebfe0fcd1d479eb4a94f86c3d1626a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!19719996 &452143588
 TilemapCollider2D:
   m_ObjectHideFlags: 0
@@ -6115,8 +6114,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 529c86d037ac8a349ba55fe7bb27420d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!212 &602910888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6506,8 +6505,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3cffc6303337ef44ea60924de6730658, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   maxSpeed: 10
   isFacingRight: 0
   initialState: 0
@@ -6575,7 +6574,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &651188647
@@ -6587,8 +6586,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77f5cfd940a68b47813a42824e0f004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   weaponItemList: {fileID: 11400000, guid: d561295049ee3e5458b3e406b005e6c2, type: 2}
   itemId: 10
 --- !u!1001 &657013324
@@ -6924,8 +6923,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b005c31465e314741b975a957f7f016c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   zOffset: 10
 --- !u!1001 &792726484
 Prefab:
@@ -18330,7 +18329,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!70 &1030905019
@@ -18359,8 +18358,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85407b45048cb1148816cca61c9b0d3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   armorItemList: {fileID: 11400000, guid: a1335c0e4de10ba4aaede6604efac8a5, type: 2}
   itemId: 4
 --- !u!114 &1030905021
@@ -18373,8 +18372,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5371916f970deab4ab1cc4db85e393e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -18388,8 +18387,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01e1c5f6cdc8c934fb0294e38354e7f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   skillList: {fileID: 11400000, guid: ac5f802fce84fcc41bfc9d8e74bd6aa0, type: 2}
 --- !u!114 &1030905023
 MonoBehaviour:
@@ -18401,8 +18400,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdda74af21d81514ebf816573424f5b9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
 --- !u!114 &1030905024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18413,8 +18412,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77f5cfd940a68b47813a42824e0f004, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   weaponItemList: {fileID: 11400000, guid: d561295049ee3e5458b3e406b005e6c2, type: 2}
   itemId: 1
 --- !u!114 &1030905025
@@ -18427,8 +18426,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -18442,8 +18441,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5c66671125c29e43be70e385d855778, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   maxSpeed: 7
   isFacingRight: 1
   stamina: 0
@@ -20528,11 +20527,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0ea920087baf4754badff7874cbb2459, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &2038967472 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4915899118115660, guid: cd40d84bb19367d4787862284afbcf25,
-    type: 2}
-  m_PrefabInternal: {fileID: 275356432}
 --- !u!4 &2067366567 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4182362464277102, guid: 8cd7bdf060604de4fae6cffb32eb634b,

@@ -16,8 +16,10 @@ public class Game
     public int currentStage;
     public int skillPoints;
     public int perkPoints;
-    public int exp;
-    public int level;
+    public int equippedWeaponID;
+    public int equippedArmourID;
+    // public int exp;
+    // public int level;
 
     public Game()
     {
@@ -29,7 +31,7 @@ public class Game
         currentStage = 1;
         skillPoints = 0;
         perkPoints = 0;
-        exp = 0;
-        level = 1;
+        // exp = 0;
+        // level = 1;
     }
 }
