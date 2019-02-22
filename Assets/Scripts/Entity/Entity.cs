@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
     protected float maxStamina;
     protected float initialMaxStamina;
 
+    [SerializeField]
     protected float health;
     protected float maxHealth;
     protected float initialMaxHealth;
