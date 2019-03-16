@@ -2603,40 +2603,44 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_LocalPosition.x
       value: 45.93
       objectReference: {fileID: 0}
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_LocalPosition.y
       value: -1.2
       objectReference: {fileID: 0}
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0.30800876
       objectReference: {fileID: 0}
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4588672610460178, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+    - target: {fileID: 4710907872061188, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1926195495452514, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
+      propertyPath: m_Name
+      value: Mini Boss
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 2de7beb6ba0786f4b979c93569c703a7, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1886149672
 Prefab:
