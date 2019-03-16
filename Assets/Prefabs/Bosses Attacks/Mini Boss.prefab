@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4710907872061188}
   - component: {fileID: 212650047665282004}
-  - component: {fileID: 114833232177796588}
   - component: {fileID: 50691609937451618}
   - component: {fileID: 61318534849968130}
-  m_Layer: 0
+  - component: {fileID: 114894847445700656}
+  m_Layer: 9
   m_Name: Mini Boss
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114833232177796588
+--- !u!114 &114894847445700656
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,15 +96,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1926195495452514}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1678afb09d746b6409da26655823f3d7, type: 3}
+  m_Script: {fileID: 11500000, guid: 676f66c763ca98a45b81a891b899d02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spear: {fileID: 1641837735699174, guid: 429e6bb3475820b4b888e67d391816bf, type: 2}
-  bombPrep: {fileID: 1708952117423616, guid: 6d596acb996cf194c9395d75b87f15da, type: 2}
-  skillCooldownSpear: 3
-  skillCooldownExplode: 5
-  spearDamage: 20
-  bombDamage: 10
+  bombPrep: {fileID: 1832674081212878, guid: d17325bdd2c1d0d4982f7c63baa4c724, type: 2}
+  skillCooldownExplode: 3
+  bombDamage: 15
+  health: 100
 --- !u!212 &212650047665282004
 SpriteRenderer:
   m_ObjectHideFlags: 1

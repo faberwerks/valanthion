@@ -17,6 +17,9 @@ public class Boss : MonoBehaviour {
     [SerializeField]
     private float spearDamage, bombDamage;
 
+    [SerializeField]
+    private float health;
+
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<Player>().gameObject;
@@ -38,6 +41,7 @@ public class Boss : MonoBehaviour {
             ThrowBomb();
             skillCooldownExplode += cooldownTimeExplode;
         }
+        Death();
     }
 
     private void ThrowSpear()
@@ -50,10 +54,10 @@ public class Boss : MonoBehaviour {
                 Instantiate(spear, new Vector3(transform.position.x, 0, transform.position.z), Quaternion.identity);
                 break;
             case 2:
-                Instantiate(spear, new Vector3(transform.position.x, 4, transform.position.z), Quaternion.identity);
+                Instantiate(spear, new Vector3(transform.position.x, 6, transform.position.z), Quaternion.identity);
                 break;
             case 3:
-                Instantiate(spear, new Vector3(transform.position.x, -4, transform.position.z), Quaternion.identity);
+                Instantiate(spear, new Vector3(transform.position.x, -6, transform.position.z), Quaternion.identity);
                 break;
         }
     }
@@ -62,5 +66,18 @@ public class Boss : MonoBehaviour {
     {
         bombPrep.GetComponent<FirePillarPrep>().damage = bombDamage;
         Instantiate(bombPrep,player.transform.position,Quaternion.identity);
+    }
+
+    private void Death()
+    {
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void TakeDamage(int atk)
+    {
+        health -= atk;
     }
 }

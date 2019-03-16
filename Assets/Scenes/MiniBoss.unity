@@ -2636,8 +2636,13 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1926195495452514, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
-      propertyPath: m_Name
-      value: Mini Boss
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114894847445700656, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758,
+        type: 2}
+      propertyPath: health
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e3fcb7a7ccc24dd41ad4b22ff34a1758, type: 2}
@@ -2684,12 +2689,12 @@ Prefab:
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744324
+      value: -1.5744629
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.048217773
+      value: 0.048202515
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
