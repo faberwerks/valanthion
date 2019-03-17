@@ -8,25 +8,27 @@ public class Bosses1 : Enemy, IEnemy
 
     protected RaycastHit2D hit;
 
-    private int atkCount;
+    #region primitiveVariable
+        private int atkCount;
 
-    // this variable control attack delay between combo
-    public float comboDelay;
+        // this variable control attack delay between combo
+        public float comboDelay;
 
-    // this variable control the attack delay
-    public float attackDelay;
-    //this variable control how long the delay before the boss perform skill
-    public float skillDelay = 11;
-    //this variable use to multiply the skill damage
-    public float skillMultiplier = 2;
+        // this variable control the attack delay
+        public float attackDelay;
+        //this variable control how long the delay before the boss perform skill
+        public float skillDelay = 11;
+        //this variable use to multiply the skill damage
+        public float skillMultiplier = 2;
 
-    private float attackCd;
-    private float comboCd;
-    private float skillCounter;
+        private float attackCd;
+        private float comboCd;
+        private float skillCounter;
 
-    private bool isAttacking;
+        private bool isAttacking;
 
-    private bool isCoolingDown = false;
+        private bool isCoolingDown = false;
+    #endregion
 
     private void Awake()
     {
@@ -43,20 +45,22 @@ public class Bosses1 : Enemy, IEnemy
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
 
-        atkCount = 0;
-        comboDelay = 0.5f;
-        health = 100;
-        atkSpeed = 2.0f;
-        attackDelay = atkSpeed;
+        #region StatInit
+            atkCount = 0;
+            comboDelay = 0.5f;
+            health = 100;
+            atkSpeed = 2.0f;
+            attackDelay = atkSpeed;
 
-        skillCounter = 0;
-        attackCd = 0;
-        atkCount = 0;
+            skillCounter = 0;
+            attackCd = 0;
+            atkCount = 0;
 
-        range = weapon.AtkRange;
-        speed = (int)maxSpeed;
-        atk = weapon.Atk;
-        defense = 10;
+            range = weapon.AtkRange;
+            speed = (int)maxSpeed;
+            atk = weapon.Atk;
+            defense = 10;
+        #endregion 
 
         /// This class initialisation
         player = GameObject.FindGameObjectWithTag("Player");
@@ -65,8 +69,11 @@ public class Bosses1 : Enemy, IEnemy
 
         CurrState = InitialState;
 
-        colorTime = 0.2f;
-        colorTimer = colorTime;
+        #region Color
+            colorTime = 0.2f;
+            colorTimer = colorTime;
+            initialColor = sprRend.color;
+        #endregion
 
         ExpValue = 100;
 
@@ -125,7 +132,6 @@ public class Bosses1 : Enemy, IEnemy
         {
             maxSpeed += 1;
             defense -= 1;
-
         }
     }
 
@@ -276,7 +282,7 @@ public class Bosses1 : Enemy, IEnemy
     {
         if(skillCounter == skillDelay)
         {
-            Debug.Log("skill active");
+            //Debug.Log("skill active");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, playerLayer);
             if (hit)
             {
@@ -287,7 +293,18 @@ public class Bosses1 : Enemy, IEnemy
         else
         {
             skillCounter += 1;
-            Debug.Log(skillCounter);
+            //Debug.Log(skillCounter);
+        }
+    }
+
+    protected override void CheckDeath()
+    {
+        if (Health <= 0)
+        {
+            stageSetting.RemoveEnemy(expValue, gameObject);
+            Debug.Log("MATI!!!!!");
+            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
