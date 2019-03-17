@@ -37,7 +37,7 @@ public class CharacterPanelManager : MonoBehaviour {
         maxStamina.text = "100";
 
         skillPoints.text = Game.current.skillPoints.ToString();
-        perkPoints.text = Game.current.perkPoints.ToString();
+        //perkPoints.text = Game.current.perkPoints.ToString();
     }
 
     // a method to subtract skill points by one
