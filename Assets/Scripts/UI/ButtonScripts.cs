@@ -45,13 +45,13 @@ public class ButtonScripts : MonoBehaviour {
     // a method to continue last stage
     public void ContinueStage()
     {
-        if (Game.current.currentStage > 4)
+        if (Game.current.latestStage > 4)
         {
             SceneManager.LoadScene("Stage1");
         }
         else
         {
-            SceneManager.LoadScene(2 + Game.current.currentStage);
+            SceneManager.LoadScene(2 + Game.current.latestStage);
         }
     }
 

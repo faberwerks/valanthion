@@ -12,9 +12,9 @@ public class StageManager : MonoBehaviour {
     private void Awake()
     {
         // currExp = Game.current.exp;
-        if (Game.current.currentStage < stageID)
+        if (Game.current.latestStage < stageID)
         {
-            Game.current.currentStage = stageID;
+            Game.current.latestStage = stageID;
         }
     }
 
@@ -22,6 +22,6 @@ public class StageManager : MonoBehaviour {
     public void WinLevel()
     {
         Game.current.skillPoints += skillPointReward;
-        Game.current.perkPoints += perkPointReward;
+       // Game.current.perkPoints += perkPointReward;
     }
 }

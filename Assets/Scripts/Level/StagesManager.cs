@@ -9,7 +9,7 @@ public class StagesManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        for (int i = 0; i < Game.current.currentStage; i++)
+        for (int i = 0; i < Game.current.latestStage; i++)
         {
             stageButtons[i].interactable = true;
         }
