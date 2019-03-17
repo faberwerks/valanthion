@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager {
 
@@ -15,6 +16,7 @@ public class GameManager {
     {
         CurrGameState = GameState.VICTORY;
         Time.timeScale = 0.0f;
+        NextScene();
     }
 
     // a method to handle defeat
@@ -68,6 +70,14 @@ public class GameManager {
         set
         {
             this.currGameState = value;
+        }
+    }
+
+    private void NextScene()
+    {
+        if ((SceneManager.GetActiveScene().buildIndex + 1) != 9)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
