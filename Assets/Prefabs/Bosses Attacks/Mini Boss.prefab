@@ -101,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bombPrep: {fileID: 1832674081212878, guid: d17325bdd2c1d0d4982f7c63baa4c724, type: 2}
   skillCooldownExplode: 3
+  skillCooldownArea: 10
   bombDamage: 15
   health: 100
 --- !u!212 &212650047665282004

@@ -10,31 +10,42 @@ public class MiniBoss : MonoBehaviour {
     private GameObject  bombPrep;
 
     [SerializeField]
-    private float  skillCooldownExplode;
+    private float  skillCooldownExplode,skillCooldownArea;
 
-    private float  cooldownTimeExplode;
+    private float  cooldownTimeExplode,cooldownTimeArea;
 
     [SerializeField]
     private float  bombDamage;
 
     [SerializeField]
     private float health;
+
+   
     
     // Use this for initialization
     void Start()
     {
+        
         player = FindObjectOfType<Player>().gameObject;
         cooldownTimeExplode = skillCooldownExplode;
+        cooldownTimeArea = skillCooldownArea;
     }
 
     // Update is called once per frame
     void Update () {
         skillCooldownExplode -= Time.deltaTime;
+        skillCooldownArea -= Time.deltaTime;
         if (skillCooldownExplode <= 0)
         {
             ThrowBomb();
-            skillCooldownExplode += cooldownTimeExplode;
+            skillCooldownExplode = cooldownTimeExplode;
         }
+        if(skillCooldownArea <= 0 && health <= 50)
+        {
+            skill();
+            skillCooldownArea = cooldownTimeArea;
+        }
+       
         Death();
     }
 
@@ -56,6 +67,11 @@ public class MiniBoss : MonoBehaviour {
     public void TakeDamage(int atk)
     {
         health -= atk;
+    }
+
+    private void skill()
+    {
+        Instantiate(bombPrep, new Vector3(40-Random.Range(0,30),0), Quaternion.identity);
     }
 
 }
