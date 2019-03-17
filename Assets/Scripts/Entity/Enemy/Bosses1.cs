@@ -301,7 +301,7 @@ public class Bosses1 : Enemy, IEnemy
     {
         if (Health <= 0)
         {
-            stageSetting.RemoveEnemy(expValue, gameObject);
+           
             Debug.Log("MATI!!!!!");
             gameObject.SetActive(false);
             Destroy(gameObject);

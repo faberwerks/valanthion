@@ -9,27 +9,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff9dc3e8d4ae654d9fe6c5573739349, type: 3}
-  m_Name: Heavy Attack
+  m_Name: Thrust
   m_EditorClassIdentifier: 
-  skillId: 1
-  skillName: Heavy Attack
+  skillId: 5
+  skillName: Thrust
   weaponType: 0
-  skillNumber: 1
-  cooldownTime: 2
+  skillNumber: 5
+  cooldownTime: 5
   executionTime: 0
-  staminaCost: 50
+  staminaCost: 20
   dealsDamage: 1
   singleTarget: 1
   multipleTargets: 0
-  bleeding: 0
-  damageMultiplier: 1.5
-  bleedingDamage: 0
+  bleeding: 1
+  damageMultiplier: 1.2
+  bleedingDamage: 10
   reducesDefense: 0
   dashes: 0
   slowsDownTarget: 0
   stuns: 0
   knocksBack: 0
-  cripples: 0
+  cripples: 1
   buffs: 0
   attackStrength: 0
   attackSpeed: 0
