@@ -7724,12 +7724,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cffc6303337ef44ea60924de6730658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   maxSpeed: 10
   isFacingRight: 0
   initialState: 0
   detectionRange: 10
   comboDelay: 0
   attackDelay: 0
+  skillDelay: 11
+  skillMultiplier: 2
 --- !u!50 &651188644
 Rigidbody2D:
   serializedVersion: 4
@@ -16196,6 +16199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c66671125c29e43be70e385d855778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   maxSpeed: 7
   isFacingRight: 1
   stamina: 0
