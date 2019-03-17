@@ -48,6 +48,7 @@ public class MiniBoss : MonoBehaviour {
     {
         if(health <= 0)
         {
+            GameManager.Instance.Victory();
             Destroy(gameObject);
         }
     }
