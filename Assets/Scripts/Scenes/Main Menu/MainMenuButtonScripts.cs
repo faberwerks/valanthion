@@ -40,7 +40,7 @@ public class MainMenuButtonScripts : MonoBehaviour {
     // a method to save the game
     public void Save()
     {
-        SaveLoad.Save();
+        SaveLoad.Save(0);
         SceneManager.LoadScene("DemoLevel2");
     }
 }
