@@ -5,20 +5,20 @@ using UnityEngine.UI;
 
 public class SaveSlot : MonoBehaviour {
 
-    public GameObject[] saveSlot;
+    public GameObject[] saveSlot = new GameObject[3];
 
 	void Start () {
-        saveSlot = new GameObject[3];
         CheckSaveFiles();
     }
 
-    void CheckSaveFiles()
+    public void CheckSaveFiles()
     {
         for (int i = 0; i < 3; i++)
         {
-            if(SaveLoad.savedGames[i] != null)
+            if (SaveLoad.savedGames[i] != null)
             {
-                saveSlot[i].GetComponentInChildren<Text>().text = SaveLoad.savedGames[i].saveName;
+                Debug.Log("save file " + i +" loaded");
+                saveSlot[i].GetComponentInChildren<Text>().text = "\t" + SaveLoad.savedGames[i].saveName;
             }
         }
     }
