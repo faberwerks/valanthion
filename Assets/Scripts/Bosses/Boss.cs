@@ -66,19 +66,19 @@ public class Boss : Entity {
         Instantiate(bombPrep,player.transform.position,Quaternion.identity);
     }
 
-    private void KnockBack(float force)
-    {
+    //public void KnockBack(float force)
+    //{
 
-    }
+    //}
 
-    private void CheckDeath()
-    {
-        if (health <= 0)
-        {
-            GameManager.Instance.Victory();
-            Destroy(gameObject);
-        }
-    }
+    //private void CheckDeath()
+    //{
+    //    if (health <= 0)
+    //    {
+    //        GameManager.Instance.Victory();
+    //        Destroy(gameObject);
+    //    }
+    //}
 
     public void TakeDamage(int atk)
     {

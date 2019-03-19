@@ -75,13 +75,13 @@ public class GameManager {
 
     private void NextScene()
     {
-        PlayerPrefs.SetString("stageName", GameObject.FindObjectOfType<StageSetting>().stageName);
+        PlayerPrefs.SetString("StageName", GameObject.FindObjectOfType<StageSetting>().stageName);
         PlayerPrefs.SetFloat("Time",GameObject.FindObjectOfType<StageSetting>().GameTime());
-        //if (Game.current.latestStage < SceneManager.GetActiveScene().buildIndex)
-        //{
-        //    Game.current.latestStage = SceneManager.GetActiveScene().buildIndex;
-        //}
+        if (Game.current.latestStage < SceneManager.GetActiveScene().buildIndex)
+        {
+            Game.current.latestStage = SceneManager.GetActiveScene().buildIndex;
+        }
         PlayerPrefs.SetInt("CurrentStage", SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene("11");
+        SceneManager.LoadScene("PostStage");
     }
 }

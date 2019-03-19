@@ -644,7 +644,7 @@ RectTransform:
   m_GameObject: {fileID: 521630910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.086100325, y: 0.086100325, z: 0.086100325}
+  m_LocalScale: {x: 0.090108, y: 0.090108, z: 0.090108}
   m_Children:
   - {fileID: 1724748132}
   - {fileID: 733323230}
@@ -694,11 +694,11 @@ MonoBehaviour:
   - {fileID: 326936677}
   - {fileID: 1836998835}
   intervals:
-  - 12
+  - 3
+  - 2
+  - 2
   - 8
-  - 8
-  - 8
-  - 8
+  - 2
 --- !u!4 &607129620
 Transform:
   m_ObjectHideFlags: 0
