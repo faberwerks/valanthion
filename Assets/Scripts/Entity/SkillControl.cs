@@ -142,11 +142,11 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
-        /*
+        
         // Defense Handling
         if (skill.reducesDefense)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
+            hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -157,7 +157,7 @@ public class SkillControl : MonoBehaviour {
         // Slowdown, stun, knockback, cripple
         if (skill.slowsDownTarget)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
+            hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -166,7 +166,7 @@ public class SkillControl : MonoBehaviour {
         }
         if (skill.stuns)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
+            hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -179,7 +179,7 @@ public class SkillControl : MonoBehaviour {
 
             knockbackForce = player.IsFacingRight ? knockbackForce : knockbackForce * -1;
 
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
+            hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
@@ -188,14 +188,14 @@ public class SkillControl : MonoBehaviour {
         }
         if (skill.cripples)
         {
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
+            hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
 
             if (hit)
             {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
-        */
+        
 
         // Buff handling
         if (skill.buffs)
