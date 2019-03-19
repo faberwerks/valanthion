@@ -12,6 +12,7 @@ public class Game
     public int[] skills;
     public int[] weapons;
 
+    public int slotIndex;
     public int latestStage;
     public int skillPoints;
     public int equippedWeaponID;
