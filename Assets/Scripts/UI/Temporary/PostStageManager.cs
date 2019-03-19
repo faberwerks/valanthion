@@ -20,4 +20,9 @@ public class PostStageManager : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentScene", 0) + 1);
+    }
 }
