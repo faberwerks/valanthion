@@ -135,6 +135,7 @@ public class MainMenuManager : MonoBehaviour {
     // a button method to save the game
     public void SaveGame()
     {
+        /*
         if (saveName.text != "")
         {
             Game.current = new Game();
@@ -142,6 +143,7 @@ public class MainMenuManager : MonoBehaviour {
             SaveLoad.Save();
             SceneManager.LoadScene("DemoLevel2");
         }
+        */
     }
 
     // a button method to quit the game

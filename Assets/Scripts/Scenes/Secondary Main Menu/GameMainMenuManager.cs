@@ -38,7 +38,7 @@ public class GameMainMenuManager : MonoBehaviour {
 
             if (GUILayout.Button("Continue Game"))
             {
-                SceneManager.LoadScene(2 + Game.current.currentStage);  // 2 because the build index for stages start at 3
+                SceneManager.LoadScene(2 + Game.current.latestStage);  // 2 because the build index for stages start at 3
             }
 
             if (GUILayout.Button("Select Stage"))
@@ -61,7 +61,7 @@ public class GameMainMenuManager : MonoBehaviour {
             GUILayout.Box("Unlocked Stages");
             GUILayout.Space(10);
 
-            for (int i = 1; i <= Game.current.currentStage; i++)
+            for (int i = 1; i <= Game.current.latestStage; i++)
             {
                 if (GUILayout.Button("Stage " + i))
                 {
@@ -79,8 +79,8 @@ public class GameMainMenuManager : MonoBehaviour {
         {
             if (currentCharacterMenu == CharacterMenu.Character)
             {
-                GUILayout.Label("Experience Points: ");
-                GUILayout.Box(Game.current.exp.ToString());
+                // GUILayout.Label("Experience Points: ");
+                // GUILayout.Box(Game.current.exp.ToString());
 
                 GUILayout.Space(10);
                 if (GUILayout.Button("Weapons"))
@@ -123,7 +123,7 @@ public class GameMainMenuManager : MonoBehaviour {
                 GUILayout.Label("Skill Points: ");
                 GUILayout.Box(Game.current.skillPoints.ToString());
                 GUILayout.Label("Skill Points: ");
-                GUILayout.Box(Game.current.perkPoints.ToString());
+                //GUILayout.Box(Game.current.perkPoints.ToString());
 
                 GUILayout.Space(10);
                 if (GUILayout.Button("Back"))

@@ -242,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5c66671125c29e43be70e385d855778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   maxSpeed: 7
   isFacingRight: 1
   stamina: 0
@@ -304,7 +305,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4754179f9b36fb74b869137cf1f44ef9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c9d6ad2c7e52c8478996a8336b4e42c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

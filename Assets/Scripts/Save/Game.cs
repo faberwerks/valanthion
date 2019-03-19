@@ -5,31 +5,25 @@ using UnityEngine;
 [System.Serializable]
 public class Game
 {
-
     public static Game current;
 
     public string saveName;
 
     public int[] skills;
-    public int[] perks;
+    public int[] weapons;
 
-    public int currentStage;
+    public int latestStage;
     public int skillPoints;
-    public int perkPoints;
-    public int exp;
-    public int level;
-
+    public int equippedWeaponID;
+   
     public Game()
     {
         saveName = "";
 
-        skills = new int[18];
-        perks = new int[5];
+        skills = new int[6];
 
-        currentStage = 1;
+        weapons = new int[3];
+
         skillPoints = 0;
-        perkPoints = 0;
-        exp = 0;
-        level = 1;
     }
 }

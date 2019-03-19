@@ -68,10 +68,16 @@ public class Boss : MonoBehaviour {
         Instantiate(bombPrep,player.transform.position,Quaternion.identity);
     }
 
+    private void NormalSlash()
+    {
+
+    }
+
     private void Death()
     {
         if (health <= 0)
         {
+            GameManager.Instance.Victory();
             Destroy(gameObject);
         }
     }

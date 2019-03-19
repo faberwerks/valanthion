@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fff9dc3e8d4ae654d9fe6c5573739349, type: 3}
+  m_Name: Thrust
+  m_EditorClassIdentifier: 
+  skillId: 5
+  skillName: Thrust
+  weaponType: 0
+  skillNumber: 5
+  cooldownTime: 5
+  executionTime: 0
+  staminaCost: 20
+  dealsDamage: 1
+  singleTarget: 1
+  multipleTargets: 0
+  bleeding: 1
+  damageMultiplier: 1.2
+  bleedingDamage: 10
+  reducesDefense: 0
+  dashes: 0
+  slowsDownTarget: 0
+  stuns: 0
+  knocksBack: 0
+  cripples: 1
+  buffs: 0
+  attackStrength: 0
+  attackSpeed: 0
+  defense: 0
+  additionalHealth: 0
+  additionalStamina: 0
+  resetsCooldowns: 0

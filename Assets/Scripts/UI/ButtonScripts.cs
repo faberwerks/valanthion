@@ -41,4 +41,22 @@ public class ButtonScripts : MonoBehaviour {
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    // a method to continue last stage
+    public void ContinueStage()
+    {
+        if (Game.current.latestStage > 4)
+        {
+            SceneManager.LoadScene("Stage1");
+        }
+        else
+        {
+            SceneManager.LoadScene(2 + Game.current.latestStage);
+        }
+    }
+
+    public void LoadStage(int stageID)
+    {
+        SceneManager.LoadScene(2 + stageID);
+    }
 }
