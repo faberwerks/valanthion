@@ -11,11 +11,14 @@ public static class SaveLoad {
     // a method to save a game
     public static void Save()
     {
-        savedGames.Add(Game.current);
-        BinaryFormatter bf = new BinaryFormatter();
-        FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
-        bf.Serialize(file, SaveLoad.savedGames);
-        file.Close();
+        if (savedGames.Count < 3)
+        {
+            savedGames.Add(Game.current);
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
+            bf.Serialize(file, SaveLoad.savedGames);
+            file.Close();
+        }
     }
 
     // a method to load games

@@ -11,11 +11,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff9dc3e8d4ae654d9fe6c5573739349, type: 3}
   m_Name: Dash Slash
   m_EditorClassIdentifier: 
-  skillId: 1
+  skillId: 2
   skillName: Dash Slash
   weaponType: 0
   skillNumber: 2
-  cooldownTime: 4
+  cooldownTime: 3.5
   executionTime: 0
   staminaCost: 15
   dealsDamage: 1

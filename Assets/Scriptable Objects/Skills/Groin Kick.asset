@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fff9dc3e8d4ae654d9fe6c5573739349, type: 3}
-  m_Name: Heavy Attack
+  m_Name: Groin Kick
   m_EditorClassIdentifier: 
-  skillId: 1
-  skillName: Heavy Attack
+  skillId: 9
+  skillName: Groin Kick
   weaponType: 0
-  skillNumber: 1
-  cooldownTime: 2
+  skillNumber: 9
+  cooldownTime: 3.5
   executionTime: 0
-  staminaCost: 50
+  staminaCost: 15
   dealsDamage: 1
   singleTarget: 1
   multipleTargets: 0
@@ -27,8 +27,8 @@ MonoBehaviour:
   reducesDefense: 0
   dashes: 0
   slowsDownTarget: 0
-  stuns: 0
-  knocksBack: 0
+  stuns: 1
+  knocksBack: 1
   cripples: 0
   buffs: 0
   attackStrength: 0

@@ -138,6 +138,14 @@ public class Player : Entity
         {
             skillControl.UseSkill((byte)2);
         }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            skillControl.UseSkill((byte)3);
+        }
+        else if (Input.GetKeyDown(KeyCode.F))
+        {
+            skillControl.UseSkill((byte)4);
+        }
     }
 
     // a method to handle player jump
