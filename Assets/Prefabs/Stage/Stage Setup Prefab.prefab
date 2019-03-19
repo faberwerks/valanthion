@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1713764613436388
 GameObject:
   m_ObjectHideFlags: 1
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c0420c78f2f6b143a925ca7b01e960b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageId: 0
+  stageID: 0
   skillPointReward: 0
   perkPointReward: 0
 --- !u!114 &114401259178357166
@@ -2116,7 +2116,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Game Menu
 --- !u!114 &114545602906645772
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2748,14 +2748,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 114936272300696648}
-        m_MethodName: MainMenu
-        m_Mode: 1
+        m_MethodName: LoadScene
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: GameMenu
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -3557,8 +3557,8 @@ RectTransform:
   - {fileID: 224597635096651104}
   - {fileID: 4959915942768158}
   - {fileID: 224785892517817300}
-  - {fileID: 224845952992626632}
   - {fileID: 224115728007618044}
+  - {fileID: 224845952992626632}
   m_Father: {fileID: 4915899118115660}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3690,7 +3690,7 @@ RectTransform:
   - {fileID: 224946028612685950}
   - {fileID: 224604327888337062}
   m_Father: {fileID: 224004404389210434}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4067,7 +4067,7 @@ RectTransform:
   - {fileID: 224012889331173056}
   - {fileID: 224857939538245062}
   m_Father: {fileID: 224004404389210434}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

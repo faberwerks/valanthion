@@ -59,4 +59,10 @@ public class ButtonScripts : MonoBehaviour {
     {
         SceneManager.LoadScene(2 + stageID);
     }
+
+    // a method to load scenes
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
 }
