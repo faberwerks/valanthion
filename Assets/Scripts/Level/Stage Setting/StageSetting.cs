@@ -8,6 +8,8 @@ public class StageSetting : MonoBehaviour
 
     protected float countupTimer;
 
+    public string stageName;
+
     // protected ushort gainedExp;
 
     // a method to get a reference to all enemies in the stage
@@ -61,6 +63,11 @@ public class StageSetting : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public float GameTime()
+    {
+        return countupTimer;
     }
 
     /////// PROPERTIES ///////

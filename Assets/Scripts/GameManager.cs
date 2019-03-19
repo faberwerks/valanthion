@@ -77,7 +77,10 @@ public class GameManager {
     {
         if ((SceneManager.GetActiveScene().buildIndex + 1) != 9)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            PlayerPrefs.SetString("stageName", GameObject.FindObjectOfType<StageSetting>().stageName);
+            PlayerPrefs.SetFloat("Time",GameObject.FindObjectOfType<StageSetting>().GameTime());
+            Game.current.latestStage = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene("11");
         }
     }
 }
