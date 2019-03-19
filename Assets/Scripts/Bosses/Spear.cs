@@ -17,10 +17,6 @@ public class Spear : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.Translate(Vector2.left*Time.deltaTime*speed);
-        if(transform.position.x <= -10)
-        {
-            Death();
-        }
 	}
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,13 +24,7 @@ public class Spear : MonoBehaviour {
         if(collision.tag == "Player")
         {
             collision.GetComponent<Entity>().TakeDamage(damage);
-            Death();
         }
-    }
-
-    private void Death()
-    {
-        Destroy(gameObject);
     }
 
 }
