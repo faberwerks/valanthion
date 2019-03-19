@@ -898,7 +898,7 @@ RectTransform:
   m_GameObject: {fileID: 1001868110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013888889, y: 0.013888889, z: 0.013888889}
+  m_LocalScale: {x: 0.014533549, y: 0.014533549, z: 0.014533549}
   m_Children:
   - {fileID: 244345391}
   - {fileID: 1616255125}
@@ -1814,8 +1814,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2021225872}
-        m_MethodName: LoadScene
-        m_Mode: 5
+        m_MethodName: Continue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
