@@ -26,6 +26,8 @@ public class Game
         weapons = new int[3];
         weapons[0] = 1;
 
+        latestStage = 1;
+
         skillPoints = 0;
     }
 }

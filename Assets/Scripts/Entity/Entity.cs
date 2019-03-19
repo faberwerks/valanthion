@@ -15,6 +15,7 @@ public class Entity : MonoBehaviour
     protected float maxStamina;
     protected float initialMaxStamina;
 
+    [SerializeField]
     protected float health;
     protected float maxHealth;
     protected float initialMaxHealth;
@@ -115,7 +116,6 @@ public class Entity : MonoBehaviour
     {
         initialSpeed = speed;
         initialAtk = atk;
-
         speed = 0;
         atk = 0;
         StartCoroutine(CStun(5.0f));
