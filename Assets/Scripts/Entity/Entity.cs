@@ -116,7 +116,6 @@ public class Entity : MonoBehaviour
     {
         initialSpeed = speed;
         initialAtk = atk;
-
         speed = 0;
         atk = 0;
         StartCoroutine(CStun(5.0f));

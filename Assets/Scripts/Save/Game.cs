@@ -21,8 +21,12 @@ public class Game
         saveName = "";
 
         skills = new int[6];
+        skills[0] = 1;
 
         weapons = new int[3];
+        weapons[0] = 1;
+
+        latestStage = 1;
 
         skillPoints = 0;
     }
