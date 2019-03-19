@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boss : MonoBehaviour {
+public class Boss : Entity {
 
     private GameObject player;
 
@@ -16,9 +16,7 @@ public class Boss : MonoBehaviour {
 
     [SerializeField]
     private float spearDamage, bombDamage;
-
-    [SerializeField]
-    private float health;
+    
 
     // Use this for initialization
     void Start () {
@@ -41,7 +39,7 @@ public class Boss : MonoBehaviour {
             ThrowBomb();
             skillCooldownExplode += cooldownTimeExplode;
         }
-        Death();
+        CheckDeath();
     }
 
     private void ThrowSpear()
@@ -68,12 +66,12 @@ public class Boss : MonoBehaviour {
         Instantiate(bombPrep,player.transform.position,Quaternion.identity);
     }
 
-    private void NormalSlash()
+    private void KnockBack(float force)
     {
 
     }
 
-    private void Death()
+    private void CheckDeath()
     {
         if (health <= 0)
         {
@@ -86,4 +84,5 @@ public class Boss : MonoBehaviour {
     {
         health -= atk;
     }
+
 }

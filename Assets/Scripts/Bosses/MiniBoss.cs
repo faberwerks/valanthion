@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MiniBoss : MonoBehaviour {
+public class MiniBoss : Entity {
 
     private GameObject player;
 
@@ -17,8 +17,7 @@ public class MiniBoss : MonoBehaviour {
     [SerializeField]
     private float  bombDamage;
 
-    [SerializeField]
-    private float health;
+    
 
    
     
@@ -46,7 +45,7 @@ public class MiniBoss : MonoBehaviour {
             skillCooldownArea = cooldownTimeArea;
         }
        
-        Death();
+        CheckDeath();
     }
 
     private void ThrowBomb()
@@ -55,7 +54,7 @@ public class MiniBoss : MonoBehaviour {
         Instantiate(bombPrep, player.transform.position, Quaternion.identity);
     }
 
-    private void Death()
+    private void CheckDeath()
     {
         if(health <= 0)
         {
@@ -74,4 +73,8 @@ public class MiniBoss : MonoBehaviour {
         Instantiate(bombPrep, new Vector3(40-Random.Range(0,30),0), Quaternion.identity);
     }
 
+    private void KnockBack(float force)
+    {
+
+    }
 }
