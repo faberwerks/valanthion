@@ -6,19 +6,16 @@ using UnityEngine;
 
 public static class SaveLoad {
 
-    public static List<Game> savedGames = new List<Game>();
+    public static Game[] savedGames = new Game[3];
 
     // a method to save a game
-    public static void Save()
+    public static void Save(int slot)
     {
-        if (savedGames.Count < 3)
-        {
-            savedGames.Add(Game.current);
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
-            bf.Serialize(file, SaveLoad.savedGames);
-            file.Close();
-        }
+        savedGames[slot] = Game.current;
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/savedGames.gd");
+        bf.Serialize(file, SaveLoad.savedGames);
+        file.Close();
     }
 
     // a method to load games
@@ -28,7 +25,7 @@ public static class SaveLoad {
         {
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
-            SaveLoad.savedGames = (List<Game>)bf.Deserialize(file);
+            SaveLoad.savedGames = (Game[])bf.Deserialize(file);
             file.Close();
         }
     }

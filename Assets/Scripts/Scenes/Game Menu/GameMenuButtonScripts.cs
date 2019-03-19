@@ -5,31 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class GameMenuButtonScripts : MonoBehaviour {
 
-	public void ToggleMainMenu()
+    // a method to continue the game from the last stage
+    public void Continue()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(Game.current.latestStage);
     }
 
-    public void ToggleContinue()
+    // a method to load a scene
+    public void LoadScene(string sceneName)
     {
-        //Need to get latest level from Save File
-        //SceneManager.LoadScene("");
+        SceneManager.LoadScene(sceneName);
     }
-
-    public void ToggleChapterSelection()
-    {
-        SceneManager.LoadScene("ChapterSelection");
-    }
-
-    public void ToggleCharacterSetting()
-    {
-        //SceneManager.LoadScene("");
-    }
-
-    public void ToggleOptions()
-    {
-        //SceneManager.LoadScene("");
-    }
-
-
 }
