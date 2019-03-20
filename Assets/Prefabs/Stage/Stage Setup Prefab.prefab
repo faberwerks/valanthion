@@ -513,7 +513,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1713764613436388
 GameObject:
   m_ObjectHideFlags: 1
@@ -1910,6 +1910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee241806a0d39a84189e4284337a4233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageName: 
 --- !u!114 &114453827100200482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2030,6 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf66f26e54ad4e841b3bbbe567f404dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageName: 
 --- !u!114 &114492820343398552
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2577,6 +2579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577abf9f664c8b34e8b90f49bb21c25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageName: 
   countdownTime: 10000
 --- !u!114 &114736087213547512
 MonoBehaviour:
