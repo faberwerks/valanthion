@@ -15,7 +15,7 @@ public class PostStageManager : MonoBehaviour {
 	void Start () {
         float time = PlayerPrefs.GetFloat("Time", 0);
         stageName.text = PlayerPrefs.GetString("StageName");
-        stageNumber.text = "Stage " + (PlayerPrefs.GetInt("CurrentStage", 0) - 10).ToString();
+        stageNumber.text = "Stage " + (PlayerPrefs.GetInt("CurrentStage", 0)).ToString();
         timeText.text = ((int)time/60).ToString() +" : "+ ((int)time %60).ToString();
 	}
 	

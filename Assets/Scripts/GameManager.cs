@@ -81,6 +81,7 @@ public class GameManager {
         {
             Game.current.latestStage = SceneManager.GetActiveScene().buildIndex;
         }
+        SaveLoad.Save(Game.current.slotIndex);
         PlayerPrefs.SetInt("CurrentStage", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("PostStage");
     }
