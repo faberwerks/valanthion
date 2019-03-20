@@ -7,11 +7,16 @@ using UnityEngine.UI;
 public class PostStageManager : MonoBehaviour {
 
     [SerializeField]
-    private Text stageName;
+    private Text stageName,stageNumber;
+    [SerializeField]
+    private Text timeText;
 
 	// Use this for initialization
 	void Start () {
+        float time = PlayerPrefs.GetFloat("Time", 0);
         stageName.text = PlayerPrefs.GetString("StageName");
+        stageNumber.text = "Stage " + (PlayerPrefs.GetInt("CurrentStage", 0) - 10).ToString();
+        timeText.text = ((int)time/60).ToString() +" : "+ ((int)time %60).ToString();
 	}
 	
 	// Update is called once per frame

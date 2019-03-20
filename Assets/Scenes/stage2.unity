@@ -4815,6 +4815,16 @@ Prefab:
       propertyPath: stageName
       value: lvl 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114448311808171302, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: stageName
+      value: lvl 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491426874650894, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: stageName
+      value: lvl 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
   m_IsPrefabParent: 0

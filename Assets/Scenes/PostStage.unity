@@ -1529,6 +1529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageName: {fileID: 552239841}
+  stageNumber: {fileID: 1430776320}
+  timeText: {fileID: 174670518}
 --- !u!4 &2021225873
 Transform:
   m_ObjectHideFlags: 0
