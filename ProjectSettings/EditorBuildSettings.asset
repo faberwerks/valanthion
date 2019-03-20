@@ -9,35 +9,29 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScreen.unity
     guid: b14df0d50df2918459c602850f5f8e4e
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 65bc38fa0562e31469f0ee63a41b1368
-  - enabled: 1
-    path: Assets/Scenes/GameMenu.unity
-    guid: 18fa0782a7c5f5b40bc9be74f00c9365
-  - enabled: 1
-    path: Assets/Scenes/ChapterSelection.unity
-    guid: 066d323d81cf3eb4998bdfd776942691
-  - enabled: 1
-    path: Assets/Scenes/SecondaryMainMenu.unity
-    guid: 002ef694b7130ae4281d5f51c3d1d5e2
-  - enabled: 1
     path: Assets/Scenes/DemoLevel2.unity
     guid: e6183c71e94ff2f45a6ba7bdc7b909d0
   - enabled: 1
-    path: Assets/Scenes/Character.unity
-    guid: 866a377ad077c4d43ae71602d9fd9722
+    path: Assets/Scenes/stage2.unity
+    guid: 17afc17daaeb07e43a67c694c8916d98
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: 4931a4487001a7d4a96d4bb78f02c2fa
+  - enabled: 1
+    path: Assets/Scenes/Stage4.unity
+    guid: 3eba8a92ac02b6643929e5b2f742c319
+  - enabled: 1
+    path: Assets/Scenes/MiniBoss.unity
+    guid: 537807d613ee0d345820faf2c75a8d5d
+  - enabled: 1
+    path: Assets/Scenes/BossFight.unity
+    guid: de864d66b5c346541873106bbe6588a4
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 65bc38fa0562e31469f0ee63a41b1368
   - enabled: 1
     path: Assets/Scenes/NewGame.unity
     guid: 02df4882eed72d2488cfb8b4f5ef3245
-  - enabled: 1
-    path: Assets/Scenes/Credits.unity
-    guid: 2110b62863962cd4d94212bce7bdb6e7
-  - enabled: 1
-    path: Assets/Scenes/PostStage.unity
-    guid: 95ec69fb00581cb4399dd0e5e49eb2cc
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/d21ae22bdf41cba41a98760578d4d7e4
-    guid: d21ae22bdf41cba41a98760578d4d7e4
   - enabled: 1
     path: Assets/Scenes/Prologue.unity
     guid: 05faab21354c4de479b0337d708f6021
@@ -45,5 +39,17 @@ EditorBuildSettings:
     path: Assets/Scenes/LoadGame.unity
     guid: be0c1af5f2651b945b22f180984504a7
   - enabled: 1
-    path: Assets/Scenes/Stage3.unity
-    guid: 4931a4487001a7d4a96d4bb78f02c2fa
+    path: Assets/Scenes/GameMenu.unity
+    guid: 18fa0782a7c5f5b40bc9be74f00c9365
+  - enabled: 1
+    path: Assets/Scenes/ChapterSelection.unity
+    guid: 066d323d81cf3eb4998bdfd776942691
+  - enabled: 1
+    path: Assets/Scenes/Character.unity
+    guid: 866a377ad077c4d43ae71602d9fd9722
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 2110b62863962cd4d94212bce7bdb6e7
+  - enabled: 1
+    path: Assets/Scenes/PostStage.unity
+    guid: 95ec69fb00581cb4399dd0e5e49eb2cc
