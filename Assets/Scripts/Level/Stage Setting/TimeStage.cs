@@ -1,8 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimeStage : StageSetting {
+
+    [SerializeField]
+    private Text timeText;
 
     private Player player;
 
@@ -45,6 +49,7 @@ public class TimeStage : StageSetting {
         if (countdownTimer > 0 && CanCount())
         {
             countdownTimer -= Time.deltaTime;
+            timeText.text = ((int)countdownTimer / 60).ToString() + " : " + ((int)countdownTimer % 60).ToString();
         }
         else
         {
