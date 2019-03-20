@@ -501,7 +501,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 356525992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.199997, y: -1.5, z: 0}
+  m_LocalPosition: {x: 2.4799957, y: -1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1378091350}
@@ -509,8 +509,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.2, y: -1.5}
-  m_SizeDelta: {x: 61.7, y: 27.1}
+  m_AnchoredPosition: {x: 2.48, y: -1.5}
+  m_SizeDelta: {x: 59.15, y: 27.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &356525994
 MonoBehaviour:
@@ -1110,7 +1110,7 @@ RectTransform:
   m_GameObject: {fileID: 1001868110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.0125, y: 0.0125, z: 0.0125}
+  m_LocalScale: {x: 0.012492631, y: 0.012492631, z: 0.012492631}
   m_Children:
   - {fileID: 244345391}
   - {fileID: 787922275}
@@ -1347,13 +1347,14 @@ GameObject:
   - component: {fileID: 1378091350}
   - component: {fileID: 1378091352}
   - component: {fileID: 1378091351}
+  - component: {fileID: 1378091353}
   m_Layer: 5
   m_Name: reward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1378091350
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1409,6 +1410,19 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1378091349}
+--- !u!114 &1378091353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1378091349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff64f5d5a1d730c4fa2b9c4a95ecbc2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewardIcon: {fileID: 877215872}
+  rewardName: {fileID: 1258489339}
 --- !u!1 &1430776318
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,7 +1508,7 @@ GameObject:
   - component: {fileID: 1631766018}
   - component: {fileID: 1631766017}
   m_Layer: 5
-  m_Name: reward
+  m_Name: reward text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1664,6 +1678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2e5f1830931754f9decb8a248b2872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reward: {fileID: 1378091349}
   stageName: {fileID: 552239841}
   stageNumber: {fileID: 1430776320}
   timeText: {fileID: 174670518}

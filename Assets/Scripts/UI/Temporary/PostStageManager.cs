@@ -6,23 +6,36 @@ using UnityEngine.UI;
 
 public class PostStageManager : MonoBehaviour {
 
+    public GameObject reward;
+
     [SerializeField]
     private Text stageName,stageNumber;
     [SerializeField]
     private Text timeText;
 
+
 	// Use this for initialization
 	void Start () {
         float time = PlayerPrefs.GetFloat("Time", 0);
         stageName.text = PlayerPrefs.GetString("StageName");
-        stageNumber.text = "Stage " + (PlayerPrefs.GetInt("CurrentStage", 0) - 10).ToString();
+        stageNumber.text = "Stage " + (PlayerPrefs.GetInt("CurrentStage", 0)).ToString();
         timeText.text = ((int)time/60).ToString() +" : "+ ((int)time %60).ToString();
+
+        //need to add skill points at specific stages
+
+        CheckReward();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    private void CheckReward()
+    {
+        int currStage = PlayerPrefs.GetInt("CurrentStage", 0);
+        Debug.Log(PlayerPrefs.GetInt("CurrentStage", 0));
+        if (currStage == 2 || currStage == 4) {
+            Debug.Log(PlayerPrefs.GetInt("CurrentStage", 0));
+            reward.SetActive(true);
+            reward.GetComponent<RewardManager>().SetReward(currStage);
+        }
+    }
 
     // a method to move scenes
     public void LoadScene(string sceneName)
