@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212677261239321110}
   - component: {fileID: 50469311819533610}
   - component: {fileID: 114638143407136842}
+  - component: {fileID: 82645630866154810}
   - component: {fileID: 114456680290858552}
   - component: {fileID: 114820915545668006}
   - component: {fileID: 114997942148890662}
@@ -161,6 +162,86 @@ CapsuleCollider2D:
   m_Offset: {x: -0.0966239, y: 0.15112972}
   m_Size: {x: 0.4372015, y: 1.2705107}
   m_Direction: 0
+--- !u!82 &82645630866154810
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1451170525410428}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95973015716466112
 Animator:
   serializedVersion: 3
@@ -245,6 +326,11 @@ MonoBehaviour:
   health: 0
   maxSpeed: 7
   isFacingRight: 1
+  atkSound: {fileID: 8300000, guid: 46e66bc5b3473224c99a3672e1ad6206, type: 3}
+  jumpSound: {fileID: 0}
+  drinkSound: {fileID: 0}
+  injuredSound: {fileID: 0}
+  audioSource: {fileID: 82645630866154810}
   stamina: 0
   jumpPower: 6
 --- !u!114 &114820915545668006

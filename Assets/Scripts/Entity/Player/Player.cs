@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Player : Entity
 {
+    public AudioClip atkSound;
+    public AudioClip jumpSound;
+    public AudioClip drinkSound;
+    public AudioClip injuredSound;
+
+    public AudioSource audioSource;
+
     protected EntityAttack entityAttack;
     protected Weapon weapon;
     protected Armor armor;
@@ -69,6 +76,7 @@ public class Player : Entity
         LayerMask targetLayer = enemyLayer | obstacleLayer;
 
         entityAttack.targetLayer = targetLayer;
+
     }
 
     // Update is called once per frame
@@ -184,6 +192,8 @@ public class Player : Entity
             // Debug.Log("Weapon Type: " +  weapon.WeaponType);
             // Debug.Log("Attack Strength: " + atk);
             entityAttack.Attack(Atk,range);
+            audioSource.PlayOneShot(atkSound);
+
         }
         return false;
     }
