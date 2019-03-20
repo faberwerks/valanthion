@@ -1775,12 +1775,12 @@ Prefab:
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744324
+      value: -1.5744629
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.048217773
+      value: 0.048202515
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -1835,7 +1835,7 @@ Prefab:
     - target: {fileID: 114491426874650894, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: stageName
-      value: lvl3
+      value: Through the Forest
       objectReference: {fileID: 0}
     - target: {fileID: 114448311808171302, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}

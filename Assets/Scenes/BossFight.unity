@@ -1775,7 +1775,7 @@ Prefab:
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744324
+      value: -1.5744629
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -1826,6 +1826,16 @@ Prefab:
         type: 2}
       propertyPath: stageName
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 20584195118666930, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: orthographic size
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114491426874650894, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: stageName
+      value: The Demon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
