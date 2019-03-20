@@ -49,6 +49,7 @@ public class StageSetting : MonoBehaviour
         if (CanCount())
         {
             countupTimer += Time.deltaTime;
+            PlayerPrefs.SetFloat("Time",countupTimer);
         }
     }
 

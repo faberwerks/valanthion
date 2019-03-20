@@ -898,7 +898,7 @@ RectTransform:
   m_GameObject: {fileID: 1001868110}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.014533549, y: 0.014533549, z: 0.014533549}
+  m_LocalScale: {x: 0.013882507, y: 0.013882507, z: 0.013882507}
   m_Children:
   - {fileID: 244345391}
   - {fileID: 1616255125}
@@ -1528,6 +1528,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc2e5f1830931754f9decb8a248b2872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stageName: {fileID: 552239841}
+  stageNumber: {fileID: 1430776320}
+  timeText: {fileID: 174670518}
 --- !u!4 &2021225873
 Transform:
   m_ObjectHideFlags: 0
