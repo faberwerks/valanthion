@@ -35,8 +35,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PostStage.unity
     guid: 95ec69fb00581cb4399dd0e5e49eb2cc
-  - enabled: 1
-    path: Assets/Scenes/stage2.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/d21ae22bdf41cba41a98760578d4d7e4
     guid: d21ae22bdf41cba41a98760578d4d7e4
   - enabled: 1
     path: Assets/Scenes/Prologue.unity
