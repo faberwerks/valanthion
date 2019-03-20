@@ -815,9 +815,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1441671332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e487a94430256b14197530185a21c954, type: 3}
+  m_Script: {fileID: 11500000, guid: ef75040f7ecd7a24f94bef0421afbed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mainMenuBGM: {fileID: 8300000, guid: b546743c7f39833458da0a3fcd820cd5, type: 3}
+  cutsceneBGM: {fileID: 8300000, guid: 2d54aaf7ff6943e48aeef8df3cbedf51, type: 3}
+  normalStageBGM: {fileID: 8300000, guid: 157ec487675f00c469ddaddfe90ea489, type: 3}
+  timerStageBGM: {fileID: 8300000, guid: 49b6b1e356a88134bbe64b213a5af1e1, type: 3}
+  bossStageBGM: {fileID: 8300000, guid: 5bd8e1ed3d0a2e34a81744318f6ef0e7, type: 3}
 --- !u!1 &1906807849
 GameObject:
   m_ObjectHideFlags: 0

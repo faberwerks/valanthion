@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenuBackgroundMusic : MonoBehaviour {
+public class BackgroundMusicManager : MonoBehaviour {
 
     private AudioSource audioSource;
 
@@ -15,13 +15,15 @@ public class MainMenuBackgroundMusic : MonoBehaviour {
 
     private int currentSceneIndex;
 
-	// Use this for initialization
-	private void Start () {
+    // Use this for initialization
+    private void Start()
+    {
         audioSource = GetComponent<AudioSource>();
-	}
-	
-	// Update is called once per frame
-	private void Update () {
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         switch (currentSceneIndex)
@@ -48,5 +50,10 @@ public class MainMenuBackgroundMusic : MonoBehaviour {
                 }
                 break;
         }
-	}
+
+        if (!audioSource.isPlaying)
+        {
+            audioSource.Play();
+        }
+    }
 }
