@@ -48,13 +48,15 @@ public class SkillControl : MonoBehaviour {
     {
         Skill skill = skillProcessor.GetSkill(skillNumber);
 
-        if (cooldownTimers[skillNumber - 1] > 0)
+        Debug.Log(skill.name);
+
+        if (cooldownTimers[skillNumber] > 0)
         {
             return;
         }
         else
         {
-            cooldownTimers[skillNumber - 1] = skill.cooldownTime;
+            cooldownTimers[skillNumber] = skill.cooldownTime;
         }
 
         if (skill.staminaCost > 0 && player.Stamina >= skill.staminaCost)
@@ -227,7 +229,7 @@ public class SkillControl : MonoBehaviour {
     // a coroutine to countdown skill cooldown
     private IEnumerator CCountdownCooldown(byte skillNumber)
     {
-        int index = skillNumber - 1;
+        int index = skillNumber;
 
         while (cooldownTimers[index] > 0)
         {

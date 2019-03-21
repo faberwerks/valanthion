@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff9dc3e8d4ae654d9fe6c5573739349, type: 3}
   m_Name: Thrust
   m_EditorClassIdentifier: 
-  skillId: 5
+  skillId: 2
   skillName: Thrust
   weaponType: 0
-  skillNumber: 5
+  skillNumber: 2
   cooldownTime: 5
   executionTime: 0
   staminaCost: 20

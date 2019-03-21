@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff9dc3e8d4ae654d9fe6c5573739349, type: 3}
   m_Name: Sword Dance
   m_EditorClassIdentifier: 
-  skillId: 4
+  skillId: 5
   skillName: Sword Dance
   weaponType: 0
-  skillNumber: 4
+  skillNumber: 5
   cooldownTime: 5
   executionTime: 0
   staminaCost: 30

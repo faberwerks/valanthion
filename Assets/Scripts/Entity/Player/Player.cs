@@ -140,19 +140,19 @@ public class Player : Entity
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            skillControl.UseSkill((byte)1);
+            skillControl.UseSkill(InputManager.instance.SkillAKey);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            skillControl.UseSkill((byte)2);
+            skillControl.UseSkill(InputManager.instance.SkillSKey);
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            skillControl.UseSkill((byte)3);
+            skillControl.UseSkill(InputManager.instance.SkillDKey);
         }
         else if (Input.GetKeyDown(KeyCode.F))
         {
-            skillControl.UseSkill((byte)4);
+            skillControl.UseSkill(InputManager.instance.SkillFKey);
         }
     }
 

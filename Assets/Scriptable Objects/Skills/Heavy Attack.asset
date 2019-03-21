@@ -11,10 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fff9dc3e8d4ae654d9fe6c5573739349, type: 3}
   m_Name: Heavy Attack
   m_EditorClassIdentifier: 
-  skillId: 1
+  skillId: 0
   skillName: Heavy Attack
   weaponType: 0
-  skillNumber: 1
+  skillNumber: 0
   cooldownTime: 2
   executionTime: 0
   staminaCost: 50
