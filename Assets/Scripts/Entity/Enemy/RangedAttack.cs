@@ -44,7 +44,7 @@ public class RangedAttack : MonoBehaviour
         if (!isAttacking)
         {
             anim.SetBool("Is Attacking", true);
-            audioSource.PlayOneShot(arrowShoot);
+            //audioSource.PlayOneShot(arrowShoot);
             isAttacking = true;
             atkTimer = atkCooldown;
 
