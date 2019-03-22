@@ -106,10 +106,10 @@ public class Boss : Entity {
 
     private void Pattern1()
     {
-        pattern[index] = pattern[index] - patternRandomize;
+        pattern[index] = (pattern[index] + patternRandomize) % 3;
         spear.GetComponent<Spear>().damage = spearDamage;
 
-        switch (pattern[index])
+        switch (pattern[index]+1)
         {
             case 1:
                 Instantiate(spear, new Vector3(transform.position.x, 2, transform.position.z), Quaternion.identity);
