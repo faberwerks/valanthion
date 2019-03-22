@@ -84,8 +84,11 @@ public class Player : Entity
     {
         InputAttack();
         CheckDeath();
-        Jump();
-        InputMove();
+        if (!Input.GetKey(KeyCode.Tab))
+        {
+            Jump();
+            InputMove();
+        }
         Stamina += 10 * Time.deltaTime; // stamina regen
         InputSkill();
         InputInv();
