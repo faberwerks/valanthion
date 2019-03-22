@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    public AudioClip atkSound;
     public AudioClip jumpSound;
     public AudioClip drinkSound;
     public AudioClip injuredSound;
@@ -169,6 +168,8 @@ public class Player : Entity
                 isJumping = true;
                 anim.SetBool("Is Jumping", true);
                 stamina -= 10;
+                audioSource.PlayOneShot(jumpSound);
+
             }
             else
             {
@@ -179,6 +180,7 @@ public class Player : Entity
                     rb.AddForce(jumpForce * jumpPower, ForceMode2D.Impulse);
                     anim.SetBool("Is Double Jumping", true);
                     stamina -= 10;
+                    audioSource.PlayOneShot(jumpSound);
                 }
             }
         }
@@ -191,9 +193,7 @@ public class Player : Entity
         {
             // Debug.Log("Weapon Type: " +  weapon.WeaponType);
             // Debug.Log("Attack Strength: " + atk);
-            entityAttack.Attack(Atk,range);
-            audioSource.PlayOneShot(atkSound);
-
+            entityAttack.Attack(Atk,range);          
         }
         return false;
     }

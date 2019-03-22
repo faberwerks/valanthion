@@ -13,6 +13,10 @@ public interface IEnemy
 
 public class Enemy : Entity
 {
+    public AudioSource audioSource;
+
+    public AudioClip enemyDeath;
+    
     public enum EnemyState : byte { PATROL, GUARD, CHASE, ATTACK, RETREAT }
 
     protected GameObject player;
@@ -75,6 +79,7 @@ public class Enemy : Entity
     {
         if (Health <= 0)
         {
+            //audioSource.PlayOneShot(enemyDeath);
             stageSetting.RemoveEnemy(gameObject);
             Destroy(gameObject);
         }

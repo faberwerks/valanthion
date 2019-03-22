@@ -75,7 +75,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451170525410428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.707, y: -3.212, z: 0}
+  m_LocalPosition: {x: 0.16, y: -0.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4020146056531660}
@@ -173,7 +173,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -296,6 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkSound: {fileID: 8300000, guid: 46e66bc5b3473224c99a3672e1ad6206, type: 3}
+  audioSource: {fileID: 82645630866154810}
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -326,8 +328,7 @@ MonoBehaviour:
   health: 0
   maxSpeed: 7
   isFacingRight: 1
-  atkSound: {fileID: 8300000, guid: 46e66bc5b3473224c99a3672e1ad6206, type: 3}
-  jumpSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 2525666d7b4c72a49a3e023cff92df1c, type: 3}
   drinkSound: {fileID: 0}
   injuredSound: {fileID: 0}
   audioSource: {fileID: 82645630866154810}

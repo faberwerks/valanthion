@@ -490,12 +490,12 @@ Prefab:
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744629
+      value: -1.5744324
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.048217773
+      value: 0.048202515
       objectReference: {fileID: 0}
     - target: {fileID: 224950595018981304, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -6528,6 +6528,8 @@ MonoBehaviour:
   health: 0
   maxSpeed: 10
   isFacingRight: 0
+  audioSource: {fileID: 0}
+  enemyDeath: {fileID: 0}
   initialState: 0
   detectionRange: 10
   comboDelay: 0
@@ -18448,6 +18450,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkSound: {fileID: 8300000, guid: 46e66bc5b3473224c99a3672e1ad6206, type: 3}
+  audioSource: {fileID: 1030905030}
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -18466,13 +18470,12 @@ MonoBehaviour:
   health: 0
   maxSpeed: 7
   isFacingRight: 1
-  atkSound: {fileID: 8300000, guid: 46e66bc5b3473224c99a3672e1ad6206, type: 3}
-  jumpSound: {fileID: 8300000, guid: b546743c7f39833458da0a3fcd820cd5, type: 3}
+  jumpSound: {fileID: 8300000, guid: 2525666d7b4c72a49a3e023cff92df1c, type: 3}
   drinkSound: {fileID: 0}
   injuredSound: {fileID: 0}
   audioSource: {fileID: 1030905030}
   stamina: 0
-  jumpPower: 5
+  jumpPower: 6
 --- !u!50 &1030905027
 Rigidbody2D:
   serializedVersion: 4

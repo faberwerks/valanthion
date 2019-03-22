@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: f5c66671125c29e43be70e385d855778
-timeCreated: 1532489116
+timeCreated: 1553269547
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - jumpSound: {instanceID: 0}
+  - drinkSound: {instanceID: 0}
+  - injuredSound: {instanceID: 0}
+  - audioSource: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

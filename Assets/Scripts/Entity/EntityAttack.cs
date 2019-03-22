@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EntityAttack : MonoBehaviour {
 
+    public AudioClip atkSound;
+
+    public AudioSource audioSource;
+
     private Animator anim;
 
     private Entity entity;
@@ -22,6 +26,7 @@ public class EntityAttack : MonoBehaviour {
         anim = GetComponent<Animator>();
 
         entity = GetComponent<Entity>();
+
     }
 
     private void Update()
@@ -40,6 +45,7 @@ public class EntityAttack : MonoBehaviour {
             if (atkTimer > 0)
             {
                 atkTimer -= Time.deltaTime;
+                
             }
             else
             {
@@ -54,7 +60,9 @@ public class EntityAttack : MonoBehaviour {
         if (!isAttacking)
         {
             anim.SetBool("Is Attacking", true);
+            audioSource.PlayOneShot(atkSound);
             isAttacking = true;
+            
             atkTimer = atkCooldown;
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, currDir, range, targetLayer);
