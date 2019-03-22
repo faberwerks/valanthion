@@ -27,6 +27,11 @@ public class MainMenuManager : MonoBehaviour {
     }
     */
 
+    private void Start()
+    {
+        SaveLoad.Load();
+    }
+
     public enum MainMenu
     {
         MainMenu,

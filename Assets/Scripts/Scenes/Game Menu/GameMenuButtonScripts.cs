@@ -16,4 +16,11 @@ public class GameMenuButtonScripts : MonoBehaviour {
     {
         SceneManager.LoadScene(sceneName);
     }
+
+    // save current game data
+    public void SaveCurrentGame()
+    {
+        SaveLoad.Save(Game.current.slotIndex);
+        Debug.Log("SAVED");
+    }
 }
