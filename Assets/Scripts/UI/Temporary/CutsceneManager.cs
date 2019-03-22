@@ -11,6 +11,7 @@ public class CutsceneManager : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
+        Time.timeScale = 1.0f;
         StartCoroutine(CStartCutscenes());
 	}
 
@@ -18,7 +19,6 @@ public class CutsceneManager : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            StopAllCoroutines();
             SceneManager.LoadScene("DemoLevel2");
         }
     }
