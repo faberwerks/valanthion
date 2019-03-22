@@ -7,7 +7,7 @@ public class SkillKeyButton : MonoBehaviour {
 
     private Button button;
 
-    public string key;
+    public KeyCode keyCode;
 
     public byte skillId;
 
@@ -17,55 +17,62 @@ public class SkillKeyButton : MonoBehaviour {
     }
 
     private void Update() {
-        switch (key)
+        if (Game.current.skills[skillId] == 0)
         {
-            case "A":
-                if ((byte)PlayerPrefs.GetInt("SkillAKey") == skillId)
-                {
-                    button.interactable = false;
-                }
-                else
-                {
-                    button.interactable = true;
-                }
-                break;
-            case "S":
-                if ((byte)PlayerPrefs.GetInt("SkillSKey") == skillId)
-                {
-                    button.interactable = false;
-                }
-                else
-                {
-                    button.interactable = true;
-                }
-                break;
-            case "D":
-                if ((byte)PlayerPrefs.GetInt("SkillDKey") == skillId)
-                {
-                    button.interactable = false;
-                }
-                else
-                {
-                    button.interactable = true;
-                }
-                break;
-            case "F":
-                if ((byte)PlayerPrefs.GetInt("SkillFKey") == skillId)
-                {
-                    button.interactable = false;
-                }
-                else
-                {
-                    button.interactable = true;
-                }
-                break;
+            button.interactable = false;
+        }
+        else
+        {
+            switch (keyCode)
+            {
+                case KeyCode.A:
+                    if ((byte)PlayerPrefs.GetInt("SkillAKey") == skillId)
+                    {
+                        button.interactable = false;
+                    }
+                    else
+                    {
+                        button.interactable = true;
+                    }
+                    break;
+                case KeyCode.S:
+                    if ((byte)PlayerPrefs.GetInt("SkillSKey") == skillId)
+                    {
+                        button.interactable = false;
+                    }
+                    else
+                    {
+                        button.interactable = true;
+                    }
+                    break;
+                case KeyCode.D:
+                    if ((byte)PlayerPrefs.GetInt("SkillDKey") == skillId)
+                    {
+                        button.interactable = false;
+                    }
+                    else
+                    {
+                        button.interactable = true;
+                    }
+                    break;
+                case KeyCode.F:
+                    if ((byte)PlayerPrefs.GetInt("SkillFKey") == skillId)
+                    {
+                        button.interactable = false;
+                    }
+                    else
+                    {
+                        button.interactable = true;
+                    }
+                    break;
+            }
         }
     }
 
     // a method to set this as the skill's key
     public void SetAsKey()
     {
-        InputManager.instance.SetKey(key, skillId);
+        InputManager.instance.SetKey(keyCode, skillId);
         button.interactable = false;
     }
 }

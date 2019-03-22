@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: D
+  keyCode: 100
   skillId: 0
 --- !u!114 &22747914
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: F
+  keyCode: 102
   skillId: 3
 --- !u!114 &47067181
 MonoBehaviour:
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
+  keyCode: 97
   skillId: 0
 --- !u!114 &180324126
 MonoBehaviour:
@@ -1284,7 +1284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: S
+  keyCode: 115
   skillId: 0
 --- !u!114 &213917252
 MonoBehaviour:
@@ -1470,12 +1470,12 @@ RectTransform:
   m_LocalPosition: {x: 0.000061035156, y: -66.48801, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 748496253}
-  - {fileID: 924235070}
-  - {fileID: 1760164222}
-  - {fileID: 715010944}
-  - {fileID: 1777085722}
   - {fileID: 670385018}
+  - {fileID: 1760164222}
+  - {fileID: 1777085722}
+  - {fileID: 715010944}
+  - {fileID: 924235070}
+  - {fileID: 748496253}
   m_Father: {fileID: 1189539671}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1811,7 +1811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: S
+  keyCode: 115
   skillId: 2
 --- !u!114 &336652983
 MonoBehaviour:
@@ -2881,11 +2881,11 @@ RectTransform:
   m_GameObject: {fileID: 466966674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.013890625, y: 0.013890625, z: 0.013890625}
+  m_LocalScale: {x: 0.013882326, y: 0.013882326, z: 0.013882326}
   m_Children:
   - {fileID: 1928700962}
-  - {fileID: 1189539671}
   - {fileID: 1586938465}
+  - {fileID: 1189539671}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4068,7 +4068,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: F
+  keyCode: 102
   skillId: 2
 --- !u!114 &601069839
 MonoBehaviour:
@@ -4451,7 +4451,7 @@ RectTransform:
   - {fileID: 1134131426}
   - {fileID: 1731211541}
   m_Father: {fileID: 235028039}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4770,7 +4770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
+  keyCode: 97
   skillId: 2
 --- !u!114 &724167796
 MonoBehaviour:
@@ -5038,7 +5038,7 @@ RectTransform:
   - {fileID: 22747911}
   - {fileID: 1063561692}
   m_Father: {fileID: 235028039}
-  m_RootOrder: 0
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5248,7 +5248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
+  keyCode: 97
   skillId: 3
 --- !u!114 &832224952
 MonoBehaviour:
@@ -5384,7 +5384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: F
+  keyCode: 102
   skillId: 1
 --- !u!114 &866720378
 MonoBehaviour:
@@ -5851,7 +5851,7 @@ RectTransform:
   - {fileID: 1062741686}
   - {fileID: 866720376}
   m_Father: {fileID: 235028039}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6117,7 +6117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
+  keyCode: 97
   skillId: 4
 --- !u!114 &979909866
 MonoBehaviour:
@@ -6580,7 +6580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: D
+  keyCode: 100
   skillId: 4
 --- !u!114 &1007010505
 MonoBehaviour:
@@ -6925,7 +6925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: D
+  keyCode: 100
   skillId: 1
 --- !u!114 &1062741683
 MonoBehaviour:
@@ -7080,7 +7080,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: F
+  keyCode: 102
   skillId: 0
 --- !u!114 &1063561695
 MonoBehaviour:
@@ -7271,7 +7271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: D
+  keyCode: 100
   skillId: 2
 --- !u!114 &1080649238
 MonoBehaviour:
@@ -7618,7 +7618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: D
+  keyCode: 100
   skillId: 5
 --- !u!114 &1134131423
 MonoBehaviour:
@@ -7896,7 +7896,7 @@ RectTransform:
   - {fileID: 953534380}
   - {fileID: 757195675}
   m_Father: {fileID: 466966678}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8210,7 +8210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: S
+  keyCode: 115
   skillId: 4
 --- !u!114 &1322259946
 MonoBehaviour:
@@ -8551,7 +8551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: D
+  keyCode: 100
   skillId: 3
 --- !u!114 &1365523592
 MonoBehaviour:
@@ -8827,7 +8827,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: S
+  keyCode: 115
   skillId: 5
 --- !u!114 &1406501892
 MonoBehaviour:
@@ -9451,7 +9451,7 @@ RectTransform:
   - {fileID: 523873266}
   - {fileID: 542294711}
   m_Father: {fileID: 466966678}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9853,7 +9853,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
+  keyCode: 97
   skillId: 5
 --- !u!114 &1660392343
 MonoBehaviour:
@@ -10206,7 +10206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: F
+  keyCode: 102
   skillId: 5
 --- !u!114 &1731211543
 MonoBehaviour:
@@ -10401,7 +10401,7 @@ RectTransform:
   - {fileID: 1080649241}
   - {fileID: 601069837}
   m_Father: {fileID: 235028039}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10510,7 +10510,7 @@ RectTransform:
   - {fileID: 1007010508}
   - {fileID: 1975989945}
   m_Father: {fileID: 235028039}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10642,7 +10642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: A
+  keyCode: 97
   skillId: 1
 --- !u!114 &1839774160
 MonoBehaviour:
@@ -10852,7 +10852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: S
+  keyCode: 115
   skillId: 3
 --- !u!114 &1858024352
 MonoBehaviour:
@@ -11112,7 +11112,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1928700961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -543.82007, y: 325.955, z: 0}
+  m_LocalPosition: {x: -544.20264, y: 326.17023, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 648128504}
@@ -11258,7 +11258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: F
+  keyCode: 102
   skillId: 4
 --- !u!114 &1975989947
 MonoBehaviour:
@@ -11610,7 +11610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42af3cb2ea1738746a478a3538bae87a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  key: S
+  keyCode: 115
   skillId: 1
 --- !u!114 &2027691579
 MonoBehaviour:

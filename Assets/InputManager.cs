@@ -30,23 +30,23 @@ public class InputManager : MonoBehaviour {
     }
 
     // a method to bind a key to a skill
-    public void SetKey(string keyCode, byte skillId)
+    public void SetKey(KeyCode keyCode, byte skillId)
     {
         switch (keyCode)
         {
-            case "A":
+            case KeyCode.A:
                 PlayerPrefs.SetInt("SkillAKey", skillId);
                 SkillAKey = (byte)PlayerPrefs.GetInt("SkillAKey");
                 break;
-            case "S":
+            case KeyCode.S:
                 PlayerPrefs.SetInt("SkillSKey", skillId);
                 SkillAKey = (byte)PlayerPrefs.GetInt("SkillSKey");
                 break;
-            case "D":
+            case KeyCode.D:
                 PlayerPrefs.SetInt("SkillDKey", skillId);
                 SkillAKey = (byte)PlayerPrefs.GetInt("SkillDKey");
                 break;
-            case "F":
+            case KeyCode.F:
                 PlayerPrefs.SetInt("SkillFKey", skillId);
                 SkillAKey = (byte)PlayerPrefs.GetInt("SkillFKey");
                 break;
