@@ -25,6 +25,7 @@ public class PostStageManager : MonoBehaviour {
 
         CheckSkillPoint();
         CheckReward();
+        SaveLoad.Save(Game.current.slotIndex);
 	}
 
     private void CheckReward()
