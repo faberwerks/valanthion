@@ -99,13 +99,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1678afb09d746b6409da26655823f3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  maxSpeed: 10
+  isFacingRight: 0
   spear: {fileID: 1641837735699174, guid: 429e6bb3475820b4b888e67d391816bf, type: 2}
   bombPrep: {fileID: 1708952117423616, guid: 6d596acb996cf194c9395d75b87f15da, type: 2}
   skillCooldownSpear: 3
   skillCooldownExplode: 5
+  patternCooldown: 0
   spearDamage: 20
   bombDamage: 10
-  health: 100
+  pattern: 
 --- !u!212 &212659344247046446
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -140,7 +144,7 @@ SpriteRenderer:
   m_SortingLayerID: -1329352971
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 892a8abacf90998458079ccad456f175, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
   m_Color: {r: 0.44117647, g: 0, b: 0.35598361, a: 1}
   m_FlipX: 0
   m_FlipY: 0

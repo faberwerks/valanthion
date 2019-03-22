@@ -99,11 +99,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676f66c763ca98a45b81a891b899d02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
+  maxSpeed: 10
+  isFacingRight: 0
   bombPrep: {fileID: 1832674081212878, guid: d17325bdd2c1d0d4982f7c63baa4c724, type: 2}
   skillCooldownExplode: 3
   skillCooldownArea: 5
   bombDamage: 15
-  health: 100
 --- !u!212 &212650047665282004
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -138,7 +140,7 @@ SpriteRenderer:
   m_SortingLayerID: -1329352971
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 892a8abacf90998458079ccad456f175, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
   m_Color: {r: 0.8455882, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
