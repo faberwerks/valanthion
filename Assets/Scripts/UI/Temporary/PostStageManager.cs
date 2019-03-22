@@ -11,7 +11,7 @@ public class PostStageManager : MonoBehaviour {
     [SerializeField]
     private Text stageName,stageNumber;
     [SerializeField]
-    private Text timeText;
+    private Text timeText,skillPointText;
 
 
 	// Use this for initialization
@@ -23,6 +23,7 @@ public class PostStageManager : MonoBehaviour {
 
         //need to add skill points at specific stages
 
+        CheckSkillPoint();
         CheckReward();
 	}
 
@@ -46,5 +47,19 @@ public class PostStageManager : MonoBehaviour {
     public void Continue()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentStage", 0) + 1);
+    }
+
+    private void CheckSkillPoint()
+    {
+        int stage = PlayerPrefs.GetInt("CurrentStage", 0);
+        if (stage < 4 && Game.current.skillPoints < stage)
+        {
+            Game.current.skillPoints++;
+            skillPointText.text = "1";
+        }
+        else
+        {
+            skillPointText.text = "0";
+        }
     }
 }

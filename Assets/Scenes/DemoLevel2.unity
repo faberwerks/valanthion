@@ -229,7 +229,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.024}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &118022921
 Transform:
@@ -367,7 +367,7 @@ SpriteRenderer:
   m_Size: {x: 1.7479999, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &226654584
 Transform:
@@ -485,7 +485,7 @@ Prefab:
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744324
+      value: -1.5744629
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -495,42 +495,42 @@ Prefab:
     - target: {fileID: 224950595018981304, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 345.13596
+      value: 344.95984
       objectReference: {fileID: 0}
     - target: {fileID: 224950595018981304, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -175.13275
+      value: -175.03363
       objectReference: {fileID: 0}
     - target: {fileID: 224912036850285262, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -270.23596
+      value: -270.0598
       objectReference: {fileID: 0}
     - target: {fileID: 224912036850285262, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 171.83273
+      value: 171.73364
       objectReference: {fileID: 0}
     - target: {fileID: 224493376211710244, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 313.03595
+      value: 312.85983
       objectReference: {fileID: 0}
     - target: {fileID: 224493376211710244, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -145.13274
+      value: -145.03365
       objectReference: {fileID: 0}
     - target: {fileID: 224461761660363264, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 282.03595
+      value: 281.85983
       objectReference: {fileID: 0}
     - target: {fileID: 224461761660363264, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -175.13275
+      value: -175.03363
       objectReference: {fileID: 0}
     - target: {fileID: 114491426874650894, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -540,12 +540,17 @@ Prefab:
     - target: {fileID: 114448311808171302, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: stageName
-      value: lvl1
+      value: Invasion
       objectReference: {fileID: 0}
     - target: {fileID: 114727685363532910, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: stageName
-      value: lvl1
+      value: Invasion
+      objectReference: {fileID: 0}
+    - target: {fileID: 114727685363532910, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: timeText
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
@@ -18604,7 +18609,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.024}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1297263362
 Transform:
@@ -19965,7 +19970,7 @@ SpriteRenderer:
   m_Size: {x: 1.7479999, y: 2.48}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &1733368748
 Transform:
@@ -20371,7 +20376,7 @@ SpriteRenderer:
   m_Size: {x: 1.28, y: 1.024}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
 --- !u!4 &2115688497
 Transform:

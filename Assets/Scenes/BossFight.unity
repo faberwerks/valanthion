@@ -1775,57 +1775,57 @@ Prefab:
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744629
+      value: -1.5744324
       objectReference: {fileID: 0}
     - target: {fileID: 224004404389210434, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.048217773
+      value: 0.048202515
       objectReference: {fileID: 0}
     - target: {fileID: 224950595018981304, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 344.85
+      value: 344.95984
       objectReference: {fileID: 0}
     - target: {fileID: 224950595018981304, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -174.97186
+      value: -175.03363
       objectReference: {fileID: 0}
     - target: {fileID: 224493376211710244, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 312.75
+      value: 312.85983
       objectReference: {fileID: 0}
     - target: {fileID: 224493376211710244, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -144.97186
+      value: -145.03365
       objectReference: {fileID: 0}
     - target: {fileID: 224461761660363264, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 281.75
+      value: 281.85983
       objectReference: {fileID: 0}
     - target: {fileID: 224461761660363264, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -174.97186
+      value: -175.03363
       objectReference: {fileID: 0}
     - target: {fileID: 224912036850285262, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -269.95
+      value: -270.0598
       objectReference: {fileID: 0}
     - target: {fileID: 224912036850285262, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 171.67186
+      value: 171.73364
       objectReference: {fileID: 0}
     - target: {fileID: 114727685363532910, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: stageName
-      value: Boss
+      value: The Demon
       objectReference: {fileID: 0}
     - target: {fileID: 20584195118666930, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -1833,6 +1833,11 @@ Prefab:
       value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 114491426874650894, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: stageName
+      value: The Demon
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448311808171302, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: stageName
       value: The Demon
