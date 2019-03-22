@@ -14,7 +14,8 @@ public class SkillControl : MonoBehaviour {
 
     public LayerMask targetLayer;
 
-    private float[] cooldownTimers = new float[6];
+    public bool[] canUse = new bool[6];
+    public float[] cooldownTimers = new float[6];
 
     private float weaponDamage;
     private float weaponRange;
@@ -26,6 +27,11 @@ public class SkillControl : MonoBehaviour {
         skillProcessor = GetComponent<SkillProcessor>();
 
         weapon = GetComponent<Weapon>();
+
+        for (int i = 0; i < 6; i++)
+        {
+            canUse[i] = true;
+        }
 
         weaponDamage = weapon.Atk;
         weaponRange = weapon.AtkRange;
@@ -222,6 +228,7 @@ public class SkillControl : MonoBehaviour {
             }
         }
 
+        canUse[skillNumber] = false;
         StartCoroutine(CCountdownCooldown(skillNumber));
     }
 
@@ -237,6 +244,7 @@ public class SkillControl : MonoBehaviour {
             yield return 0;
         }
 
+        canUse[skillNumber] = true;
         yield break;
     }
 }

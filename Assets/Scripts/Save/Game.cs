@@ -23,9 +23,17 @@ public class Game
 
         skills = new int[6];
         skills[0] = 1;
+        for (int i = 1; i < 6; i++)
+        {
+            skills[i] = 0;
+        }
 
         weapons = new int[3];
         weapons[0] = 1;
+        for (int i = 1; i < 3; i++)
+        {
+            weapons[i] = 0;
+        }
 
         latestStage = 1;
 

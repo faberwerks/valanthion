@@ -24,8 +24,44 @@ public class InputManager : MonoBehaviour {
         }
 
         SkillAKey = (byte) PlayerPrefs.GetInt("SkillAKey", 0);
-        SkillSKey = (byte) PlayerPrefs.GetInt("SkillSKey", 1);
-        SkillDKey = (byte) PlayerPrefs.GetInt("SkillDKey", 2);
-        SkillFKey = (byte) PlayerPrefs.GetInt("SkillFKey", 3);
+        SkillSKey = (byte) PlayerPrefs.GetInt("SkillSKey", -1);
+        SkillDKey = (byte) PlayerPrefs.GetInt("SkillDKey", -1);
+        SkillFKey = (byte) PlayerPrefs.GetInt("SkillFKey", -1);
+    }
+
+    // a method to bind a key to a skill
+    public void SetKey(string keyCode, byte skillId)
+    {
+        switch (keyCode)
+        {
+            case "A":
+                PlayerPrefs.SetInt("SkillAKey", skillId);
+                SkillAKey = (byte)PlayerPrefs.GetInt("SkillAKey");
+                break;
+            case "S":
+                PlayerPrefs.SetInt("SkillSKey", skillId);
+                SkillAKey = (byte)PlayerPrefs.GetInt("SkillSKey");
+                break;
+            case "D":
+                PlayerPrefs.SetInt("SkillDKey", skillId);
+                SkillAKey = (byte)PlayerPrefs.GetInt("SkillDKey");
+                break;
+            case "F":
+                PlayerPrefs.SetInt("SkillFKey", skillId);
+                SkillAKey = (byte)PlayerPrefs.GetInt("SkillFKey");
+                break;
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+        {
+            Debug.Log(PlayerPrefs.GetInt("SkillAKey"));
+            Debug.Log(PlayerPrefs.GetInt("SkillSKey"));
+            Debug.Log(PlayerPrefs.GetInt("SkillDKey"));
+            Debug.Log(PlayerPrefs.GetInt("SkillFKey"));
+            Debug.Log(Game.current.skills);
+        }
     }
 }

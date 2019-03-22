@@ -27,11 +27,12 @@ public class SkillProcessor : MonoBehaviour {
     {
         foreach (Skill skill in validSkillList)
         {
-            if (skill.skillNumber == skillNumber)
+            if (skill.skillNumber == skillNumber && Game.current.skills[skillNumber] != 0)
             {
                 Debug.Log("Found skill!");
                 return skill;
             }
+            Debug.Log("Found skill but not allowed!");
         }
 
         return null;
