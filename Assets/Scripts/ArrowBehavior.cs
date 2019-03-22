@@ -54,6 +54,10 @@ public class ArrowBehavior : MonoBehaviour
             c.SendMessage("TakeDamage", attackStrength);
             Destroy();
         }
+        else if(c.CompareTag("Ground"))
+        {
+            Destroy();
+        }
     }
 
 }
