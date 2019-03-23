@@ -901,12 +901,12 @@ GameObject:
   - component: {fileID: 222783980335501158}
   - component: {fileID: 114384667539025330}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Timer stage2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1736547708437592
 GameObject:
   m_ObjectHideFlags: 1
@@ -1075,12 +1075,12 @@ GameObject:
   - component: {fileID: 222486345081457014}
   - component: {fileID: 114689301055538924}
   m_Layer: 5
-  m_Name: Timer
+  m_Name: Timer stage3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1879641587081352
 GameObject:
   m_ObjectHideFlags: 1
