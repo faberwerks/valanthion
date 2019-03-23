@@ -137,7 +137,12 @@ public class Player : Entity
     public void InputMove()
     {
         float tempMove = Input.GetAxis("Horizontal");
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            tempMove = 0;
+        }
         Move(tempMove);
+
     }
 
     // a method to handle skill use input
@@ -165,7 +170,7 @@ public class Player : Entity
     // REMINDER: Set fixed jump stamina cost
     void Jump()
     {
-        if (Input.GetKeyDown("up"))
+        if (Input.GetKeyDown("up") && !Input.GetKey(KeyCode.Tab))
         {
             if (!isJumping && stamina >=10)
             {

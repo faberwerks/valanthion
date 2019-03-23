@@ -4,10 +4,25 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
+    protected SpriteRenderer sprRend;
+
+    protected Color initialColor;
+
     public bool destroyable;
     public float health;
     public bool damages;
     public float damage;
+
+    protected float colorTime;
+    protected float colorTimer;
+
+    private void Start()
+    {
+        sprRend = gameObject.GetComponent<SpriteRenderer>();
+        initialColor = sprRend.color;
+        colorTime = 0.2f;
+        colorTimer = colorTime;
+    }
 
     private void Update()
     {
@@ -34,6 +49,7 @@ public class Obstacle : MonoBehaviour {
         if (destroyable)
         {
             health -= Mathf.FloorToInt(damage);
+            StartCoroutine(CTimeColorChange());
         }
     }
 
@@ -45,4 +61,20 @@ public class Obstacle : MonoBehaviour {
         }
     }
 
+    //COROUTINES
+    // color change timer
+    protected IEnumerator CTimeColorChange()
+    {
+        sprRend.color = new Color(255f, 0.0f, 0.0f, 255f);
+        colorTimer = colorTime;
+
+        while (colorTimer > 0)
+        {
+            colorTimer -= Time.deltaTime;
+            yield return 0;
+        }
+
+        sprRend.color = initialColor;
+        yield break;
+    }
 }
