@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuManager : MonoBehaviour {
 
     public GameObject defeatPanel;
-    public GameObject victoryPanel;
+    // public GameObject victoryPanel;
     public GameObject pausePanel;
     public GameObject minimap;
 
@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour {
     void Start()
     {
         defeatPanel.SetActive(false);
-        victoryPanel.SetActive(false);
+        // victoryPanel.SetActive(false);
         minimap.SetActive(false);
         minimapIsOpen = false;
     }
@@ -28,7 +28,7 @@ public class MenuManager : MonoBehaviour {
         {
             case GameManager.GameState.PLAYING:
                 defeatPanel.SetActive(false);
-                victoryPanel.SetActive(false);
+                // victoryPanel.SetActive(false);
                 break;
             case GameManager.GameState.VICTORY:
                 VictoryMenu();
@@ -75,11 +75,13 @@ public class MenuManager : MonoBehaviour {
         defeatPanel.SetActive(true);
     }
 
+    /*
     // a method to activate the victory menu/panel
     public void VictoryMenu()
     {
         victoryPanel.SetActive(true);
     }
+    */
 
     // a method to activate the pause menu/panel
     public void PauseMenu()
