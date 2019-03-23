@@ -177,8 +177,47 @@ public class MeleeEnemy : Enemy, IEnemy {
     {
         anim.SetFloat("Speed", 0.0f);
 
-        distance = Mathf.Abs(transform.position.x - player.transform.position.x);
-        if (distance > range)
+        #region edited by :
+        // Changed made by : Samuel Edsel Fernandez
+        // Edited 23 mar 2019
+        // Purpose :Make the AI detect which deretion he need to facing when attacking
+        #endregion
+
+        #region Comented
+        //distance = Mathf.Abs(transform.position.x - player.transform.position.x);
+        //if (distance > range)
+        //{
+        //    CurrState = EnemyState.CHASE;
+        //    return;
+        //}
+        //else
+        //{
+        //    if (!entityAttack.IsAttacking)
+        //    {
+        //        entityAttack.Attack(Atk, range);
+        //    }
+        //}
+        #endregion
+
+        distance = transform.position.x - player.transform.position.x;
+
+        #region Explanation
+        //if distance is minus than the player is at left
+        //The isFacingRight variable is flipped so if isFacingRight == true the enemy will facing left
+        #endregion
+
+        if(distance < 0 && isFacingRight == false && distance < range)
+        {
+            Debug.Log("Player at the left");
+            Flip();
+        }
+        else if(distance > 0 && isFacingRight == true && distance < range)
+        {
+            Debug.Log("Player at the right");
+            Flip();
+        }
+
+        if (Mathf.Abs(distance) > range)
         {
             CurrState = EnemyState.CHASE;
             return;
@@ -190,6 +229,7 @@ public class MeleeEnemy : Enemy, IEnemy {
                 entityAttack.Attack(Atk, range);
             }
         }
+
     }
 
     public void Retreat() { }
