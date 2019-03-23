@@ -197,6 +197,14 @@ MonoBehaviour:
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
+  canUse: 000000000000
+  cooldownTimers:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!114 &114336242603606336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -315,7 +323,7 @@ SpriteRenderer:
   m_SortingLayerID: -901804511
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4754179f9b36fb74b869137cf1f44ef9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9c9d6ad2c7e52c8478996a8336b4e42c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
