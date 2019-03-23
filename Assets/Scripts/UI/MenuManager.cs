@@ -9,11 +9,14 @@ public class MenuManager : MonoBehaviour {
     public GameObject pausePanel;
     public GameObject minimap;
 
+    public bool minimapIsOpen;
+
     void Start()
     {
         defeatPanel.SetActive(false);
         victoryPanel.SetActive(false);
         minimap.SetActive(false);
+        minimapIsOpen = false;
     }
 
     // Update is called once per frame
@@ -44,10 +47,12 @@ public class MenuManager : MonoBehaviour {
         if (Input.GetKey(KeyCode.Tab))
         {
             minimap.SetActive(true);
+            minimapIsOpen = true;
         }
         else
         {
             minimap.SetActive(false);
+            minimapIsOpen = false;
         }
     }
 

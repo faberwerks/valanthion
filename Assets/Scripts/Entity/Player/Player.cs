@@ -16,6 +16,7 @@ public class Player : Entity
     protected Armor armor;
     protected SkillControl skillControl;
     protected Inventory inv;
+    protected MenuManager menuManager;
 
     protected Vector2 jumpForce = new Vector2(0, 1);
 
@@ -58,6 +59,7 @@ public class Player : Entity
         entityAttack = GetComponent<EntityAttack>();
         skillControl = GetComponent<SkillControl>();
         inv = GetComponent<Inventory>();
+        menuManager = GameObject.FindGameObjectWithTag("MenuManager").GetComponent<MenuManager>();
 
         maxStamina = 100;
         stamina = maxStamina;
@@ -84,7 +86,7 @@ public class Player : Entity
     {
         InputAttack();
         CheckDeath();
-        if (!Input.GetKey(KeyCode.Tab))
+        if (!menuManager.minimapIsOpen)
         {
             Jump();
             InputMove();
