@@ -44,8 +44,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451170525410428}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.16, y: -0.37, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.8, y: -1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -180,7 +180,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114279536759785256
@@ -192,8 +192,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5371916f970deab4ab1cc4db85e393e5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -214,8 +214,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01e1c5f6cdc8c934fb0294e38354e7f9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   skillList: {fileID: 11400000, guid: ac5f802fce84fcc41bfc9d8e74bd6aa0, type: 2}
 --- !u!114 &114456680290858552
 MonoBehaviour:
@@ -226,10 +226,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   atkSound: {fileID: 8300000, guid: 46e66bc5b3473224c99a3672e1ad6206, type: 3}
-  audioSource: {fileID: 82645630866154810}
+  audioSource: {fileID: 82143811475658210}
   targetLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -242,8 +242,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 85407b45048cb1148816cca61c9b0d3b, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   armorItemList: {fileID: 11400000, guid: a1335c0e4de10ba4aaede6604efac8a5, type: 2}
   itemId: 4
 --- !u!114 &114638143407136842
@@ -255,12 +255,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5c66671125c29e43be70e385d855778, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   health: 0
   maxSpeed: 7
   isFacingRight: 1
-  atkSound: {fileID: 8300000, guid: 46e66bc5b3473224c99a3672e1ad6206, type: 3}
   jumpSound: {fileID: 8300000, guid: b546743c7f39833458da0a3fcd820cd5, type: 3}
   drinkSound: {fileID: 0}
   injuredSound: {fileID: 0}
@@ -276,10 +275,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77f5cfd940a68b47813a42824e0f004, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   weaponItemList: {fileID: 11400000, guid: d561295049ee3e5458b3e406b005e6c2, type: 2}
-  itemId: 1
+  itemId: 3
 --- !u!114 &114997942148890662
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,8 +288,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdda74af21d81514ebf816573424f5b9, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212677261239321110
 SpriteRenderer:
   m_ObjectHideFlags: 1

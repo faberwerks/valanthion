@@ -27,6 +27,8 @@ public class EntityAttack : MonoBehaviour {
 
         entity = GetComponent<Entity>();
 
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     private void Update()

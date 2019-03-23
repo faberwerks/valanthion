@@ -30,9 +30,9 @@ public class MenuManager : MonoBehaviour {
                 defeatPanel.SetActive(false);
                 // victoryPanel.SetActive(false);
                 break;
-            case GameManager.GameState.VICTORY:
-                VictoryMenu();
-                break;
+            //case GameManager.GameState.VICTORY:
+            //    VictoryMenu();
+            //    break;
             case GameManager.GameState.DEFEAT:
                 DefeatMenu();
                 break;
