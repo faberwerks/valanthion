@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RangedAttack : MonoBehaviour
 {
+    private AudioSource audioSource;
+
+     private AudioClip arrowShoot;
+
     private Animator anim;
 
     private Vector2 currDir;
@@ -40,7 +44,7 @@ public class RangedAttack : MonoBehaviour
         if (!isAttacking)
         {
             anim.SetBool("Is Attacking", true);
-
+            //audioSource.PlayOneShot(arrowShoot);
             isAttacking = true;
             atkTimer = atkCooldown;
 
