@@ -14,16 +14,20 @@ public class SaveLoadInput : MonoBehaviour {
 
     public void SaveNewGame(NewGameButtonScript newSave)
     {
-        Game.current = new Game();
-        Game.current.saveName = newSave.saveName.text;
-        Game.current.slotIndex = this.slotIndex;
+        Game.current = new Game
+        {
+            saveName = newSave.saveName.text,
+            slotIndex = this.slotIndex
+        };
         SaveLoad.Save(slotIndex);
+        InputManager.instance.SetKeysFromSaveFile(Game.current.skillKeys);
         Debug.Log("Saved");
     }
 
     public void LoadGame()
     {
         Game.current = SaveLoad.savedGames[slotIndex];
+        InputManager.instance.SetKeysFromSaveFile(Game.current.skillKeys);
         SceneManager.LoadScene("GameMenu");
     }
 }

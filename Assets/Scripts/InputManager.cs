@@ -23,12 +23,14 @@ public class InputManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        // gets existing key bindings if they exist
-        // if not assigns Skill ID 0 to all keys by default
-        AKeySkill = (byte) PlayerPrefs.GetInt("AKeySkill", 0);
-        SKeySkill = (byte) PlayerPrefs.GetInt("SKeySkill", 6);
-        DKeySkill = (byte) PlayerPrefs.GetInt("DKeySkill", 6);
-        FKeySkill = (byte) PlayerPrefs.GetInt("FKeySkill", 6);
+        #region Commented
+        //// gets existing key bindings if they exist
+        //// if not assigns Skill ID 0 to all keys by default
+        //AKeySkill = (byte) PlayerPrefs.GetInt("AKeySkill", 0);
+        //SKeySkill = (byte) PlayerPrefs.GetInt("SKeySkill", 6);
+        //DKeySkill = (byte) PlayerPrefs.GetInt("DKeySkill", 6);
+        //FKeySkill = (byte) PlayerPrefs.GetInt("FKeySkill", 6);
+        #endregion
     }
 
     // a method to bind a skill to a key
@@ -95,6 +97,14 @@ public class InputManager : MonoBehaviour {
                 FKeySkill = (byte)PlayerPrefs.GetInt("FKeySkill");
             }
         }
+    }
+
+    public void SetKeysFromSaveFile(byte[] skillKeys)
+    {
+        SetKey(KeyCode.A, skillKeys[0]);
+        SetKey(KeyCode.S, skillKeys[1]);
+        SetKey(KeyCode.D, skillKeys[2]);
+        SetKey(KeyCode.F, skillKeys[3]);
     }
 
     public void Update()

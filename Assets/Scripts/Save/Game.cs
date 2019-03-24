@@ -12,6 +12,8 @@ public class Game
     public int[] skills;
     public int[] weapons;
 
+    public byte[] skillKeys;
+
     public int slotIndex;
     public int latestStage;
     public int skillPoints;
@@ -33,6 +35,13 @@ public class Game
         for (int i = 1; i < 3; i++)
         {
             weapons[i] = 0;
+        }
+
+        skillKeys = new byte[4];
+        skillKeys[0] = 0;
+        for (int i = 1; i < 4; i++)
+        {
+            skillKeys[i] = 6;
         }
 
         latestStage = 1;
