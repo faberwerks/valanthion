@@ -44,7 +44,7 @@ public class SkillSlot : MonoBehaviour {
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillAKey");
+                    skillId = (byte)PlayerPrefs.GetInt("AKeySkill");
                     image.sprite = skillIcons[skillId];
                 }
                 break;
@@ -55,7 +55,7 @@ public class SkillSlot : MonoBehaviour {
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillSKey");
+                    skillId = (byte)PlayerPrefs.GetInt("SKeySkill");
                     image.sprite = skillIcons[skillId];
                 }
                 break;
@@ -66,7 +66,7 @@ public class SkillSlot : MonoBehaviour {
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillDKey");
+                    skillId = (byte)PlayerPrefs.GetInt("DKeySkill");
                     image.sprite = skillIcons[skillId];
                 }
                 break;
@@ -77,7 +77,7 @@ public class SkillSlot : MonoBehaviour {
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillFKey");
+                    skillId = (byte)PlayerPrefs.GetInt("FKeySkill");
                     image.sprite = skillIcons[skillId];
                 }
                 break;

@@ -54,7 +54,10 @@ public class SkillControl : MonoBehaviour {
     {
         Skill skill = skillProcessor.GetSkill(skillNumber);
 
-        Debug.Log(skill.name);
+        if (skill == null)
+        {
+            return;
+        }
 
         if (cooldownTimers[skillNumber] > 0)
         {
@@ -68,7 +71,6 @@ public class SkillControl : MonoBehaviour {
         if (skill.staminaCost > 0 && player.Stamina >= skill.staminaCost)
         {
             player.Stamina -= skill.staminaCost;
-            Debug.Log(player.stamina);
         }
         else
         {
