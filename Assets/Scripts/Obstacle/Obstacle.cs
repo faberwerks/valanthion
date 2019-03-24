@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour {
 
+    public AudioClip hitSound;
+    // public AudioClip destroyedSound;
+
     protected SpriteRenderer sprRend;
+
+    protected AudioSource audioSource;
 
     protected Color initialColor;
 
@@ -19,6 +24,7 @@ public class Obstacle : MonoBehaviour {
     private void Start()
     {
         sprRend = gameObject.GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         initialColor = sprRend.color;
         colorTime = 0.2f;
         colorTimer = colorTime;
@@ -49,6 +55,7 @@ public class Obstacle : MonoBehaviour {
         if (destroyable)
         {
             health -= Mathf.FloorToInt(damage);
+            audioSource.PlayOneShot(hitSound);
             StartCoroutine(CTimeColorChange());
         }
     }

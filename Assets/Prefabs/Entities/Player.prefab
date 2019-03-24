@@ -258,13 +258,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 82143811475658210}
-  hitSound: {fileID: 0}
+  hitSound: {fileID: 8300000, guid: f050356bcac06e342a07e8347b8e6476, type: 3}
   health: 64
   maxSpeed: 7
   isFacingRight: 1
-  jumpSound: {fileID: 8300000, guid: b546743c7f39833458da0a3fcd820cd5, type: 3}
-  drinkSound: {fileID: 0}
-  injuredSound: {fileID: 0}
+  jumpSound: {fileID: 8300000, guid: 2525666d7b4c72a49a3e023cff92df1c, type: 3}
+  drinkSound: {fileID: 8300000, guid: 56797abb0df236d4dbb83149f495348d, type: 3}
   stamina: 100
   jumpPower: 6
 --- !u!114 &114820915545668006
@@ -326,7 +325,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9c9d6ad2c7e52c8478996a8336b4e42c, type: 3}
-  m_Color: {r: 255, g: 0, b: 0, a: 255}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

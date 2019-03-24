@@ -7,6 +7,7 @@ using UnityEditor;
 [CanEditMultipleObjects]
 public class ObstacleEditor : Editor {
 
+    SerializedProperty hitSound;
     SerializedProperty destroyable;
     SerializedProperty health;
     SerializedProperty damages;
@@ -14,6 +15,7 @@ public class ObstacleEditor : Editor {
 
     private void OnEnable()
     {
+        hitSound = serializedObject.FindProperty("hitSound");
         destroyable = serializedObject.FindProperty("destroyable");
         health = serializedObject.FindProperty("health");
         damages = serializedObject.FindProperty("damages");
@@ -23,6 +25,7 @@ public class ObstacleEditor : Editor {
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
+        EditorGUILayout.PropertyField(hitSound);
         EditorGUILayout.PropertyField(destroyable);
 
         if (destroyable.boolValue)

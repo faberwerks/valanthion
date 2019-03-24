@@ -224,11 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4db503df146437b418888695b4e50a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSource: {fileID: 82202538286149292}
+  hitSound: {fileID: 8300000, guid: f050356bcac06e342a07e8347b8e6476, type: 3}
   health: 0
   maxSpeed: 10
   isFacingRight: 0
-  audioSource: {fileID: 82202538286149292}
-  enemyDeath: {fileID: 0}
   initialState: 0
   detectionRange: 15
 --- !u!212 &212476678351163220

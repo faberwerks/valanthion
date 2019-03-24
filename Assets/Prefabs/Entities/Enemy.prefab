@@ -186,7 +186,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114489015554943630
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   atkSound: {fileID: 0}
   audioSource: {fileID: 0}
   targetLayer:
@@ -214,13 +214,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ce1ab0296f67fa49aefacc8982eac1e, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSource: {fileID: 82239078378676586}
+  hitSound: {fileID: 8300000, guid: f050356bcac06e342a07e8347b8e6476, type: 3}
   health: 100
   maxSpeed: 3
   isFacingRight: 0
-  audioSource: {fileID: 82239078378676586}
-  enemyDeath: {fileID: 8300000, guid: 64b345b2a8b054e469cae21b4efd87b0, type: 3}
   initialState: 0
   detectionRange: 10
 --- !u!114 &114657148173580112
@@ -232,8 +232,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a77f5cfd940a68b47813a42824e0f004, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   weaponItemList: {fileID: 11400000, guid: d561295049ee3e5458b3e406b005e6c2, type: 2}
   itemId: 10
 --- !u!212 &212591724634707478
