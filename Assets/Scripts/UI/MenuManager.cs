@@ -21,6 +21,7 @@ public class MenuManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        Debug.Log(GameManager.Instance.CurrGameState);
         CheckPause();
         CheckMinimap();
 
