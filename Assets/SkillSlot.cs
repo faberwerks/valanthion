@@ -45,7 +45,10 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte)PlayerPrefs.GetInt("AKeySkill");
-                    image.sprite = skillIcons[skillId];
+                    if (skillId < 6)
+                    {
+                        image.sprite = skillIcons[skillId];
+                    }
                 }
                 break;
             case KeyCode.S:
@@ -56,7 +59,10 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte)PlayerPrefs.GetInt("SKeySkill");
-                    image.sprite = skillIcons[skillId];
+                    if (skillId < 6)
+                    {
+                        image.sprite = skillIcons[skillId];
+                    }
                 }
                 break;
             case KeyCode.D:
@@ -67,7 +73,10 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte)PlayerPrefs.GetInt("DKeySkill");
-                    image.sprite = skillIcons[skillId];
+                    if (skillId < 6)
+                    {
+                        image.sprite = skillIcons[skillId];
+                    }
                 }
                 break;
             case KeyCode.F:
@@ -78,7 +87,10 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte)PlayerPrefs.GetInt("FKeySkill");
-                    image.sprite = skillIcons[skillId];
+                    if (skillId < 6)
+                    {
+                        image.sprite = skillIcons[skillId];
+                    }
                 }
                 break;
         }
@@ -155,6 +167,25 @@ public class SkillSlot : MonoBehaviour {
                         image.color = cooldownColour;
                     }
                 }
+                break;
+        }
+    }
+
+    private void CheckSlotState()
+    {
+        switch (skillSlotKey)
+        {
+            case KeyCode.A:
+                if (PlayerPrefs.GetInt("AKeySkill") != 6)
+                {
+
+                }
+                break;
+            case KeyCode.S:
+                break;
+            case KeyCode.D:
+                break;
+            case KeyCode.F:
                 break;
         }
     }
