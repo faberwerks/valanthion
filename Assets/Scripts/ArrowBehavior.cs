@@ -18,7 +18,7 @@ public class ArrowBehavior : MonoBehaviour
     private void Update()
     {
         Move();
-        Debug.Log(transform.position);
+        // Debug.Log(transform.position);
     }
 
     private void OnDisable()
@@ -26,14 +26,9 @@ public class ArrowBehavior : MonoBehaviour
         CancelInvoke();
     }
 
+    // a method to move arrow towards target
     public void Move()
     {
-        /*
-        transform.Translate(CurrDir * speed);
-
-        float angle = Mathf.Atan2(CurrDir.y, CurrDir.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle - 180, Vector3.forward);
-        */
         if (transform.position.x == CurrDir.x && transform.position.y == CurrDir.y)
         {
             Destroy();
@@ -42,6 +37,7 @@ public class ArrowBehavior : MonoBehaviour
         transform.position = Vector2.MoveTowards(transform.position, CurrDir, speed * Time.deltaTime);
     }
 
+    // a method to deactivate arrow in scene
     private void Destroy()
     {
         gameObject.SetActive(false);
@@ -54,10 +50,12 @@ public class ArrowBehavior : MonoBehaviour
             c.SendMessage("TakeDamage", attackStrength);
             Destroy();
         }
+        /*
         else if(c.CompareTag("Ground"))
         {
             Destroy();
         }
+        */
     }
 
 }

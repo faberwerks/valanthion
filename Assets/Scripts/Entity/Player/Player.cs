@@ -6,9 +6,9 @@ public class Player : Entity
 {
     public AudioClip jumpSound;
     public AudioClip drinkSound;
-    public AudioClip injuredSound;
+    // public AudioClip injuredSound;
 
-    public AudioSource audioSource;
+    // public AudioSource audioSource;
 
     protected EntityAttack entityAttack;
     protected Weapon weapon;
@@ -217,6 +217,7 @@ public class Player : Entity
             {
                 Health += inv.items[0].value;
                 inv.RemoveItem("Health Potion");
+                audioSource.PlayOneShot(drinkSound);
             }
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
@@ -225,6 +226,7 @@ public class Player : Entity
             {
                 Stamina += inv.items[1].value;
                 inv.RemoveItem("Stamina Potion");
+                audioSource.PlayOneShot(drinkSound);
             }
         }
         else if(Input.GetKeyDown(KeyCode.Alpha3))
@@ -233,18 +235,21 @@ public class Player : Entity
             {
                 atk += inv.items[2].value;
                 inv.RemoveItem("Attack Potion");
-                Debug.Log("Damage Buff :" + atk);
+                audioSource.PlayOneShot(drinkSound);
+                // Debug.Log("Damage Buff :" + atk);
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            if (inv.items[3].count > 0)
-            {
-                defense += inv.items[3].value;
-                inv.RemoveItem("Defense Potion");
-                Debug.Log("Defense Buff :" + defense);
-            }
-        }
+        #region Commented
+        //else if (Input.GetKeyDown(KeyCode.Alpha4))
+        //{
+        //    if (inv.items[3].count > 0)
+        //    {
+        //        defense += inv.items[3].value;
+        //        inv.RemoveItem("Defense Potion");
+        //        Debug.Log("Defense Buff :" + defense);
+        //    }
+        //}
+        #endregion
     }
 
     // a method to handle dashing input

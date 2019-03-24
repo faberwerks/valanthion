@@ -13,9 +13,9 @@ public interface IEnemy
 
 public class Enemy : Entity
 {
-    public AudioSource audioSource;
+    //public AudioSource audioSource;
 
-    public AudioClip enemyDeath;
+    //public AudioClip enemyDeath;
     
     public enum EnemyState : byte { PATROL, GUARD, CHASE, ATTACK, RETREAT }
 

@@ -8,10 +8,10 @@ public class SaveSlot : MonoBehaviour {
 
     public GameObject[] saveSlot = new GameObject[3];
 
-    private SaveLoadInput sli;
+    // private SaveLoadInput sli;
 
 	void Start () {
-        sli = GetComponent<SaveLoadInput>();
+        // sli = GetComponent<SaveLoadInput>();
         CheckSaveFiles();
         if(SceneManager.GetActiveScene().name == "LoadGame")
         {

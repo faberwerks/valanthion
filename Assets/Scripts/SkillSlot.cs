@@ -16,7 +16,7 @@ public class SkillSlot : MonoBehaviour {
 
     public KeyCode skillSlotKey;
 
-    private int skillsUnlocked = 0;
+    // private int skillsUnlocked = 0;
 
     private byte skillId;
 

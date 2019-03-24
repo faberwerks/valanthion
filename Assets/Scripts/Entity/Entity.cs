@@ -10,6 +10,10 @@ public class Entity : MonoBehaviour
 
     protected Animator anim;
 
+    public AudioSource audioSource;
+
+    public AudioClip hitSound;
+
     protected Color initialColor;
 
     protected float maxStamina;
@@ -93,6 +97,8 @@ public class Entity : MonoBehaviour
         float damage = atk * (100.0f / (100 + Defense));
 
         Health -= Mathf.FloorToInt(damage);
+
+        audioSource.PlayOneShot(hitSound);
 
         StartCoroutine(CTimeColorChange());
     }
