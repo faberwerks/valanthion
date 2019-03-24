@@ -263,6 +263,8 @@ MonoBehaviour:
   health: 0
   maxSpeed: 3
   isFacingRight: 1
+  audioSource: {fileID: 0}
+  enemyDeath: {fileID: 0}
   initialState: 0
   detectionRange: 10
 --- !u!114 &114668733798292338
@@ -276,6 +278,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkSound: {fileID: 0}
+  audioSource: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -306,6 +310,8 @@ MonoBehaviour:
   health: 0
   maxSpeed: 3
   isFacingRight: 1
+  audioSource: {fileID: 0}
+  enemyDeath: {fileID: 0}
   initialState: 0
   detectionRange: 10
 --- !u!114 &114880241601314548
@@ -319,6 +325,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20cffb9a2129dc94db3f98385ee7bf73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  atkSound: {fileID: 0}
+  audioSource: {fileID: 0}
   targetLayer:
     serializedVersion: 2
     m_Bits: 256
