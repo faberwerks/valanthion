@@ -20,6 +20,8 @@ public class SkillSlot : MonoBehaviour {
 
     private byte skillId;
 
+    private bool unbound;
+
 	// Use this for initialization
 	private void Start () {
 
@@ -27,135 +29,266 @@ public class SkillSlot : MonoBehaviour {
 
         image = GetComponent<Image>();
 
-        for (int i = 0; i < 6; i++)
-        {
-            if (Game.current.skills[i] != 0)
-            {
-                skillsUnlocked++;
-            }
-        }
+        #region Commented
+        //for (int i = 0; i < 6; i++)
+        //{
+        //    if (Game.current.skills[i] != 0)
+        //    {
+        //        skillsUnlocked++;
+        //    }
+        //}
+
+        
+        //switch (skillSlotKey)
+        //{
+        //    case KeyCode.A:
+        //        if (skillsUnlocked < 1)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            skillId = (byte)PlayerPrefs.GetInt("AKeySkill");
+        //            if (skillId < 6)
+        //            {
+        //                image.sprite = skillIcons[skillId];
+        //            }
+        //        }
+        //        break;
+        //    case KeyCode.S:
+        //        if (skillsUnlocked < 2)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            skillId = (byte)PlayerPrefs.GetInt("SKeySkill");
+        //            if (skillId < 6)
+        //            {
+        //                image.sprite = skillIcons[skillId];
+        //            }
+        //        }
+        //        break;
+        //    case KeyCode.D:
+        //        if (skillsUnlocked < 3)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            skillId = (byte)PlayerPrefs.GetInt("DKeySkill");
+        //            if (skillId < 6)
+        //            {
+        //                image.sprite = skillIcons[skillId];
+        //            }
+        //        }
+        //        break;
+        //    case KeyCode.F:
+        //        if (skillsUnlocked < 4)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            skillId = (byte)PlayerPrefs.GetInt("FKeySkill");
+        //            if (skillId < 6)
+        //            {
+        //                image.sprite = skillIcons[skillId];
+        //            }
+        //        }
+        //        break;
+        //}
+        #endregion
+
+        unbound = false;
 
         switch (skillSlotKey)
         {
             case KeyCode.A:
-                if (skillsUnlocked < 1)
+                if (PlayerPrefs.GetInt("AKeySkill") == 6)
                 {
+                    unbound = true;
                     image.color = cooldownColour;
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillAKey");
-                    image.sprite = skillIcons[skillId];
+                    skillId = (byte) PlayerPrefs.GetInt("AKeySkill");
                 }
                 break;
             case KeyCode.S:
-                if (skillsUnlocked < 2)
+                if (PlayerPrefs.GetInt("SKeySkill") == 6)
                 {
+                    unbound = true;
                     image.color = cooldownColour;
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillSKey");
-                    image.sprite = skillIcons[skillId];
+                    skillId = (byte)PlayerPrefs.GetInt("SKeySkill");
                 }
                 break;
             case KeyCode.D:
-                if (skillsUnlocked < 3)
+                if (PlayerPrefs.GetInt("DKeySkill") == 6)
                 {
+                    unbound = true;
                     image.color = cooldownColour;
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillDKey");
-                    image.sprite = skillIcons[skillId];
+                    skillId = (byte)PlayerPrefs.GetInt("DKeySkill");
                 }
                 break;
             case KeyCode.F:
-                if (skillsUnlocked < 4)
+                if (PlayerPrefs.GetInt("FKeySkill") == 6)
                 {
+                    unbound = true;
                     image.color = cooldownColour;
                 }
                 else
                 {
-                    skillId = (byte)PlayerPrefs.GetInt("SkillFKey");
-                    image.sprite = skillIcons[skillId];
+                    skillId = (byte)PlayerPrefs.GetInt("FKeySkill");
                 }
                 break;
         }
-	}
-	
-	// Update is called once per frame
-	private void Update () {
-        switch (skillSlotKey)
+    }
+
+    // Update is called once per frame
+    private void Update () {
+        #region Commented
+        //switch (skillSlotKey)
+        //{
+        //    case KeyCode.A:
+        //        if (skillsUnlocked < 1)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            if (skillControl.canUse[skillId])
+        //            {
+        //                image.color = defaultColour;
+        //            }
+        //            else
+        //            {
+        //                image.color = cooldownColour;
+        //            }
+        //        }
+        //        break;
+        //    case KeyCode.S:
+        //        if (skillsUnlocked < 2)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            if (skillControl.canUse[skillId])
+        //            {
+        //                image.color = defaultColour;
+        //            }
+        //            else
+        //            {
+        //                image.color = cooldownColour;
+        //            }
+        //        }
+        //        break;
+        //    case KeyCode.D:
+        //        if (skillsUnlocked < 3)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            if (skillControl.canUse[skillId])
+        //            {
+        //                image.color = defaultColour;
+        //            }
+        //            else
+        //            {
+        //                image.color = cooldownColour;
+        //            }
+        //        }
+        //        break;
+        //    case KeyCode.F:
+        //        if (skillsUnlocked < 4)
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        else
+        //        {
+        //            if (skillControl.canUse[skillId])
+        //            {
+        //                image.color = defaultColour;
+        //            }
+        //            else
+        //            {
+        //                image.color = cooldownColour;
+        //            }
+        //        }
+        //        break;
+        //}
+        #endregion
+
+        if (!unbound)
         {
-            case KeyCode.A:
-                if (skillsUnlocked < 1)
-                {
-                    image.color = cooldownColour;
-                }
-                else
-                {
-                    if (skillControl.canUse[skillId])
-                    {
-                        image.color = defaultColour;
-                    }
-                    else
-                    {
-                        image.color = cooldownColour;
-                    }
-                }
-                break;
-            case KeyCode.S:
-                if (skillsUnlocked < 2)
-                {
-                    image.color = cooldownColour;
-                }
-                else
-                {
-                    if (skillControl.canUse[skillId])
-                    {
-                        image.color = defaultColour;
-                    }
-                    else
-                    {
-                        image.color = cooldownColour;
-                    }
-                }
-                break;
-            case KeyCode.D:
-                if (skillsUnlocked < 3)
-                {
-                    image.color = cooldownColour;
-                }
-                else
-                {
-                    if (skillControl.canUse[skillId])
-                    {
-                        image.color = defaultColour;
-                    }
-                    else
-                    {
-                        image.color = cooldownColour;
-                    }
-                }
-                break;
-            case KeyCode.F:
-                if (skillsUnlocked < 4)
-                {
-                    image.color = cooldownColour;
-                }
-                else
-                {
-                    if (skillControl.canUse[skillId])
-                    {
-                        image.color = defaultColour;
-                    }
-                    else
-                    {
-                        image.color = cooldownColour;
-                    }
-                }
-                break;
+            CheckSlotState();
+        }
+    }
+
+    // a method to check the current state of the slot
+    private void CheckSlotState()
+    {
+        #region Commented
+        //switch (skillSlotKey)
+        //{
+        //    case KeyCode.A:
+        //        if (skillControl.cooldownTimers[skillId] <= 0)
+        //        {
+        //            image.color = defaultColour;
+        //        }
+        //        else
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        break;
+        //    case KeyCode.S:
+        //        if (skillControl.cooldownTimers[skillId] <= 0)
+        //        {
+        //            image.color = defaultColour;
+        //        }
+        //        else
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        break;
+        //    case KeyCode.D:
+        //        if (skillControl.cooldownTimers[skillId] <= 0)
+        //        {
+        //            image.color = defaultColour;
+        //        }
+        //        else
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        break;
+        //    case KeyCode.F:
+        //        if (skillControl.cooldownTimers[skillId] <= 0)
+        //        {
+        //            image.color = defaultColour;
+        //        }
+        //        else
+        //        {
+        //            image.color = cooldownColour;
+        //        }
+        //        break;
+        //}
+        #endregion
+
+        if (skillControl.cooldownTimers[skillId] <= 0)
+        {
+            image.color = defaultColour;
+        }
+        else
+        {
+            image.color = cooldownColour;
         }
     }
 }

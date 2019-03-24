@@ -6,10 +6,10 @@ public class InputManager : MonoBehaviour {
 
     public static InputManager instance;
 
-    public byte SkillAKey { get; set; }
-    public byte SkillSKey { get; set; }
-    public byte SkillDKey { get; set; }
-    public byte SkillFKey { get; set; }
+    public byte AKeySkill { get; set; }
+    public byte SKeySkill { get; set; }
+    public byte DKeySkill { get; set; }
+    public byte FKeySkill { get; set; }
 
     private void Awake()
     {
@@ -23,45 +23,96 @@ public class InputManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        SkillAKey = (byte) PlayerPrefs.GetInt("SkillAKey", 0);
-        SkillSKey = (byte) PlayerPrefs.GetInt("SkillSKey", -1);
-        SkillDKey = (byte) PlayerPrefs.GetInt("SkillDKey", -1);
-        SkillFKey = (byte) PlayerPrefs.GetInt("SkillFKey", -1);
+        // gets existing key bindings if they exist
+        // if not assigns Skill ID 0 to all keys by default
+        AKeySkill = (byte) PlayerPrefs.GetInt("AKeySkill", 0);
+        SKeySkill = (byte) PlayerPrefs.GetInt("SKeySkill", 6);
+        DKeySkill = (byte) PlayerPrefs.GetInt("DKeySkill", 6);
+        FKeySkill = (byte) PlayerPrefs.GetInt("FKeySkill", 6);
     }
 
-    // a method to bind a key to a skill
+    // a method to bind a skill to a key
     public void SetKey(KeyCode keyCode, byte skillId)
     {
         switch (keyCode)
         {
             case KeyCode.A:
-                PlayerPrefs.SetInt("SkillAKey", skillId);
-                SkillAKey = (byte)PlayerPrefs.GetInt("SkillAKey");
+                PlayerPrefs.SetInt("AKeySkill", skillId);
+                AKeySkill = (byte)PlayerPrefs.GetInt("AKeySkill");
                 break;
             case KeyCode.S:
-                PlayerPrefs.SetInt("SkillSKey", skillId);
-                SkillAKey = (byte)PlayerPrefs.GetInt("SkillSKey");
+                PlayerPrefs.SetInt("SKeySkill", skillId);
+                SKeySkill = (byte)PlayerPrefs.GetInt("SKeySkill");
                 break;
             case KeyCode.D:
-                PlayerPrefs.SetInt("SkillDKey", skillId);
-                SkillAKey = (byte)PlayerPrefs.GetInt("SkillDKey");
+                PlayerPrefs.SetInt("DKeySkill", skillId);
+                DKeySkill = (byte)PlayerPrefs.GetInt("DKeySkill");
                 break;
             case KeyCode.F:
-                PlayerPrefs.SetInt("SkillFKey", skillId);
-                SkillAKey = (byte)PlayerPrefs.GetInt("SkillFKey");
+                PlayerPrefs.SetInt("FKeySkill", skillId);
+                FKeySkill = (byte)PlayerPrefs.GetInt("FKeySkill");
                 break;
+        }
+
+        RemoveDuplicateKeyBindings(keyCode, skillId);
+    }
+
+    // a method to remove duplicate and/or old key bindings after a new key binding has been set
+    private void RemoveDuplicateKeyBindings(KeyCode baseKeyCode, byte skillId)
+    {
+        if (baseKeyCode != KeyCode.A)
+        {
+            if (AKeySkill == skillId)
+            {
+                PlayerPrefs.SetInt("AKeySkill", 6);
+                AKeySkill = (byte)PlayerPrefs.GetInt("AKeySkill");
+            }
+        }
+
+        if (baseKeyCode != KeyCode.S)
+        {
+            if (SKeySkill == skillId)
+            {
+                PlayerPrefs.SetInt("SKeySkill", 6);
+                SKeySkill = (byte)PlayerPrefs.GetInt("SKeySkill");
+            }
+        }
+
+        if (baseKeyCode != KeyCode.D)
+        {
+            if (DKeySkill == skillId)
+            {
+                PlayerPrefs.SetInt("DKeySkill", 6);
+                DKeySkill = (byte)PlayerPrefs.GetInt("DKeySkill");
+            }
+        }
+
+        if (baseKeyCode != KeyCode.F)
+        {
+            if (FKeySkill == skillId)
+            {
+                PlayerPrefs.SetInt("FKeySkill", 6);
+                FKeySkill = (byte)PlayerPrefs.GetInt("FKeySkill");
+            }
         }
     }
 
-    private void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            Debug.Log(PlayerPrefs.GetInt("SkillAKey"));
-            Debug.Log(PlayerPrefs.GetInt("SkillSKey"));
-            Debug.Log(PlayerPrefs.GetInt("SkillDKey"));
-            Debug.Log(PlayerPrefs.GetInt("SkillFKey"));
-            Debug.Log(Game.current.skills);
+            Debug.Log("A Key Skill: " + PlayerPrefs.GetInt("AKeySkill"));
+            Debug.Log("S Key Skill: " + PlayerPrefs.GetInt("SKeySkill"));
+            Debug.Log("D Key Skill: " + PlayerPrefs.GetInt("DKeySkill"));
+            Debug.Log("F Key Skill: " + PlayerPrefs.GetInt("FKeySkill"));
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            SetKey(KeyCode.A, 0);
+            SetKey(KeyCode.S, 6);
+            SetKey(KeyCode.D, 6);
+            SetKey(KeyCode.F, 6);
         }
     }
 }
