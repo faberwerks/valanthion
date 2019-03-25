@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script manages skill key bindings.
+// Skills are represented by byte values that represent the skill IDs that is assigned to each key.
+// For example: if AKeySkill has a value of 1, it is bound to Skill ID 1 ("Dash Slash")
+// Skill IDs range from 0 to 5; a value of 6 indicates NO SKILL BOUND TO KEY
+
 public class InputManager : MonoBehaviour {
 
     public static InputManager instance;
