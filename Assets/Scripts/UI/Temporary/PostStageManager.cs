@@ -23,7 +23,7 @@ public class PostStageManager : MonoBehaviour {
 
         //need to add skill points at specific stages
 
-        CheckSkillPoint();
+        CheckLatestStage();
         CheckReward();
         SaveLoad.Save(Game.current.slotIndex);
 	}
@@ -53,7 +53,7 @@ public class PostStageManager : MonoBehaviour {
     private void CheckSkillPoint()
     {
         int stage = PlayerPrefs.GetInt("CurrentStage", 0);
-        if (stage < 4 && Game.current.skillPoints < stage)
+        if (stage < 4)
         {
             Game.current.skillPoints++;
             skillPointText.text = "1";
@@ -61,6 +61,16 @@ public class PostStageManager : MonoBehaviour {
         else
         {
             skillPointText.text = "0";
+        }
+    }
+
+    private void CheckLatestStage()
+    {
+        int stage = PlayerPrefs.GetInt("CurrentStage", 0);
+        if (Game.current.latestStage <= stage)
+        {
+            CheckSkillPoint();
+            Game.current.latestStage = Game.current.latestStage + 1;
         }
     }
 }
