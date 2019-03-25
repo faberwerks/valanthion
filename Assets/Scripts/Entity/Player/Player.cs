@@ -71,7 +71,7 @@ public class Player : Entity
         range = weapon.AtkRange;
         entityAttack.AtkCooldown = weapon.AtkSpeed;
         Defense = armor.Defense;
-        weapon.itemId = (short) Game.current.equippedWeaponID;
+        weapon.SetWeapon((byte)Game.current.equippedWeaponID);
 
         LayerMask enemyLayer = LayerMask.GetMask("Enemy");
         LayerMask obstacleLayer = LayerMask.GetMask("Obstacle");
@@ -220,7 +220,7 @@ public class Player : Entity
     // a method to handle input for inventory
     public void InputInv()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (!Input.GetKey(KeyCode.Tab))
         {
             if (Input.GetKeyDown(KeyCode.Alpha1))
             {

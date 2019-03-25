@@ -18,8 +18,22 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
-        itemId = (short) Game.current.equippedWeaponID;
+        foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
+        {
+            if (weaponItem.itemId == itemId)
+            {
+                WeaponType = weaponItem.weaponType;
+                Atk = weaponItem.attackStrength;
+                AtkRange = weaponItem.attackRange;
+                AtkSpeed = 3 / weaponItem.attackSpeed;
+                break;
+            }
+        }
+    }
 
+    // a method to set the weapon
+    public void SetWeapon(short itemId)
+    {
         foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
         {
             if (weaponItem.itemId == itemId)
