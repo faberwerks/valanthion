@@ -9,9 +9,8 @@ public class VictoryPoint : MonoBehaviour {
         if (collision.gameObject.CompareTag("Player"))
         {
             GameManager.Instance.Victory();
-            FindObjectOfType<StageManager>().WinLevel();
+            //FindObjectOfType<StageManager>().WinLevel();
             //GameObject.FindGameObjectWithTag("Stage Manager").GetComponent<StageManager>().WinLevel();
-            Game.current.latestStage += 1;
         }
     }
 }
