@@ -671,52 +671,52 @@ Prefab:
     - target: {fileID: 224319141465371358, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 312.80005
+      value: 312.85986
       objectReference: {fileID: 0}
     - target: {fileID: 224319141465371358, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -145.00002
+      value: -145.03365
       objectReference: {fileID: 0}
     - target: {fileID: 224982138088151122, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 345.00003
+      value: 345.05984
       objectReference: {fileID: 0}
     - target: {fileID: 224982138088151122, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -175
+      value: -175.03363
       objectReference: {fileID: 0}
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744324
+      value: -1.5744629
       objectReference: {fileID: 0}
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.048217773
+      value: 0.048202515
       objectReference: {fileID: 0}
     - target: {fileID: 224414774473569870, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -270
+      value: -270.0598
       objectReference: {fileID: 0}
     - target: {fileID: 224414774473569870, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 171.70001
+      value: 171.73364
       objectReference: {fileID: 0}
     - target: {fileID: 224515422471517206, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 281.80005
+      value: 281.85986
       objectReference: {fileID: 0}
     - target: {fileID: 224515422471517206, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -175
+      value: -175.03363
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
@@ -1546,6 +1546,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd7bdf060604de4fae6cffb32eb634b, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &426517946 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1875365221841650, guid: cd40d84bb19367d4787862284afbcf25,
+    type: 2}
+  m_PrefabInternal: {fileID: 194700033}
 --- !u!1001 &436478268
 Prefab:
   m_ObjectHideFlags: 0
@@ -24219,7 +24224,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231d55fb932aef047856ebad8a975025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
+  canvas: {fileID: 426517946}
+  time: {fileID: 1817310696542244, guid: c4db0e4425a642c49afd0b08e8415d77, type: 2}
   timer: 600
 --- !u!114 &1320528881
 MonoBehaviour:
@@ -24249,7 +24255,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageName: 
-  timeText: {fileID: 0}
+  time: {fileID: 0}
+  canvas: {fileID: 0}
   countdownTime: 120
 --- !u!114 &1320528883
 MonoBehaviour:

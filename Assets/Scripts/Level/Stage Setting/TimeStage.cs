@@ -6,6 +6,11 @@ using UnityEngine.UI;
 public class TimeStage : StageSetting {
 
     [SerializeField]
+    private GameObject time;
+
+    [SerializeField]
+    private GameObject canvas;
+
     private Text timeText;
 
     private Player player;
@@ -26,6 +31,9 @@ public class TimeStage : StageSetting {
 
         timeIsUp = false;
         hasWon = false;
+        time = Instantiate(time, canvas.transform);
+        timeText = time.GetComponentInChildren<Text>();
+
     }
 
     private void Update()
