@@ -1149,7 +1149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c574099b94653447b7499f39d531100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 0
+  weaponId: 1
 --- !u!114 &191884022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,7 +2881,7 @@ RectTransform:
   m_GameObject: {fileID: 466966674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.01388889, y: 0.01388889, z: 0.01388889}
+  m_LocalScale: {x: 0.012499999, y: 0.012499999, z: 0.012499999}
   m_Children:
   - {fileID: 1928700962}
   - {fileID: 1586938465}
@@ -3085,7 +3085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1d70d888b13da408dc45ac1d932cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 0
+  weaponId: 1
 --- !u!114 &492918576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3503,7 +3503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c574099b94653447b7499f39d531100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 1
+  weaponId: 2
 --- !u!114 &523873268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3791,7 +3791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c574099b94653447b7499f39d531100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 2
+  weaponId: 3
 --- !u!114 &542294713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6253,7 +6253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1d70d888b13da408dc45ac1d932cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 2
+  weaponId: 3
 --- !u!114 &983845411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7502,7 +7502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1d70d888b13da408dc45ac1d932cf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponId: 1
+  weaponId: 2
 --- !u!114 &1133754291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11112,7 +11112,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1928700961}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -543.9, y: 326, z: 0}
+  m_LocalPosition: {x: -543.9, y: 366, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 648128504}
