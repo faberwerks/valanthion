@@ -18,6 +18,8 @@ public class Weapon : MonoBehaviour
 
     private void Awake()
     {
+        itemId = (short) Game.current.equippedWeaponID;
+
         foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
         {
             if (weaponItem.itemId == itemId)
