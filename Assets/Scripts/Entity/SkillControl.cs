@@ -56,16 +56,8 @@ public class SkillControl : MonoBehaviour {
 
         if (skill == null)
         {
+            Debug.Log("Skill soesn't exist");
             return;
-        }
-
-        if (cooldownTimers[skillNumber] > 0)
-        {
-            return;
-        }
-        else
-        {
-            cooldownTimers[skillNumber] = skill.cooldownTime;
         }
 
         if (skill.staminaCost > 0 && player.Stamina >= skill.staminaCost)
@@ -74,8 +66,20 @@ public class SkillControl : MonoBehaviour {
         }
         else
         {
+            Debug.Log("Stamina not enough");
             return;
         }
+
+        if (cooldownTimers[skillNumber] > 0)
+        {
+            Debug.Log("Sedang cooldown");
+            return;
+        }
+        else
+        {
+            cooldownTimers[skillNumber] = skill.cooldownTime;
+        }
+
 
         RaycastHit2D hit;
 
@@ -239,7 +243,7 @@ public class SkillControl : MonoBehaviour {
     private IEnumerator CCountdownCooldown(byte skillNumber)
     {
         int index = skillNumber;
-
+        Debug.Log("Courotine called");
         while (cooldownTimers[index] > 0)
         {
             cooldownTimers[index] -= Time.deltaTime;

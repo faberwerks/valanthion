@@ -149,7 +149,7 @@ public class Player : Entity
     // a method to handle skill use input
     public void InputSkill()
     {
-        if (Input.GetKey(KeyCode.Tab))
+        if (!Input.GetKey(KeyCode.Tab))
         {
             if (Input.GetKeyDown(KeyCode.A))
             {
