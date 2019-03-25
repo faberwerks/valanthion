@@ -124,5 +124,11 @@ public class InputManager : MonoBehaviour {
             SetKey(KeyCode.D, 6);
             SetKey(KeyCode.F, 6);
         }
+
+        if (Input.GetKeyDown(KeyCode.RightAlt))
+        {
+            Game.current.latestStage = 6;
+        }
+
     }
 }
