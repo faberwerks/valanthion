@@ -50,6 +50,11 @@ public class PostStageManager : MonoBehaviour {
         SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentStage", 0) + 1);
     }
 
+    public void RetryLevel()
+    {
+        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentStage", 0));
+    }
+
     private void CheckSkillPoint()
     {
         int stage = PlayerPrefs.GetInt("CurrentStage", 0);
