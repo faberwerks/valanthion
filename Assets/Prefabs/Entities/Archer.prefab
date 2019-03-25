@@ -228,7 +228,7 @@ MonoBehaviour:
   hitSound: {fileID: 8300000, guid: f050356bcac06e342a07e8347b8e6476, type: 3}
   health: 0
   maxSpeed: 10
-  isFacingRight: 0
+  isFacingRight: 1
   initialState: 0
   detectionRange: 15
 --- !u!212 &212476678351163220
