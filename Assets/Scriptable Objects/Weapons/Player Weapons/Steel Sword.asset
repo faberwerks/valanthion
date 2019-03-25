@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7047a9acb768b7544b2b5e9b60e3e435, type: 3}
   m_Name: Steel Sword
   m_EditorClassIdentifier: 
-  itemId: 1
+  itemId: 0
   weaponType: 0
   attackStrength: 20
   attackSpeed: 3
