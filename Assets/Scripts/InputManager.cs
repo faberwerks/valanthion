@@ -104,6 +104,7 @@ public class InputManager : MonoBehaviour {
         }
     }
 
+    // a method to load key bindings from save file
     public void SetKeysFromSaveFile(byte[] skillKeys)
     {
         SetKey(KeyCode.A, skillKeys[0]);
@@ -114,26 +115,28 @@ public class InputManager : MonoBehaviour {
 
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            Debug.Log("A Key Skill: " + PlayerPrefs.GetInt("AKeySkill"));
-            Debug.Log("S Key Skill: " + PlayerPrefs.GetInt("SKeySkill"));
-            Debug.Log("D Key Skill: " + PlayerPrefs.GetInt("DKeySkill"));
-            Debug.Log("F Key Skill: " + PlayerPrefs.GetInt("FKeySkill"));
-        }
+        #region Commented Debug Controls
+        // DEBUG CONTROLS
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        //{
+        //    Debug.Log("A Key Skill: " + PlayerPrefs.GetInt("AKeySkill"));
+        //    Debug.Log("S Key Skill: " + PlayerPrefs.GetInt("SKeySkill"));
+        //    Debug.Log("D Key Skill: " + PlayerPrefs.GetInt("DKeySkill"));
+        //    Debug.Log("F Key Skill: " + PlayerPrefs.GetInt("FKeySkill"));
+        //}
 
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
-        {
-            SetKey(KeyCode.A, 0);
-            SetKey(KeyCode.S, 6);
-            SetKey(KeyCode.D, 6);
-            SetKey(KeyCode.F, 6);
-        }
+        //if (Input.GetKeyDown(KeyCode.LeftAlt))
+        //{
+        //    SetKey(KeyCode.A, 0);
+        //    SetKey(KeyCode.S, 6);
+        //    SetKey(KeyCode.D, 6);
+        //    SetKey(KeyCode.F, 6);
+        //}
 
-        if (Input.GetKeyDown(KeyCode.RightAlt))
-        {
-            Game.current.latestStage = 6;
-        }
-
+        //if (Input.GetKeyDown(KeyCode.RightAlt))
+        //{
+        //    Game.current.latestStage = 6;
+        //}
+        #endregion
     }
 }
