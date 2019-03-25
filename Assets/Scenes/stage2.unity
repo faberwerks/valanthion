@@ -519,7 +519,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231d55fb932aef047856ebad8a975025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
+  canvas: {fileID: 0}
+  time: {fileID: 0}
   timer: 600
 --- !u!114 &421806307
 MonoBehaviour:
@@ -551,7 +552,7 @@ MonoBehaviour:
   stageName: 
   time: {fileID: 1817310696542244, guid: c4db0e4425a642c49afd0b08e8415d77, type: 2}
   canvas: {fileID: 975251897}
-  countdownTime: 120
+  countdownTime: 5
 --- !u!114 &421806309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5045,12 +5046,12 @@ Prefab:
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744324
+      value: -1.5744629
       objectReference: {fileID: 0}
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.048202515
+      value: 0.048217773
       objectReference: {fileID: 0}
     - target: {fileID: 224414774473569870, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}

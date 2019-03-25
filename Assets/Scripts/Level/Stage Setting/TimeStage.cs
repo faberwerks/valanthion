@@ -47,8 +47,8 @@ public class TimeStage : StageSetting {
         else if (timeIsUp && !hasWon)
         {
             Debug.Log("time is up and has not won!");
-            GameManager.Instance.Victory();
             hasWon = true;
+            GameManager.Instance.Victory();
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StageSetting : MonoBehaviour
 {
@@ -36,6 +37,12 @@ public class StageSetting : MonoBehaviour
     // a method to initialise variables and references
     protected void StageSettingStart()
     {
+
+        if (Game.current.latestStage < SceneManager.GetActiveScene().buildIndex)
+        {
+            Game.current.latestStage = SceneManager.GetActiveScene().buildIndex;
+        }
+
         countupTimer = 0.0f;
 
         FindEnemies();
