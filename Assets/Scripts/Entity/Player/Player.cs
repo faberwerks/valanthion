@@ -83,14 +83,16 @@ public class Player : Entity
     // Update is called once per frame
     void Update()
     {
-        InputAttack();
         CheckDeath();
-        if (!menuManager.minimapIsOpen)
-        {
-            Jump();
-            InputMove();
-        }
         Stamina += 10 * Time.deltaTime; // stamina regen
+        //if (!menuManager.minimapIsOpen)
+        //{
+        //    Jump();
+        //    InputMove();
+        //}
+        InputAttack();
+        Jump();
+        InputMove();
         InputSkill();
         InputInv();
         InputDash();
@@ -147,21 +149,24 @@ public class Player : Entity
     // a method to handle skill use input
     public void InputSkill()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKey(KeyCode.Tab))
         {
-            skillControl.UseSkill(InputManager.instance.AKeySkill);
-        }
-        else if (Input.GetKeyDown(KeyCode.S))
-        {
-            skillControl.UseSkill(InputManager.instance.SKeySkill);
-        }
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            skillControl.UseSkill(InputManager.instance.DKeySkill);
-        }
-        else if (Input.GetKeyDown(KeyCode.F))
-        {
-            skillControl.UseSkill(InputManager.instance.FKeySkill);
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                skillControl.UseSkill(InputManager.instance.AKeySkill);
+            }
+            else if (Input.GetKeyDown(KeyCode.S))
+            {
+                skillControl.UseSkill(InputManager.instance.SKeySkill);
+            }
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                skillControl.UseSkill(InputManager.instance.DKeySkill);
+            }
+            else if (Input.GetKeyDown(KeyCode.F))
+            {
+                skillControl.UseSkill(InputManager.instance.FKeySkill);
+            }
         }
     }
 
@@ -199,11 +204,14 @@ public class Player : Entity
     // a method to handle input for attacks
     public bool InputAttack()
     {
-        if (Input.GetKeyDown("z"))
+        if (!Input.GetKey(KeyCode.Tab))
         {
-            // Debug.Log("Weapon Type: " +  weapon.WeaponType);
-            // Debug.Log("Attack Strength: " + atk);
-            entityAttack.Attack(Atk,range);          
+            if (Input.GetKeyDown("z"))
+            {
+                // Debug.Log("Weapon Type: " +  weapon.WeaponType);
+                // Debug.Log("Attack Strength: " + atk);
+                entityAttack.Attack(Atk, range);
+            }
         }
         return false;
     }
@@ -211,32 +219,35 @@ public class Player : Entity
     // a method to handle input for inventory
     public void InputInv()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (Input.GetKey(KeyCode.Tab))
         {
-            if (inv.items[0].count > 0)
+            if (Input.GetKeyDown(KeyCode.Alpha1))
             {
-                Health += inv.items[0].value;
-                inv.RemoveItem("Health Potion");
-                audioSource.PlayOneShot(drinkSound);
+                if (inv.items[0].count > 0)
+                {
+                    Health += inv.items[0].value;
+                    inv.RemoveItem("Health Potion");
+                    audioSource.PlayOneShot(drinkSound);
+                }
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            if (inv.items[1].count > 0)
+            else if (Input.GetKeyDown(KeyCode.Alpha2))
             {
-                Stamina += inv.items[1].value;
-                inv.RemoveItem("Stamina Potion");
-                audioSource.PlayOneShot(drinkSound);
+                if (inv.items[1].count > 0)
+                {
+                    Stamina += inv.items[1].value;
+                    inv.RemoveItem("Stamina Potion");
+                    audioSource.PlayOneShot(drinkSound);
+                }
             }
-        }
-        else if(Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            if (inv.items[2].count > 0)
+            else if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                atk += inv.items[2].value;
-                inv.RemoveItem("Attack Potion");
-                audioSource.PlayOneShot(drinkSound);
-                // Debug.Log("Damage Buff :" + atk);
+                if (inv.items[2].count > 0)
+                {
+                    atk += inv.items[2].value;
+                    inv.RemoveItem("Attack Potion");
+                    audioSource.PlayOneShot(drinkSound);
+                    // Debug.Log("Damage Buff :" + atk);
+                }
             }
         }
         #region Commented
@@ -255,7 +266,7 @@ public class Player : Entity
     // a method to handle dashing input
     public void InputDash()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Stamina >= 20)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Stamina >= 20 && !Input.GetKey(KeyCode.Tab))
         {
             Dash();
             Stamina -= 20;
