@@ -317,7 +317,7 @@ public class Player : Entity
         {
             if(stamina > 100)
             {
-                Debug.Log("Stamina reached the limit");
+                // Debug.Log("Stamina reached the limit");
                 stamina = 100;
             }
             else if (stamina <= 0)
@@ -326,7 +326,7 @@ public class Player : Entity
             }
             else
             {
-                Debug.Log("Stamian value set: " + value);
+                // Debug.Log("Stamian value set: " + value);
                 this.stamina = value;
             }
         }

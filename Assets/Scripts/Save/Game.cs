@@ -47,6 +47,6 @@ public class Game
         latestStage = 1;
 
         skillPoints = 0;
-        equippedWeaponID = 1;
+        equippedWeaponID = 0;
     }
 }
