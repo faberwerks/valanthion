@@ -67,11 +67,11 @@ public class Player : Entity
 
         isJumping = false;
 
+        weapon.SetWeapon((byte)Game.current.equippedWeaponID);
         atk = weapon.Atk;
         range = weapon.AtkRange;
         entityAttack.AtkCooldown = weapon.AtkSpeed;
         Defense = armor.Defense;
-        weapon.SetWeapon((byte)Game.current.equippedWeaponID);
 
         LayerMask enemyLayer = LayerMask.GetMask("Enemy");
         LayerMask obstacleLayer = LayerMask.GetMask("Obstacle");

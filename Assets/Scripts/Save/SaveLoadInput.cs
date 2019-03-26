@@ -21,7 +21,7 @@ public class SaveLoadInput : MonoBehaviour {
         };
         SaveLoad.Save(slotIndex);
         InputManager.instance.SetKeysFromSaveFile(Game.current.skillKeys);
-        Debug.Log("Saved");
+        //Debug.Log("Saved");
     }
 
     public void LoadGame()

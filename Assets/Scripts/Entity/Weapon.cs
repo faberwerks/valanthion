@@ -34,6 +34,7 @@ public class Weapon : MonoBehaviour
     // a method to set the weapon
     public void SetWeapon(short itemId)
     {
+        this.itemId = itemId;
         foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
         {
             if (weaponItem.itemId == itemId)
