@@ -137,6 +137,14 @@ public class RangedEnemy : Enemy, IEnemy {
 
             if (!rangedAttack.IsAttacking)
             {
+                if (player.transform.position.x > transform.position.x)
+                {
+                    Flip(true);
+                }
+                else
+                {
+                    Flip(false);
+                }
                 rangedAttack.Fire(FindArrowDir(), player.transform);
             }
         }

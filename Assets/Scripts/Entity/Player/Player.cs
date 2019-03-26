@@ -85,7 +85,15 @@ public class Player : Entity
     void Update()
     {
         CheckDeath();
-        Stamina += 10 * Time.deltaTime; // stamina regen
+        // stamina regen
+        if (Stamina + (10 * Time.deltaTime) <= 100)
+        {
+            Stamina += 10 * Time.deltaTime;  
+        }
+        else
+        {
+            Stamina = 100f;
+        }
         //if (!menuManager.minimapIsOpen)
         //{
         //    Jump();
@@ -309,6 +317,7 @@ public class Player : Entity
         {
             if(stamina > 100)
             {
+                Debug.Log("Stamina reached the limit");
                 stamina = 100;
             }
             else if (stamina <= 0)
@@ -317,6 +326,7 @@ public class Player : Entity
             }
             else
             {
+                Debug.Log("Stamian value set: " + value);
                 this.stamina = value;
             }
         }

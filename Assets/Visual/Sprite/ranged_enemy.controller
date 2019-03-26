@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469f0a4186d9af34d844b29435e56d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  booleanVariableName: Is Attacking
+  booleanVariableName: isAttacking
 --- !u!1101 &1101432719873525188
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
