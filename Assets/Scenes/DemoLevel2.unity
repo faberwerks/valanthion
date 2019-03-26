@@ -540,22 +540,22 @@ Prefab:
     - target: {fileID: 224319141465371358, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -170
+      value: -145
       objectReference: {fileID: 0}
     - target: {fileID: 224982138088151122, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 344.99997
+      value: 345
       objectReference: {fileID: 0}
     - target: {fileID: 224982138088151122, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -200
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744324
+      value: -1.5744629
       objectReference: {fileID: 0}
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -570,7 +570,7 @@ Prefab:
     - target: {fileID: 224414774473569870, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 196.69998
+      value: 171.7
       objectReference: {fileID: 0}
     - target: {fileID: 224515422471517206, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
@@ -580,11 +580,31 @@ Prefab:
     - target: {fileID: 224515422471517206, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -200
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 4334172591764394, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
       propertyPath: m_RootOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468137080687654, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: leftBorder
+      value: -36
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468137080687654, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: topBorder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468137080687654, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: bottomBorder
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114468137080687654, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: rightBorder
+      value: 130
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
@@ -18863,7 +18883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 231d55fb932aef047856ebad8a975025, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
+  canvas: {fileID: 0}
+  time: {fileID: 0}
   timer: 600
 --- !u!114 &1523164628
 MonoBehaviour:
@@ -18893,7 +18914,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stageName: 
-  timeText: {fileID: 0}
+  time: {fileID: 0}
+  canvas: {fileID: 0}
   countdownTime: 120
 --- !u!114 &1523164630
 MonoBehaviour:

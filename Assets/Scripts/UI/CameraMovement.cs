@@ -34,7 +34,7 @@ public class CameraMovement : MonoBehaviour {
         currPos = player.transform.position;
         currPos.z += zOffset;
 
-        if(stageNumber == 2)
+        if(stageNumber == 1 || stageNumber == 2)
         {
             var clampedX = Mathf.Clamp(player.transform.position.x, leftBorder + camWidth, rightBorder - camWidth);
             var clampedY = Mathf.Clamp(player.transform.position.y , bottomBorder + camHeight, topBorder - camHeight);
