@@ -34,16 +34,13 @@ public class Weapon : MonoBehaviour
     // a method to set the weapon
     public void SetWeapon(short itemId)
     {
-<<<<<<< HEAD
-=======
-        Debug.Log("SetWeapon called: " + itemId);
->>>>>>> origin/particle-system
+        //Debug.Log("SetWeapon called: " + itemId);
         this.itemId = itemId;
         foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
         {
             if (weaponItem.itemId == itemId)
             {
-                Debug.Log("Weapon Found: " + weaponItem.name + " ID " + weaponItem.itemId);
+                //Debug.Log("Weapon Found: " + weaponItem.name + " ID " + weaponItem.itemId);
                 WeaponType = weaponItem.weaponType;
                 Atk = weaponItem.attackStrength;
                 AtkRange = weaponItem.attackRange;
