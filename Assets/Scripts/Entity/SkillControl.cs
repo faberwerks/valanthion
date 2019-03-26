@@ -60,23 +60,48 @@ public class SkillControl : MonoBehaviour {
             return;
         }
 
-        if (skill.staminaCost > 0 && player.Stamina >= skill.staminaCost)
-        {
-            player.Stamina -= skill.staminaCost;
-        }
-        else
-        {
-            Debug.Log("Stamina not enough");
-            return;
-        }
+        #region Commented: Bug #049
+        //if (skill.staminaCost > 0 && player.Stamina >= skill.staminaCost)
+        //{
+        //    player.Stamina -= skill.staminaCost;
+        //}
+        //else
+        //{
+        //    Debug.Log("Stamina not enough");
+        //    return;
+        //}
 
-        if (cooldownTimers[skillNumber] > 0)
+        //if (cooldownTimers[skillNumber] > 0)
+        //{
+        //    Debug.Log("Sedang cooldown");
+        //    return;
+        //}
+        //else
+        //{
+        //    cooldownTimers[skillNumber] = skill.cooldownTime;
+        //}
+        #endregion
+
+        #region Documentation: Bug #049 Fix
+        // Bug #049: SkillControl checks first whether there is enough stamina then immediately uses the stamina.
+        //           But it does not take into account the cooldown. So if the stamina is enough, it will use
+        //           stamina regardless of whether the cooldown has finished or not.
+        // Fix     : Return the method if it does not fulfill the stamina AND cooldown conditions.
+        //           If it fulfills the conditions, then use stamina.
+        #endregion
+        if (skill.staminaCost < 0 || player.Stamina < skill.staminaCost || cooldownTimers[skillNumber] > 0)
         {
-            Debug.Log("Sedang cooldown");
             return;
         }
         else
         {
+            //player.Stamina -= skill.staminaCost;
+            float stamina = player.Stamina;
+            Debug.Log(stamina);
+            stamina -= skill.staminaCost;
+            Debug.Log(stamina);
+            player.Stamina = stamina;
+
             cooldownTimers[skillNumber] = skill.cooldownTime;
         }
 
