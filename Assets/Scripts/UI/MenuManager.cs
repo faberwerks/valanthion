@@ -60,7 +60,7 @@ public class MenuManager : MonoBehaviour {
     // a method to handle pause button input
     public void CheckPause()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && GameManager.Instance.CurrGameState == GameManager.GameState.PLAYING)
         {
             GameManager.Instance.Pause(true);
         }

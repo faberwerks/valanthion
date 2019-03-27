@@ -19,9 +19,9 @@ public class StageManager : MonoBehaviour {
     }
 
     // a method to handle post-level processing after winning
-    public void WinLevel()
-    {
-        Game.current.skillPoints += skillPointReward;
-       // Game.current.perkPoints += perkPointReward;
-    }
+    //public void WinLevel()
+    //{
+    //    Game.current.skillPoints += skillPointReward;
+    //   // Game.current.perkPoints += perkPointReward;
+    //}
 }

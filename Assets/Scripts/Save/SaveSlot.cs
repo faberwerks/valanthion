@@ -25,7 +25,7 @@ public class SaveSlot : MonoBehaviour {
         {
             if (SaveLoad.savedGames[i] != null)
             {
-                Debug.Log("save file " + i +" loaded");
+                //Debug.Log("save file " + i +" loaded");
                 saveSlot[i].GetComponentInChildren<Text>().text = "\t" + SaveLoad.savedGames[i].saveName;
             }
         }

@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7047a9acb768b7544b2b5e9b60e3e435, type: 3}
   m_Name: Ryter Sword
   m_EditorClassIdentifier: 
-  itemId: 2
+  itemId: 1
   weaponType: 0
-  attackStrength: 4
+  attackStrength: 25
   attackSpeed: 3
   attackRange: 1

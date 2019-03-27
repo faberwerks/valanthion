@@ -76,11 +76,7 @@ public class GameManager {
     private void NextScene()
     {
         PlayerPrefs.SetString("StageName", GameObject.FindObjectOfType<StageSetting>().stageName);
-        // Debug.Log(GameObject.FindObjectOfType<StageSetting>().GameTime());
-        if (Game.current.latestStage < SceneManager.GetActiveScene().buildIndex)
-        {
-            Game.current.latestStage = SceneManager.GetActiveScene().buildIndex;
-        }
+        //Debug.Log(GameObject.FindObjectOfType<StageSetting>().GameTime());
         SaveLoad.Save(Game.current.slotIndex);
         PlayerPrefs.SetInt("CurrentStage", SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene("PostStage");

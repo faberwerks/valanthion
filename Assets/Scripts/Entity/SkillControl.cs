@@ -36,7 +36,7 @@ public class SkillControl : MonoBehaviour {
         weaponDamage = weapon.Atk;
         weaponRange = weapon.AtkRange;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (player.IsFacingRight)
@@ -56,26 +56,49 @@ public class SkillControl : MonoBehaviour {
 
         if (skill == null)
         {
+            Debug.Log("Skill soesn't exist");
             return;
         }
 
-        if (cooldownTimers[skillNumber] > 0)
+        #region Commented: Bug #049
+        //if (skill.staminaCost > 0 && player.Stamina >= skill.staminaCost)
+        //{
+        //    player.Stamina -= skill.staminaCost;
+        //}
+        //else
+        //{
+        //    Debug.Log("Stamina not enough");
+        //    return;
+        //}
+
+        //if (cooldownTimers[skillNumber] > 0)
+        //{
+        //    Debug.Log("Sedang cooldown");
+        //    return;
+        //}
+        //else
+        //{
+        //    cooldownTimers[skillNumber] = skill.cooldownTime;
+        //}
+        #endregion
+
+        #region Documentation: Bug #049 Fix
+        // Bug #049: SkillControl checks first whether there is enough stamina then immediately uses the stamina.
+        //           But it does not take into account the cooldown. So if the stamina is enough, it will use
+        //           stamina regardless of whether the cooldown has finished or not.
+        // Fix     : Return the method if it does not fulfill the stamina AND cooldown conditions.
+        //           If it fulfills the conditions, then use stamina.
+        #endregion
+        if (skill.staminaCost < 0 || player.Stamina < skill.staminaCost || cooldownTimers[skillNumber] > 0)
         {
             return;
         }
         else
         {
+            player.Stamina -= skill.staminaCost;
             cooldownTimers[skillNumber] = skill.cooldownTime;
         }
 
-        if (skill.staminaCost > 0 && player.Stamina >= skill.staminaCost)
-        {
-            player.Stamina -= skill.staminaCost;
-        }
-        else
-        {
-            return;
-        }
 
         RaycastHit2D hit;
 
@@ -89,7 +112,7 @@ public class SkillControl : MonoBehaviour {
                 if (hit)
                 {
                     hit.collider.SendMessage("TakeDamage", skill.damageMultiplier * weaponDamage);
-                    
+
                     if (skill.bleeding)
                     {
                         hit.collider.SendMessage("Bleed");
@@ -103,7 +126,7 @@ public class SkillControl : MonoBehaviour {
                 foreach (Collider2D target in targets)
                 {
                     target.SendMessage("TakeDamage", skill.damageMultiplier * weaponDamage);
-                    
+
                     if (skill.bleeding)
                     {
                         target.SendMessage("Bleed");
@@ -152,7 +175,7 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
-        
+
         // Defense Handling
         if (skill.reducesDefense)
         {
@@ -205,7 +228,7 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
-        
+
 
         // Buff handling
         if (skill.buffs)
@@ -239,7 +262,7 @@ public class SkillControl : MonoBehaviour {
     private IEnumerator CCountdownCooldown(byte skillNumber)
     {
         int index = skillNumber;
-
+        Debug.Log("Courotine called");
         while (cooldownTimers[index] > 0)
         {
             cooldownTimers[index] -= Time.deltaTime;

@@ -6,15 +6,22 @@ using UnityEngine.UI;
 public class TimerStage3 : MonoBehaviour {
 
     [SerializeField]
-    private Text timerText;
+    private GameObject canvas, time;
+
+    private Text timeText;
     [SerializeField]
     private float timer;
-	
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+        time = Instantiate(time, canvas.transform);
+        timeText = time.GetComponentInChildren<Text>();
+    }
+
+    // Update is called once per frame
+    void Update () {
         timer -= Time.deltaTime;
-        timerText.text = ((int)timer/60).ToString() + " : " + ((int)timer % 60).ToString();
+        timeText.text = ((int)timer/60).ToString() + " : " + ((int)timer % 60).ToString();
 		if(timer <= 0)
         {
             FindObjectOfType<Player>().Health = 0;

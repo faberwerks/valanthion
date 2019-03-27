@@ -14,10 +14,12 @@ public class RewardManager : MonoBehaviour {
         {
             case 2:
                 rewardName.GetComponent<Text>().text = "Ryter Sword";
+                Game.current.weapons[1] = 1;
                 //change rewardIcon
                 break;
             case 4:
                 rewardName.GetComponent<Text>().text = "Azelion";
+                Game.current.weapons[2] = 1;
                 //change rewardIcon
                 break;
         }

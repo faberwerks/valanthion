@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class GameMenuButtonScripts : MonoBehaviour {
 
+    private void Start()
+    {
+        Time.timeScale = 1;
+    }
+
     // a method to continue the game from the last stage
     public void Continue()
     {

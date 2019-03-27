@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script manages skill key bindings.
+// Skills are represented by byte values that represent the skill IDs that is assigned to each key.
+// For example: if AKeySkill has a value of 1, it is bound to Skill ID 1 ("Dash Slash")
+// Skill IDs range from 0 to 5; a value of 6 indicates NO SKILL BOUND TO KEY
+
 public class InputManager : MonoBehaviour {
 
     public static InputManager instance;
@@ -23,12 +28,14 @@ public class InputManager : MonoBehaviour {
             Destroy(gameObject);
         }
 
-        // gets existing key bindings if they exist
-        // if not assigns Skill ID 0 to all keys by default
-        AKeySkill = (byte) PlayerPrefs.GetInt("AKeySkill", 0);
-        SKeySkill = (byte) PlayerPrefs.GetInt("SKeySkill", 6);
-        DKeySkill = (byte) PlayerPrefs.GetInt("DKeySkill", 6);
-        FKeySkill = (byte) PlayerPrefs.GetInt("FKeySkill", 6);
+        #region Commented
+        //// gets existing key bindings if they exist
+        //// if not assigns Skill ID 0 to all keys by default
+        //AKeySkill = (byte) PlayerPrefs.GetInt("AKeySkill", 0);
+        //SKeySkill = (byte) PlayerPrefs.GetInt("SKeySkill", 6);
+        //DKeySkill = (byte) PlayerPrefs.GetInt("DKeySkill", 6);
+        //FKeySkill = (byte) PlayerPrefs.GetInt("FKeySkill", 6);
+        #endregion
     }
 
     // a method to bind a skill to a key
@@ -97,22 +104,39 @@ public class InputManager : MonoBehaviour {
         }
     }
 
+    // a method to load key bindings from save file
+    public void SetKeysFromSaveFile(byte[] skillKeys)
+    {
+        SetKey(KeyCode.A, skillKeys[0]);
+        SetKey(KeyCode.S, skillKeys[1]);
+        SetKey(KeyCode.D, skillKeys[2]);
+        SetKey(KeyCode.F, skillKeys[3]);
+    }
+
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            Debug.Log("A Key Skill: " + PlayerPrefs.GetInt("AKeySkill"));
-            Debug.Log("S Key Skill: " + PlayerPrefs.GetInt("SKeySkill"));
-            Debug.Log("D Key Skill: " + PlayerPrefs.GetInt("DKeySkill"));
-            Debug.Log("F Key Skill: " + PlayerPrefs.GetInt("FKeySkill"));
-        }
+        #region Commented Debug Controls
+        // DEBUG CONTROLS
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        //{
+        //    Debug.Log("A Key Skill: " + PlayerPrefs.GetInt("AKeySkill"));
+        //    Debug.Log("S Key Skill: " + PlayerPrefs.GetInt("SKeySkill"));
+        //    Debug.Log("D Key Skill: " + PlayerPrefs.GetInt("DKeySkill"));
+        //    Debug.Log("F Key Skill: " + PlayerPrefs.GetInt("FKeySkill"));
+        //}
 
-        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        //if (Input.GetKeyDown(KeyCode.LeftAlt))
+        //{
+        //    SetKey(KeyCode.A, 0);
+        //    SetKey(KeyCode.S, 6);
+        //    SetKey(KeyCode.D, 6);
+        //    SetKey(KeyCode.F, 6);
+        //}
+
+        if (Input.GetKeyDown(KeyCode.RightAlt))
         {
-            SetKey(KeyCode.A, 0);
-            SetKey(KeyCode.S, 6);
-            SetKey(KeyCode.D, 6);
-            SetKey(KeyCode.F, 6);
+            Game.current.latestStage = 6;
         }
+        #endregion
     }
 }
