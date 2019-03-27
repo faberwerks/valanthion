@@ -71,7 +71,7 @@ public class Player : Entity
         atk = weapon.Atk;
         range = weapon.AtkRange;
         entityAttack.AtkCooldown = weapon.AtkSpeed;
-        Defense = armor.Defense;  
+        Defense = armor.Defense;
 
         LayerMask enemyLayer = LayerMask.GetMask("Enemy");
         LayerMask obstacleLayer = LayerMask.GetMask("Obstacle");

@@ -12,7 +12,12 @@ public class ChapterSelection : MonoBehaviour {
 
 	// Use this for initialization
 	private void Start () {
-		for (int i = 0; i < Game.current.latestStage; i++)
+        int _tempLatestStage = Game.current.latestStage;
+        if (_tempLatestStage > 6)
+        {
+            _tempLatestStage = 6;
+        }
+        for (int i = 0; i < _tempLatestStage; i++)
         {
             stageButtons[i].interactable = true;
         }

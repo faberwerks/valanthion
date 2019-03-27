@@ -34,7 +34,6 @@ public class Weapon : MonoBehaviour
     // a method to set the weapon
     public void SetWeapon(short itemId)
     {
-        Debug.Log("SetWeapon called: " + itemId);
         this.itemId = itemId;
         foreach (WeaponItem weaponItem in weaponItemList.weaponItemList)
         {

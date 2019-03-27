@@ -16,7 +16,7 @@ public class EquipWeaponButton : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void Update () {
-        if (Game.current.weapons[weaponId] != 0 || Game.current.equippedWeaponID == weaponId)
+        if (Game.current.weapons[weaponId] != 0 && Game.current.equippedWeaponID != weaponId)
         {
             buttonComponent.interactable = true;
         }
@@ -30,5 +30,6 @@ public class EquipWeaponButton : MonoBehaviour {
     public void EquipWeapon()
     {
         Game.current.equippedWeaponID = weaponId;
+        Debug.Log(Game.current.equippedWeaponID);
     }
 }
