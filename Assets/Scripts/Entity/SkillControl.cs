@@ -36,7 +36,7 @@ public class SkillControl : MonoBehaviour {
         weaponDamage = weapon.Atk;
         weaponRange = weapon.AtkRange;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (player.IsFacingRight)
@@ -95,13 +95,7 @@ public class SkillControl : MonoBehaviour {
         }
         else
         {
-            //player.Stamina -= skill.staminaCost;
-            float stamina = player.Stamina;
-            Debug.Log(stamina);
-            stamina -= skill.staminaCost;
-            Debug.Log(stamina);
-            player.Stamina = stamina;
-
+            player.Stamina -= skill.staminaCost;
             cooldownTimers[skillNumber] = skill.cooldownTime;
         }
 
@@ -118,7 +112,7 @@ public class SkillControl : MonoBehaviour {
                 if (hit)
                 {
                     hit.collider.SendMessage("TakeDamage", skill.damageMultiplier * weaponDamage);
-                    
+
                     if (skill.bleeding)
                     {
                         hit.collider.SendMessage("Bleed");
@@ -132,7 +126,7 @@ public class SkillControl : MonoBehaviour {
                 foreach (Collider2D target in targets)
                 {
                     target.SendMessage("TakeDamage", skill.damageMultiplier * weaponDamage);
-                    
+
                     if (skill.bleeding)
                     {
                         target.SendMessage("Bleed");
@@ -181,7 +175,7 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
-        
+
         // Defense Handling
         if (skill.reducesDefense)
         {
@@ -234,7 +228,7 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
-        
+
 
         // Buff handling
         if (skill.buffs)
