@@ -133,10 +133,10 @@ public class InputManager : MonoBehaviour {
         //    SetKey(KeyCode.F, 6);
         //}
 
-        //if (Input.GetKeyDown(KeyCode.RightAlt))
-        //{
-        //    Game.current.latestStage = 6;
-        //}
+        if (Input.GetKeyDown(KeyCode.RightAlt))
+        {
+            Game.current.latestStage = 6;
+        }
         #endregion
     }
 }
