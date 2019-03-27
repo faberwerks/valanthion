@@ -20,7 +20,14 @@ public class MiniBoss : Entity {
     // Use this for initialization
     void Start()
     {
-        anim = GetComponent<Animator>();
+        rb = gameObject.GetComponent<Rigidbody2D>();
+        anim = gameObject.GetComponent<Animator>();
+        sprRend = GetComponent<SpriteRenderer>();
+        
+        initialColor = sprRend.color;
+
+        colorTime = 0.5f;
+
         player = FindObjectOfType<Player>().gameObject;
         cooldownTimeExplode = skillCooldownExplode;
         cooldownTimeArea = skillCooldownArea;
@@ -64,11 +71,14 @@ public class MiniBoss : Entity {
     public void TakeDamage(int atk)
     {
         health -= atk;
+
+        StartCoroutine(CTimeColorChange());
     }
 
     private void skill()
     {
         Instantiate(bombPrep, new Vector3(40-Random.Range(0,30),0), Quaternion.identity);
     }
-    
+
+   
 }

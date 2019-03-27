@@ -24,7 +24,14 @@ public class Boss : Entity {
 
     // Use this for initialization
     void Start () {
+        rb = gameObject.GetComponent<Rigidbody2D>();
         anim = gameObject.GetComponent<Animator>();
+        sprRend = GetComponent<SpriteRenderer>();
+        
+        initialColor = sprRend.color;
+
+        colorTime = 0.5f;
+
         index = 0;
         patternRandomize = 0;
         player = FindObjectOfType<Player>().gameObject;
@@ -88,12 +95,7 @@ public class Boss : Entity {
         Instantiate(bombPrep,player.transform.position,Quaternion.identity);
     }
 
-    public void KnockBack(float force)
-    {
-
-    }
-
-    private void CheckDeath()
+    protected override void CheckDeath()
     {
         if (health <= 0)
         {
@@ -105,6 +107,8 @@ public class Boss : Entity {
     public void TakeDamage(int atk)
     {
         health -= atk;
+
+        StartCoroutine(CTimeColorChange());
     }
 
     private void Pattern1()
@@ -126,4 +130,7 @@ public class Boss : Entity {
         }
 
     }
+
+    
+    
 }
