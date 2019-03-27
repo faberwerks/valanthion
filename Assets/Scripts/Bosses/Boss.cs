@@ -107,7 +107,7 @@ public class Boss : Entity {
     public void TakeDamage(int atk)
     {
         health -= atk;
-
+        audioSource.Play();
         StartCoroutine(CTimeColorChange());
     }
 
