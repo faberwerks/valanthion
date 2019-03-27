@@ -24,6 +24,7 @@ public class Boss : Entity {
 
     // Use this for initialization
     void Start () {
+        anim = gameObject.GetComponent<Animator>();
         index = 0;
         patternRandomize = 0;
         player = FindObjectOfType<Player>().gameObject;
@@ -39,6 +40,7 @@ public class Boss : Entity {
         patternCooldown -= Time.deltaTime;
         if(skillCooldownSpear <= 0)
         {
+            anim.SetTrigger("Attacking");
             ThrowSpear();
             skillCooldownSpear = cooldownTimeSpear;
         }
@@ -49,7 +51,8 @@ public class Boss : Entity {
         }
         if(patternCooldown <= 0)
         {
-            if(index >= 9)
+            anim.SetTrigger("Attacking");
+            if (index >= 9)
             {
                 index = 0;
                 patternRandomize = Random.Range(0, 3);

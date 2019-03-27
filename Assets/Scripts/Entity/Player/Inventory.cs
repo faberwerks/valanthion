@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour {
     {
         ItemInfo healthPotionInfo = new ItemInfo();
         healthPotionInfo.itemName = "Health Potion";
-        healthPotionInfo.value = 10;
+        healthPotionInfo.value = 20;
         healthPotionInfo.count = 0;
 
         items.Add(healthPotionInfo);
