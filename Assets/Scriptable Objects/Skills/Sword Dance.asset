@@ -17,12 +17,12 @@ MonoBehaviour:
   skillNumber: 5
   cooldownTime: 5
   executionTime: 0
-  staminaCost: 30
+  staminaCost: 45
   dealsDamage: 1
   singleTarget: 0
   multipleTargets: 1
   bleeding: 0
-  damageMultiplier: 3
+  damageMultiplier: 5
   bleedingDamage: 0
   reducesDefense: 0
   dashes: 0

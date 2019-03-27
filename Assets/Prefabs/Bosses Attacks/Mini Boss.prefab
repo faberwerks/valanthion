@@ -119,12 +119,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 0}
   hitSound: {fileID: 0}
-  health: 100
+  health: 3000
   maxSpeed: 10
   isFacingRight: 0
   bombPrep: {fileID: 1832674081212878, guid: d17325bdd2c1d0d4982f7c63baa4c724, type: 2}
-  skillCooldownExplode: 3
-  skillCooldownArea: 5
+  skillCooldownExplode: 4
+  skillCooldownArea: 6
   bombDamage: 15
 --- !u!212 &212650047665282004
 SpriteRenderer:
