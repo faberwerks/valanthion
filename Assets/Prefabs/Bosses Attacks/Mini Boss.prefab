@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50691609937451618}
   - component: {fileID: 61318534849968130}
   - component: {fileID: 114894847445700656}
+  - component: {fileID: 95476528789863118}
   m_Layer: 9
   m_Name: Mini Boss
   m_TagString: Untagged
@@ -37,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926195495452514}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.93, y: -1.2, z: 0.30800876}
+  m_LocalPosition: {x: 46.35, y: -0.37, z: 0.30800876}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -79,15 +80,32 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.4655, y: 1.2665}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.5, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &95476528789863118
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926195495452514}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc15c5b8c3754e94b8ccf25aa43cca31, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114894847445700656
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,12 +117,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 676f66c763ca98a45b81a891b899d02d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  audioSource: {fileID: 0}
+  hitSound: {fileID: 0}
+  health: 3000
   maxSpeed: 10
   isFacingRight: 0
   bombPrep: {fileID: 1832674081212878, guid: d17325bdd2c1d0d4982f7c63baa4c724, type: 2}
-  skillCooldownExplode: 3
-  skillCooldownArea: 5
+  skillCooldownExplode: 4
+  skillCooldownArea: 6
   bombDamage: 15
 --- !u!212 &212650047665282004
 SpriteRenderer:
@@ -140,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: -1329352971
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5c80998ee8cd8ee41b4b14e99a711354, type: 3}
   m_Color: {r: 0.8455882, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0

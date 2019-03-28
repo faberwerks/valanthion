@@ -16,15 +16,11 @@ public class MiniBoss : Entity {
 
     [SerializeField]
     private float  bombDamage;
-
-    
-
-   
     
     // Use this for initialization
     void Start()
     {
-        
+        anim = GetComponent<Animator>();
         player = FindObjectOfType<Player>().gameObject;
         cooldownTimeExplode = skillCooldownExplode;
         cooldownTimeArea = skillCooldownArea;
@@ -36,11 +32,13 @@ public class MiniBoss : Entity {
         skillCooldownArea -= Time.deltaTime;
         if (skillCooldownExplode <= 0)
         {
+            anim.SetTrigger("Attacking");
             ThrowBomb();
             skillCooldownExplode = cooldownTimeExplode;
         }
         if(skillCooldownArea <= 0 && health <= 50)
         {
+            anim.SetTrigger("Attacking");
             skill();
             skillCooldownArea = cooldownTimeArea;
         }
@@ -54,7 +52,7 @@ public class MiniBoss : Entity {
         Instantiate(bombPrep, player.transform.position, Quaternion.identity);
     }
 
-    private void CheckDeath()
+    protected override void CheckDeath()
     {
         if(health <= 0)
         {
@@ -72,9 +70,5 @@ public class MiniBoss : Entity {
     {
         Instantiate(bombPrep, new Vector3(40-Random.Range(0,30),0), Quaternion.identity);
     }
-
-    private void KnockBack(float force)
-    {
-
-    }
+    
 }
