@@ -45,7 +45,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1451170525410428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.55826, y: -3.4889827, z: 0}
+  m_LocalPosition: {x: 8.2, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   jumpSound: {fileID: 8300000, guid: 2525666d7b4c72a49a3e023cff92df1c, type: 3}
   drinkSound: {fileID: 8300000, guid: 56797abb0df236d4dbb83149f495348d, type: 3}
   stamina: 100
-  jumpPower: 6
+  jumpPower: 0
 --- !u!114 &114820915545668006
 MonoBehaviour:
   m_ObjectHideFlags: 1
