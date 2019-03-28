@@ -9,6 +9,8 @@ public class MiniBoss : Entity {
     [SerializeField]
     private GameObject  bombPrep;
 
+    public float changeStatePercentage;
+
     [SerializeField]
     private float  skillCooldownExplode,skillCooldownArea;
 
@@ -28,6 +30,7 @@ public class MiniBoss : Entity {
 
         colorTime = 0.5f;
 
+        initialMaxHealth = health;
         player = FindObjectOfType<Player>().gameObject;
         cooldownTimeExplode = skillCooldownExplode;
         cooldownTimeArea = skillCooldownArea;
@@ -43,10 +46,10 @@ public class MiniBoss : Entity {
             ThrowBomb();
             skillCooldownExplode = cooldownTimeExplode;
         }
-        if(skillCooldownArea <= 0 && health <= 50)
+        if(skillCooldownArea <= 0 && health <= (changeStatePercentage/100 * initialMaxHealth))
         {
             anim.SetTrigger("Attacking");
-            skill();
+            Skill();
             skillCooldownArea = cooldownTimeArea;
         }
        
@@ -75,7 +78,7 @@ public class MiniBoss : Entity {
         StartCoroutine(CTimeColorChange());
     }
 
-    private void skill()
+    private void Skill()
     {
         Instantiate(bombPrep, new Vector3(40-Random.Range(0,30),0), Quaternion.identity);
     }
