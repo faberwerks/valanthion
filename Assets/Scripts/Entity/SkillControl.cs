@@ -176,6 +176,8 @@ public class SkillControl : MonoBehaviour {
             }
         }
 
+        // The following methods already exist right above this comment
+        /*
         // Defense Handling
         if (skill.reducesDefense)
         {
@@ -228,6 +230,7 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
+        */
 
 
         // Buff handling

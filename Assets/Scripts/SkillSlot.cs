@@ -28,6 +28,7 @@ public class SkillSlot : MonoBehaviour {
         skillControl = GameObject.FindGameObjectWithTag("Player").GetComponent<SkillControl>();
 
         image = GetComponent<Image>();
+        image.sprite = skillIcons[skillId];
 
         #region Commented
         //for (int i = 0; i < 6; i++)

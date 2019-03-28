@@ -146,6 +146,7 @@ public class Entity : MonoBehaviour
     {
         initialSpeed = speed;
         initialAtk = atk;
+        Debug.Log(initialAtk);
 
         speed = 0;
         atk -= atkReduction;
@@ -267,6 +268,7 @@ public class Entity : MonoBehaviour
 
         speed = initialSpeed;
         atk = initialAtk;
+        Debug.Log(atk);
         yield break;
     }
 

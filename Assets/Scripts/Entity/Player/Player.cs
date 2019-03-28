@@ -171,6 +171,7 @@ public class Player : Entity
             if (Input.GetKeyDown(KeyCode.D))
             {
                 skillControl.UseSkill(InputManager.instance.DKeySkill);
+                Debug.Log("Use D Skill");
             }
             else if (Input.GetKeyDown(KeyCode.F))
             {
