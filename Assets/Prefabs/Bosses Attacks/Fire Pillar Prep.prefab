@@ -54,7 +54,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePillar: {fileID: 1257975096134942, guid: 7fcdc20657455e74ab71ed52c2e52f38, type: 2}
   countdown: 0.8
-  damage: 15
+  damage: 25
 --- !u!212 &212357794190946246
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -86,11 +86,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -684187465
+  m_SortingLayer: -4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  m_Color: {r: 0.9264706, g: 0.5926687, b: 0.5926687, a: 0.616}
+  m_Sprite: {fileID: 21300000, guid: 498d23d36518ff842beb4c5c1a4f9a7e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.616}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
