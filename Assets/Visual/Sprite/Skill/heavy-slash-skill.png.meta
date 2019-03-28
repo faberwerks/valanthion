@@ -1,0 +1,234 @@
+fileFormatVersion: 2
+guid: ede9184ee5e5721498c89687f414b61f
+timeCreated: 1553789226
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: heavy-slash-skill_0
+    21300002: heavy-slash-skill_1
+    21300004: heavy-slash-skill_2
+    21300006: heavy-slash-skill_3
+    21300008: heavy-slash-skill_4
+    21300010: heavy-slash-skill_5
+    21300012: heavy-slash-skill_6
+    21300014: heavy-slash-skill_7
+    21300016: heavy-slash-skill_8
+    21300018: heavy-slash-skill_9
+    21300020: heavy-slash-skill_10
+    21300022: heavy-slash-skill_11
+    21300024: heavy-slash-skill_12
+    21300026: heavy-slash-skill_13
+    21300028: heavy-slash-skill_14
+    21300030: heavy-slash-skill_15
+    21300032: heavy-slash-skill_16
+    21300034: heavy-slash-skill_17
+    21300036: heavy-slash-skill_18
+    21300038: heavy-slash-skill_19
+    21300040: heavy-slash-skill_20
+    21300042: heavy-slash-skill_21
+    21300044: heavy-slash-skill_22
+    21300046: heavy-slash-skill_23
+    21300048: heavy-slash-skill_24
+    21300050: heavy-slash-skill_25
+    21300052: heavy-slash-skill_26
+    21300054: heavy-slash-skill_27
+    21300056: heavy-slash-skill_28
+    21300058: heavy-slash-skill_29
+    21300060: heavy-slash-skill_30
+    21300062: heavy-slash-skill_31
+    21300064: heavy-slash-skill_32
+    21300066: heavy-slash-skill_33
+    21300068: heavy-slash-skill_34
+    21300070: heavy-slash-skill_35
+    21300072: heavy-slash-skill_36
+    21300074: heavy-slash-skill_37
+    21300076: heavy-slash-skill_38
+    21300078: heavy-slash-skill_39
+    21300080: heavy-slash-skill_40
+    21300082: heavy-slash-skill_41
+    21300084: heavy-slash-skill_42
+    21300086: heavy-slash-skill_43
+    21300088: heavy-slash-skill_44
+    21300090: heavy-slash-skill_45
+    21300092: heavy-slash-skill_46
+    21300094: heavy-slash-skill_47
+    21300096: heavy-slash-skill_48
+    21300098: heavy-slash-skill_49
+    21300100: heavy-slash-skill_50
+    21300102: heavy-slash-skill_51
+    21300104: heavy-slash-skill_52
+    21300106: heavy-slash-skill_53
+    21300108: heavy-slash-skill_54
+    21300110: heavy-slash-skill_55
+    21300112: heavy-slash-skill_56
+    21300114: heavy-slash-skill_57
+    21300116: heavy-slash-skill_58
+    21300118: heavy-slash-skill_59
+    21300120: heavy-slash-skill_60
+    21300122: heavy-slash-skill_61
+    21300124: heavy-slash-skill_62
+    21300126: heavy-slash-skill_63
+    21300128: heavy-slash-skill_64
+    21300130: heavy-slash-skill_65
+    21300132: heavy-slash-skill_66
+    21300134: heavy-slash-skill_67
+    21300136: heavy-slash-skill_68
+    21300138: heavy-slash-skill_69
+    21300140: heavy-slash-skill_70
+    21300142: heavy-slash-skill_71
+    21300144: heavy-slash-skill_72
+    21300146: heavy-slash-skill_73
+    21300148: heavy-slash-skill_74
+    21300150: heavy-slash-skill_75
+    21300152: heavy-slash-skill_76
+    21300154: heavy-slash-skill_77
+    21300156: heavy-slash-skill_78
+    21300158: heavy-slash-skill_79
+    21300160: heavy-slash-skill_80
+    21300162: heavy-slash-skill_81
+    21300164: heavy-slash-skill_82
+    21300166: heavy-slash-skill_83
+    21300168: heavy-slash-skill_84
+    21300170: heavy-slash-skill_85
+    21300172: heavy-slash-skill_86
+    21300174: heavy-slash-skill_87
+    21300176: heavy-slash-skill_88
+    21300178: heavy-slash-skill_89
+    21300180: heavy-slash-skill_90
+    21300182: heavy-slash-skill_91
+    21300184: heavy-slash-skill_92
+    21300186: heavy-slash-skill_93
+    21300188: heavy-slash-skill_94
+    21300190: heavy-slash-skill_95
+    21300192: heavy-slash-skill_96
+    21300194: heavy-slash-skill_97
+    21300196: heavy-slash-skill_98
+    21300198: heavy-slash-skill_99
+    21300200: heavy-slash-skill_100
+    21300202: heavy-slash-skill_101
+    21300204: heavy-slash-skill_102
+    21300206: heavy-slash-skill_103
+    21300208: heavy-slash-skill_104
+    21300210: heavy-slash-skill_105
+    21300212: heavy-slash-skill_106
+    21300214: heavy-slash-skill_107
+    21300216: heavy-slash-skill_108
+    21300218: heavy-slash-skill_109
+    21300220: heavy-slash-skill_110
+    21300222: heavy-slash-skill_111
+    21300224: heavy-slash-skill_112
+    21300226: heavy-slash-skill_113
+    21300228: heavy-slash-skill_114
+    21300230: heavy-slash-skill_115
+    21300232: heavy-slash-skill_116
+    21300234: heavy-slash-skill_117
+    21300236: heavy-slash-skill_118
+    21300238: heavy-slash-skill_119
+    21300240: heavy-slash-skill_120
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 400
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: heavy-slash-skill_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 382
+        height: 704
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: heavy-slash-skill_3
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 0
+        width: 707
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

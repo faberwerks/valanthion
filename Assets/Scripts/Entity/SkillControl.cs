@@ -254,6 +254,27 @@ public class SkillControl : MonoBehaviour {
         }
 
         canUse[skillNumber] = false;
+        switch(skillNumber)
+        {
+            case 0:
+                player.GetComponent<Animator>().SetTrigger("Is Using Skill 0");
+                break;
+            case 1:
+                player.GetComponent<Animator>().SetTrigger("Is Using Skill 1");
+                break;
+            case 2:
+                player.GetComponent<Animator>().SetTrigger("Is Using Skill 2");
+                break;
+            case 3:
+                player.GetComponent<Animator>().SetTrigger("Is Using Skill 3");
+                break;
+            case 4:
+                player.GetComponent<Animator>().SetTrigger("Is Using Skill 4");
+                break;
+            case 5:
+                player.GetComponent<Animator>().SetTrigger("Is Using Skill 5");
+                break;
+        }
         StartCoroutine(CCountdownCooldown(skillNumber));
     }
 
