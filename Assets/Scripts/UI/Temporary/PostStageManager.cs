@@ -33,8 +33,8 @@ public class PostStageManager : MonoBehaviour {
     private void CheckReward()
     {
         int currStage = PlayerPrefs.GetInt("CurrentStage", 0);
-        Debug.Log(PlayerPrefs.GetInt("CurrentStage", 0));
-        if (currStage == 2 || currStage == 4) {
+        //Debug.Log(PlayerPrefs.GetInt("CurrentStage", 0));
+        if ((currStage == 2 && Game.current.weapons[1] == 0) || (currStage == 4 && Game.current.weapons[2] == 0)) {
             Debug.Log(PlayerPrefs.GetInt("CurrentStage", 0));
             reward.SetActive(true);
             reward.GetComponent<RewardManager>().SetReward(currStage);

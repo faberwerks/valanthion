@@ -39,7 +39,7 @@ public class Weapon : MonoBehaviour
         {
             if (weaponItem.itemId == itemId)
             {
-                Debug.Log("Weapon Found: " + weaponItem.name + " ID " + weaponItem.itemId);
+                //Debug.Log("Weapon Found: " + weaponItem.name + " ID " + weaponItem.itemId);
                 WeaponType = weaponItem.weaponType;
                 Atk = weaponItem.attackStrength;
                 AtkRange = weaponItem.attackRange;
