@@ -135,11 +135,7 @@ public class SkillControl : MonoBehaviour {
             }
         }
 
-        // Dash handling
-        if (skill.dashes)
-        {
-            player.Dash();
-        }
+        
 
 
         hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
@@ -277,6 +273,11 @@ public class SkillControl : MonoBehaviour {
             case 5:
                 player.GetComponent<Animator>().SetTrigger("Is Using Skill 5");
                 break;
+        }
+        // Dash handling
+        if (skill.dashes)
+        {
+            player.Dash();
         }
         StartCoroutine(CCountdownCooldown(skillNumber));
     }

@@ -104,7 +104,7 @@ public class Player : Entity
         InputMove();
         InputSkill();
         InputInv();
-        InputDash();
+        //InputDash();
     }
 
     // a method to validate death
@@ -129,7 +129,7 @@ public class Player : Entity
         {
             dashDir = Vector2.left;
         }
-        rb.AddForce(dashDir * 4, ForceMode2D.Impulse);
+        rb.AddForce(dashDir * 50, ForceMode2D.Impulse);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -274,14 +274,14 @@ public class Player : Entity
     }
 
     // a method to handle dashing input
-    public void InputDash()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Stamina >= 20 && !Input.GetKey(KeyCode.Tab))
-        {
-            Dash();
-            Stamina -= 20;
-        }
-    }
+    //public void InputDash()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.LeftShift) && Stamina >= 20 && !Input.GetKey(KeyCode.Tab))
+    //    {
+    //        Dash();
+    //        Stamina -= 20;
+    //    }
+    //}
 
     /////// PROPERTIES ///////
     public Weapon Weapon
