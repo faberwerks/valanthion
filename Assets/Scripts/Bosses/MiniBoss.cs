@@ -74,7 +74,7 @@ public class MiniBoss : Entity {
     public void TakeDamage(int atk)
     {
         health -= atk;
-
+        audioSource.Play();
         StartCoroutine(CTimeColorChange());
     }
 
