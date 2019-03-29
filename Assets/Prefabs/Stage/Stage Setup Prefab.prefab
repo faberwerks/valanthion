@@ -1111,6 +1111,7 @@ GameObject:
   - component: {fileID: 4955633244374106}
   - component: {fileID: 20552272169207700}
   - component: {fileID: 124503237013961108}
+  - component: {fileID: 114951345644527266}
   m_Layer: 0
   m_Name: Minimap Camera
   m_TagString: Untagged
@@ -1769,12 +1770,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 97
 --- !u!114 &114228892028427468
 MonoBehaviour:
@@ -2171,6 +2172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zOffset: -10
+  topBorder: 0
+  rightBorder: 0
+  bottomBorder: 0
+  leftBorder: 0
 --- !u!114 &114469746086666014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2465,12 +2470,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 100
 --- !u!114 &114614408060473154
 MonoBehaviour:
@@ -3436,12 +3441,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 102
 --- !u!114 &114920688298820746
 MonoBehaviour:
@@ -3596,6 +3601,21 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114951345644527266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1918490721515108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e6bb3ecef9895a4e8ca9fea24882a7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topBorder: 0
+  rightBorder: 0
+  bottomBorder: 0
+  leftBorder: 0
 --- !u!114 &114965460198457740
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3674,12 +3694,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 115
 --- !u!114 &114995183058294830
 MonoBehaviour:

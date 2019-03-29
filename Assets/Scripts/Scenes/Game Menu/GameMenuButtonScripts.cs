@@ -13,7 +13,14 @@ public class GameMenuButtonScripts : MonoBehaviour {
     // a method to continue the game from the last stage
     public void Continue()
     {
-        SceneManager.LoadScene(Game.current.latestStage);
+        if (Game.current.latestStage < 7)
+        {
+            SceneManager.LoadScene(Game.current.latestStage);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
     }
 
     // a method to load a scene

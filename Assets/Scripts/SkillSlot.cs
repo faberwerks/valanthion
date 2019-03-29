@@ -28,7 +28,6 @@ public class SkillSlot : MonoBehaviour {
         skillControl = GameObject.FindGameObjectWithTag("Player").GetComponent<SkillControl>();
 
         image = GetComponent<Image>();
-        image.sprite = skillIcons[skillId];
 
         #region Commented
         //for (int i = 0; i < 6; i++)
@@ -114,6 +113,7 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte) PlayerPrefs.GetInt("AKeySkill");
+                    image.sprite = skillIcons[skillId];
                 }
                 break;
             case KeyCode.S:
@@ -125,6 +125,7 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte)PlayerPrefs.GetInt("SKeySkill");
+                    image.sprite = skillIcons[skillId];
                 }
                 break;
             case KeyCode.D:
@@ -136,6 +137,7 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte)PlayerPrefs.GetInt("DKeySkill");
+                    image.sprite = skillIcons[skillId];
                 }
                 break;
             case KeyCode.F:
@@ -147,9 +149,12 @@ public class SkillSlot : MonoBehaviour {
                 else
                 {
                     skillId = (byte)PlayerPrefs.GetInt("FKeySkill");
+                    image.sprite = skillIcons[skillId];
                 }
                 break;
         }
+
+        
     }
 
     // Update is called once per frame
