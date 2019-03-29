@@ -5701,7 +5701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577abf9f664c8b34e8b90f49bb21c25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageName: 
+  stageName: The Gatekeeper
   time: {fileID: 0}
   canvas: {fileID: 0}
   countdownTime: 120
@@ -5717,7 +5717,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee241806a0d39a84189e4284337a4233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageName: 
+  stageName: The Gatekeeper
 --- !u!114 &826337474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6520,52 +6520,52 @@ Prefab:
     - target: {fileID: 224319141465371358, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 312.85986
+      value: 312.8
       objectReference: {fileID: 0}
     - target: {fileID: 224319141465371358, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -145.03365
+      value: -145
       objectReference: {fileID: 0}
     - target: {fileID: 224982138088151122, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 345.05984
+      value: 345
       objectReference: {fileID: 0}
     - target: {fileID: 224982138088151122, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -175.03363
+      value: -175
       objectReference: {fileID: 0}
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.5744629
+      value: -1.5744324
       objectReference: {fileID: 0}
     - target: {fileID: 224011925663351112, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.048202515
+      value: 0.048217773
       objectReference: {fileID: 0}
     - target: {fileID: 224414774473569870, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -270.0598
+      value: -270
       objectReference: {fileID: 0}
     - target: {fileID: 224414774473569870, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 171.73364
+      value: 171.7
       objectReference: {fileID: 0}
     - target: {fileID: 224515422471517206, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 281.85986
+      value: 281.8
       objectReference: {fileID: 0}
     - target: {fileID: 224515422471517206, guid: cd40d84bb19367d4787862284afbcf25,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: -175.03363
+      value: -175
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}

@@ -49,7 +49,14 @@ public class PostStageManager : MonoBehaviour {
 
     public void Continue()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentStage", 0) + 1);
+        if (Game.current.latestStage >= 7)
+        {
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(PlayerPrefs.GetInt("CurrentStage", 0) + 1);
+        }
     }
 
     public void RetryLevel()

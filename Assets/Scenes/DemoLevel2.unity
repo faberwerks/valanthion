@@ -20704,7 +20704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 577abf9f664c8b34e8b90f49bb21c25f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageName: 
+  stageName: Invasion
   time: {fileID: 0}
   canvas: {fileID: 0}
   countdownTime: 120
@@ -20720,7 +20720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee241806a0d39a84189e4284337a4233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageName: 
+  stageName: Invasion
 --- !u!114 &1523164631
 MonoBehaviour:
   m_ObjectHideFlags: 0
