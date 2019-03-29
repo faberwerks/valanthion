@@ -123,6 +123,7 @@ MonoBehaviour:
   maxSpeed: 10
   isFacingRight: 0
   bombPrep: {fileID: 1832674081212878, guid: d17325bdd2c1d0d4982f7c63baa4c724, type: 2}
+  changeStatePercentage: 100
   skillCooldownExplode: 4
   skillCooldownArea: 6
   bombDamage: 15
@@ -157,8 +158,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1329352971
-  m_SortingLayer: 1
+  m_SortingLayerID: -684187465
+  m_SortingLayer: -4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5c80998ee8cd8ee41b4b14e99a711354, type: 3}
   m_Color: {r: 0.8455882, g: 0, b: 0, a: 1}
