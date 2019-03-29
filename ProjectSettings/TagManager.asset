@@ -8,6 +8,8 @@ TagManager:
   - Enemy
   - Ground
   - MenuManager
+  - TutorialToggler
+  - TutorialCanvas
   layers:
   - Default
   - TransparentFX

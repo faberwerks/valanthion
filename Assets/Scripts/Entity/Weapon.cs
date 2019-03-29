@@ -51,7 +51,7 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("Weapon: " + itemId);
+        //Debug.Log("Weapon: " + itemId);
     }
 
     /////// PROPERTIES ///////
