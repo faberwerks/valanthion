@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1370235647999858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -43.94, y: 4.04, z: 0}
+  m_LocalPosition: {x: 39.35, y: 6.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -161,9 +161,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitSound: {fileID: 8300000, guid: b5cc3e08bd0f3e34fbcb52e912c8bef8, type: 3}
   destroyable: 1
-  health: 20
+  health: 25
   damages: 1
-  damage: 1
+  damage: 2
 --- !u!212 &212525396613274184
 SpriteRenderer:
   m_ObjectHideFlags: 1
