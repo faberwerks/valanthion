@@ -1420,7 +1420,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage: 
+  m_WarningMessage:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114516540117754948
@@ -1432,19 +1432,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1678afb09d746b6409da26655823f3d7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioSource: {fileID: 0}
-  hitSound: {fileID: 0}
-  health: 100
+  m_Name:
+  m_EditorClassIdentifier:
+  audioSource: {fileID: 82594965121860146}
+  hitSound: {fileID: 8300000, guid: fad2ecaf2c4415b4fa617dc4c43b02ad, type: 3}
+  health: 5000
   maxSpeed: 10
   isFacingRight: 0
   spear: {fileID: 1641837735699174, guid: 429e6bb3475820b4b888e67d391816bf, type: 2}
   bombPrep: {fileID: 1708952117423616, guid: 6d596acb996cf194c9395d75b87f15da, type: 2}
-  skillCooldownSpear: 20
+  skillCooldownSpear: 15
   skillCooldownExplode: 5
   patternCooldown: 3
-  spearDamage: 20
+  spearDamage: 10
   bombDamage: 10
   pattern: 010000000200000000000000020000000000000001000000020000000200000000000000
 --- !u!212 &212659344247046446
