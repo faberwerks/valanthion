@@ -201,6 +201,22 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -145.03365
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 223844821826819104, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223130116123249420, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: m_OverrideSorting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223130116123249420, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114951345644527266, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
   m_IsPrefabParent: 0

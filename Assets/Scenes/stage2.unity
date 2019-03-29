@@ -6212,6 +6212,26 @@ Prefab:
       propertyPath: leftBorder
       value: -41
       objectReference: {fileID: 0}
+    - target: {fileID: 114951345644527266, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: topBorder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951345644527266, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: rightBorder
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951345644527266, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: bottomBorder
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114951345644527266, guid: cd40d84bb19367d4787862284afbcf25,
+        type: 2}
+      propertyPath: leftBorder
+      value: 41
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cd40d84bb19367d4787862284afbcf25, type: 2}
   m_IsPrefabParent: 0
