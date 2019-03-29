@@ -114,6 +114,7 @@ GameObject:
   - component: {fileID: 222467809903631724}
   - component: {fileID: 114773597086069896}
   - component: {fileID: 114209561349927294}
+  - component: {fileID: 223511434634992092}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -284,6 +285,7 @@ GameObject:
   - component: {fileID: 222128771040888804}
   - component: {fileID: 114813701213315832}
   - component: {fileID: 114980604394354782}
+  - component: {fileID: 223649652901150510}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -388,6 +390,7 @@ GameObject:
   - component: {fileID: 224780747401868422}
   - component: {fileID: 222249111150471886}
   - component: {fileID: 114030712604341138}
+  - component: {fileID: 223175074305963064}
   m_Layer: 5
   m_Name: Panel (2)
   m_TagString: Untagged
@@ -589,6 +592,7 @@ GameObject:
   - component: {fileID: 224764393734880050}
   - component: {fileID: 222565789950337292}
   - component: {fileID: 114945762752541750}
+  - component: {fileID: 223206569594857212}
   m_Layer: 5
   m_Name: Panel (4)
   m_TagString: Untagged
@@ -778,6 +782,7 @@ GameObject:
   - component: {fileID: 224258356870059576}
   - component: {fileID: 222675936994202978}
   - component: {fileID: 114798756475157930}
+  - component: {fileID: 223049033538727134}
   m_Layer: 5
   m_Name: Panel (1)
   m_TagString: Untagged
@@ -939,6 +944,7 @@ GameObject:
   - component: {fileID: 222999725617673346}
   - component: {fileID: 114732361071268568}
   - component: {fileID: 114594045804484252}
+  - component: {fileID: 223177940262651484}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -991,6 +997,7 @@ GameObject:
   - component: {fileID: 222644358287169954}
   - component: {fileID: 114636307504816106}
   - component: {fileID: 114913912476917668}
+  - component: {fileID: 223356124367711744}
   m_Layer: 0
   m_Name: Image
   m_TagString: Untagged
@@ -1045,6 +1052,7 @@ GameObject:
   - component: {fileID: 224012850624686516}
   - component: {fileID: 222461804455718476}
   - component: {fileID: 114737157157773526}
+  - component: {fileID: 223304858139092798}
   m_Layer: 5
   m_Name: Panel (3)
   m_TagString: Untagged
@@ -1769,12 +1777,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 97
 --- !u!114 &114228892028427468
 MonoBehaviour:
@@ -2171,6 +2179,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zOffset: -10
+  topBorder: 0
+  rightBorder: 0
+  bottomBorder: 0
+  leftBorder: 0
 --- !u!114 &114469746086666014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2465,12 +2477,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 100
 --- !u!114 &114614408060473154
 MonoBehaviour:
@@ -3436,12 +3448,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 102
 --- !u!114 &114920688298820746
 MonoBehaviour:
@@ -3674,12 +3686,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillIcons:
-  - {fileID: 21300000, guid: 18f86b376cbaa314db849a27d5bcbe0f, type: 3}
-  - {fileID: 21300000, guid: af542577c3f33b542817c8a1df57913e, type: 3}
-  - {fileID: 21300000, guid: cb21fc3cfc55ccd4692037753ec580ad, type: 3}
-  - {fileID: 21300000, guid: e361fd03fe517b64e906cf766f9ce6fd, type: 3}
-  - {fileID: 21300000, guid: fedaba3f27d93a44982c65c281faecf8, type: 3}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 46052f2068792bf4b942f2fef9aa3a18, type: 3}
+  - {fileID: 21300000, guid: 42e24adcff3a86646b53538c079458b0, type: 3}
+  - {fileID: 21300000, guid: 9a022518c3017264e9e780933fd27647, type: 3}
+  - {fileID: 21300000, guid: 41fa27fa5595ce442b487b152322e8fe, type: 3}
+  - {fileID: 21300000, guid: b70d749332dcdef4dbdd21501b3015e9, type: 3}
+  - {fileID: 21300000, guid: e1bcfb107cd1c2e48b36c244956cc1e2, type: 3}
   skillSlotKey: 115
 --- !u!114 &114995183058294830
 MonoBehaviour:
@@ -4058,6 +4070,26 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1808191867714534}
+--- !u!223 &223049033538727134
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1704179012083066}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!223 &223128104446788986
 Canvas:
   m_ObjectHideFlags: 1
@@ -4096,7 +4128,47 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 2075111675
-  m_SortingOrder: -1
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223175074305963064
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1401715274048254}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223177940262651484
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1808191867714534}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!223 &223188579316130998
 Canvas:
@@ -4117,6 +4189,26 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 2075111675
   m_SortingOrder: -4
+  m_TargetDisplay: 0
+--- !u!223 &223206569594857212
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521302680542920}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!223 &223274240907409486
 Canvas:
@@ -4158,6 +4250,26 @@ Canvas:
   m_SortingLayerID: 2075111675
   m_SortingOrder: -5
   m_TargetDisplay: 0
+--- !u!223 &223304858139092798
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1884834003461960}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!223 &223343711715619460
 Canvas:
   m_ObjectHideFlags: 1
@@ -4178,6 +4290,46 @@ Canvas:
   m_SortingLayerID: 2075111675
   m_SortingOrder: -3
   m_TargetDisplay: 0
+--- !u!223 &223356124367711744
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846719831983874}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223511434634992092
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1157715489217500}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
 --- !u!223 &223576669160121536
 Canvas:
   m_ObjectHideFlags: 1
@@ -4196,6 +4348,26 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 2075111675
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!223 &223649652901150510
+Canvas:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1361139337912864}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 2
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 1
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!223 &223694305532230244
@@ -4296,7 +4468,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 2075111675
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &224001566212445492
 RectTransform:

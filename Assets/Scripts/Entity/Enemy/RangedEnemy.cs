@@ -28,6 +28,9 @@ public class RangedEnemy : Enemy, IEnemy {
         range = weapon.AtkRange;
         speed = 3;
         atk = weapon.Atk;
+
+        initialAtk = atk;
+        initialSpeed = speed;
         defense = 10;
 
         /// This class initialisation

@@ -28,6 +28,8 @@ public class MeleeEnemy : Enemy, IEnemy {
         range = weapon.AtkRange;
         speed = (int) maxSpeed;
         atk = weapon.Atk;
+        initialAtk = atk;
+        initialSpeed = speed;
         defense = 10;
 
         /// This class initialisation

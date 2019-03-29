@@ -5730,7 +5730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf66f26e54ad4e841b3bbbe567f404dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageName: 
+  stageName: The Gatekeeper
 --- !u!4 &826337475
 Transform:
   m_ObjectHideFlags: 0

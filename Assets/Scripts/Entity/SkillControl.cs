@@ -135,11 +135,7 @@ public class SkillControl : MonoBehaviour {
             }
         }
 
-        // Dash handling
-        if (skill.dashes)
-        {
-            player.Dash();
-        }
+        
 
 
         hit = Physics2D.Raycast(transform.position, currDir, weaponRange, targetLayer);
@@ -176,6 +172,8 @@ public class SkillControl : MonoBehaviour {
             }
         }
 
+        // The following methods already exist right above this comment
+        /*
         // Defense Handling
         if (skill.reducesDefense)
         {
@@ -228,6 +226,7 @@ public class SkillControl : MonoBehaviour {
                 hit.collider.SendMessage("Cripple", 3);
             }
         }
+        */
 
 
         // Buff handling
@@ -274,6 +273,11 @@ public class SkillControl : MonoBehaviour {
             case 5:
                 player.GetComponent<Animator>().SetTrigger("Is Using Skill 5");
                 break;
+        }
+        // Dash handling
+        if (skill.dashes)
+        {
+            player.Dash();
         }
         StartCoroutine(CCountdownCooldown(skillNumber));
     }
