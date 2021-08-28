@@ -1,6 +1,3 @@
-[![Contributors][contributors-shield]][contributors-url]
-[![Issues][issues-shield]][issues-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
@@ -105,8 +102,4 @@ Project Link: [https://github.com/faberwerks/valanthion](https://github.com/fabe
 * [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[contributors-shield]: https://img.shields.io/github/contributors/faberwerks/repo.svg?style=for-the-badge
-[contributors-url]: https://github.com/faberwerks/valanthion/graphs/contributors
-[issues-shield]: https://img.shields.io/github/issues/faberwerks/repo.svg?style=for-the-badge
-[issues-url]: https://github.com/faberwerks/valanthion/issues
 [product-screenshot]: images/screenshot.png
